@@ -1,10 +1,10 @@
 # Estado de Rebajón MX: 🟢 TODO BIEN
 
-Última revisión automática: 2026-11-11 17:19 (hora CDMX)
+Última revisión automática: 2026-11-11 17:57 (hora CDMX)
 
 ## Correcto
 - 🟢 Página en línea con la fecha de hoy.
-- 🟢 Video del turno en la página: video-20261111-1718.mp4 (HTTP 200).
+- 🟢 Video del turno en la página: video-20261111-1756.mp4 (HTTP 200).
 - 🟢 40 ofertas vigentes.
 
 ## Últimas publicaciones
