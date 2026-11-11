@@ -1,0 +1,65 @@
+{
+  "_ayuda": "Configuración de la marca. Para otro cliente, copia el repositorio y cambia solo este archivo. Ver docs/MANUAL.md.",
+  "nombre": "Rebajón MX",
+  "logo": [
+    "REBAJÓN",
+    "MX"
+  ],
+  "web": "rebajonmx.netlify.app",
+  "whatsapp": "https://whatsapp.com/channel/0029VbDg01SAYlUKlEiiDX1O",
+  "telegram": "",
+  "tienda": "Mercado Libre",
+  "hashtags": [
+    "#buenfin",
+    "#buenfin2026",
+    "#ofertas",
+    "#descuentos",
+    "#mexico",
+    "#mercadolibre"
+  ],
+  "descuento_minimo": 15,
+  "dias_vigencia_precio": 10,
+  "campana": {
+    "nombre": "Buen Fin 2026",
+    "inicio": "2026-11-13",
+    "fin": "2026-11-17"
+  },
+  "redes": [
+    "instagram",
+    "facebook",
+    "tiktok"
+  ],
+  "temas": {
+    "azul": {
+      "fondo": "#2340d9",
+      "texto": "#ffffff",
+      "suave": "rgba(255,255,255,.86)",
+      "acento": "#ffcf2e",
+      "acento2": "#e4006f",
+      "sobre_acento": "#141a33",
+      "decoracion": "rgba(255,255,255,.22)"
+    },
+    "blanco": {
+      "fondo": "#f6f7fb",
+      "texto": "#141a33",
+      "suave": "#5b6385",
+      "acento": "#2340d9",
+      "acento2": "#e4006f",
+      "sobre_acento": "#ffffff",
+      "decoracion": "rgba(35,64,217,.16)"
+    },
+    "rosa": {
+      "fondo": "#e4006f",
+      "texto": "#ffffff",
+      "suave": "rgba(255,255,255,.88)",
+      "acento": "#ffcf2e",
+      "acento2": "#141a33",
+      "sobre_acento": "#141a33",
+      "decoracion": "rgba(255,255,255,.24)"
+    }
+  },
+  "ia": {
+    "_ayuda": "Opcional. Modelo gratuito de Gemini para convertir ideas (contenido/pedido.txt) en videos.",
+    "modelo": "gemini-flash-latest"
+  }
+}
