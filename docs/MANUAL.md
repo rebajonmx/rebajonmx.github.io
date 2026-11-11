@@ -5,7 +5,8 @@ Para editar un archivo: ábrelo → botón del lápiz ✏️ → cambia → **Co
 
 ## 1. Lo diario (no hay que hacer nada)
 
-GitHub corre el sistema solo a las **7:00 a. m. y 7:00 p. m.** (hora de CDMX):
+GitHub corre el sistema solo a las **7:00 a. m. y 7:00 p. m.** (hora de CDMX). Durante una campaña (fechas en
+`config/marca.json`) también a las **12:00 p. m. y 5:00 p. m.** (para apagarlo: `"publicaciones_extra_en_campana": false`):
 ofertas → página → video nuevo → Instagram, Facebook y TikTok (vía Buffer) → Telegram (si está activo) → auditoría.
 
 ## 2. Auditar en 10 segundos
@@ -20,9 +21,12 @@ Abre **`ESTADO.md`** en el repositorio:
 Edita **`data/links.txt`**. Una oferta por renglón:
 
 ```
-link | categoría | precio antes | precio ahora | nombre corto
-https://meli.la/abc123 | Hogar | 999 | 499 | Freidora de aire 5 L
+link | categoría | precio antes | precio ahora | nombre corto | foto | calificación | vendidos
+https://meli.la/abc123 | Hogar | 999 | 499 | Freidora de aire 5 L | https://http2.mlstatic.com/....webp | 4.8 | 10mil
 ```
+- Las 3 últimas son opcionales pero recomendadas: sin foto el video usa un emoji.
+- **Cómo sacar los datos rápido:** Mercado Libre → Afiliados y creadores → buscar el producto → **Compartir → Copiar link**
+  (ese es el link de afiliado). Para la foto: abre el producto, clic derecho en la foto → *Copiar dirección de imagen*.
 - Con la API de Mercado Libre activada (sección 7) basta con pegar el link.
 - Sin la API, escribe los 5 datos. Cuando cambien los precios, actualízalos (cuentan como revisados ese día).
 - Una oferta se publica solo si tiene **15% o más** de descuento y precio revisado en los últimos **10 días**.

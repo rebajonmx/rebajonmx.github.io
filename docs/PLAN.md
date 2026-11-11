@@ -35,7 +35,8 @@ siempre). Una IA de video gratuita da pocos segundos al día y estilo inconsiste
 - [x] Sistema automático: ofertas → página → video → Instagram/Facebook/TikTok → auditoría.
 - [x] Motor de videos con conceptos y 3 colores; 10 conceptos nuevos.
 - [x] Documentación: `README.md`, `AGENTS.md`, `docs/MANUAL.md`, `docs/CONCEPTOS.md`, `docs/PROMPTS.md`, este plan.
-- [ ] Más ofertas para el Buen Fin (meta 30-40) con links de afiliado.
+- [x] Más ofertas para el Buen Fin: 40 con links de afiliado, foto, calificación y ventas.
+- [x] 4 publicaciones al día durante la campaña y 3 conceptos nuevos de Buen Fin.
 - [ ] Llave de Gemini (`GEMINI_API_KEY`) y prueba de `pedido.txt`.
 - [ ] Canal de Telegram + secretos.
 - [ ] App de Mercado Libre (`ML_CLIENT_ID/SECRET`) y prueba de "solo pegar links".

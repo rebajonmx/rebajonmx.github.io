@@ -46,12 +46,12 @@ y los textos. O escribe la idea en `contenido/pedido.txt` y deja que Gemini lo a
 | `numero` | `numero`, `titulo`, `texto` | Un número o dato enorme (ej. "1", "5 días", "$2,000"). |
 | `lista` | `titulo`, `items` (3 a 5), `marca` | Lista con palomitas que aparecen una por una. |
 | `comparacion` | `titulo`, `izq` y `der` (cada uno con `titulo`, `valor`, `texto`), `texto` | Dos tarjetas lado a lado (antes/después, sin/con). |
-| `producto` | `elegir`, `indice`, `categoria`, `max_precio`, `etiqueta` | Foto del producto, % de descuento y precio animado. |
+| `producto` | `elegir`, `indice`, `categoria` (o `categorias`: lista), `max_precio`, `etiqueta` | Foto del producto, % de descuento y precio animado. |
 | `productos` | igual que `producto` + `cuantos` (1 a 5) | Varias escenas de producto seguidas con #1, #2, #3. |
 | `cierre` | `titulo`, `titulo2` | Se agrega solo al final. Solo ponlo si quieres cambiar sus títulos. |
 
 Todas aceptan `seg` (duración en segundos) si quieres cambiar la duración normal.
-`elegir`: `top` (más descuento), `barato` (precio más bajo) o `aleatorio`.
+`elegir`: `top` (más descuento), `barato` (precio más bajo), `aleatorio`, `vendidos` (más ventas) o `variado` (rota: cada publicación muestra productos distintos; recomendado para listas).
 
 ## Variables que se rellenan solas
 
