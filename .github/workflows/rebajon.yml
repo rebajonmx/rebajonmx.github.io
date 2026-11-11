@@ -1,0 +1,83 @@
+name: Rebajón MX automático
+
+on:
+  schedule:
+    - cron: "0 13 * * *"   # 7:00 a. m. en Ciudad de México
+    - cron: "0 1 * * *"    # 7:00 p. m. en Ciudad de México
+  workflow_dispatch:
+    inputs:
+      video:
+        description: "Video a publicar (1 campaña, 2 top 5, 3 tips). Vacío = automático"
+        required: false
+      publicar:
+        description: "¿Publicar en Instagram, Facebook y TikTok?"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+jobs:
+  ciclo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar herramientas
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-core fonts-noto-color-emoji
+          pip install -q requests==2.32.3 playwright==1.48.0
+          python -m playwright install --with-deps chromium
+
+      - name: 1. Revisar precios en Mercado Libre
+        working-directory: scripts
+        run: python actualizar_precios.py || echo "Precios sin actualizar (ver registro)"
+
+      - name: 2. Construir sitio
+        working-directory: scripts
+        run: python construir_sitio.py
+
+      - name: 3. Elegir video del turno
+        id: turno
+        run: |
+          N="${{ github.event.inputs.video }}"
+          if [ -z "$N" ]; then N=$(( ( $(date +%j) * 2 + $(date +%H) / 12 ) % 3 + 1 )); fi
+          echo "n=$N" >> "$GITHUB_OUTPUT"
+
+      - name: 4. Generar videos
+        working-directory: scripts
+        run: python generar_videos.py 1 2 3
+
+      - name: 5. Publicar sitio en Netlify
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: npx -y netlify-cli@17.38.1 deploy --prod --dir public --site "$NETLIFY_SITE_ID" --auth "$NETLIFY_AUTH_TOKEN" --message "Actualización automática"
+
+      - name: 6. Publicar en Instagram, Facebook y TikTok (Buffer)
+        if: github.event_name == 'schedule' || github.event.inputs.publicar == 'true'
+        working-directory: scripts
+        env:
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+        run: sleep 20 && python publicar_buffer.py ${{ steps.turno.outputs.n }}
+
+      - name: 7. Guardar precios nuevos
+        run: |
+          git config user.name "rebajon-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/ofertas.json
+          git diff --cached --quiet || git commit -m "Precios $(date -u +%F\ %H:%M)" && git push
+
+      - name: Guardar videos del día (descargables 7 días)
+        uses: actions/upload-artifact@v4
+        with:
+          name: contenido-${{ github.run_number }}
+          path: |
+            public/media/*.mp4
+            public/whatsapp.txt
+          retention-days: 7
