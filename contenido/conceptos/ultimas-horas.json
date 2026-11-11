@@ -1,0 +1,26 @@
+{
+ "id": "ultimas-horas",
+ "nombre": "Últimos días",
+ "objetivo": "Urgencia al final de la campaña",
+ "temporada": "durante",
+ "publicacion": "⏰ El {campana} se acaba. Estas rebajas siguen vivas hoy, pero no sabemos por cuánto tiempo.",
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "emoji": "⏰",
+   "titulo": "¡SE ACABA!",
+   "texto": "el {campana}",
+   "etiqueta": "quedan {dias_restantes} día(s)"
+  },
+  {
+   "tipo": "texto",
+   "titulo": "No lo dejes al final",
+   "texto": "Los productos con más descuento son los primeros en agotarse."
+  },
+  {
+   "tipo": "productos",
+   "elegir": "variado",
+   "cuantos": 3
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "id": "lo-mas-vendido",
+ "nombre": "Lo que todos están comprando",
+ "objetivo": "Prueba social",
+ "temporada": "siempre",
+ "publicacion": "🔥 Lo que más está comprando la gente, ahora con descuento. Todos con miles de ventas y buenas calificaciones.",
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "emoji": "🔥",
+   "titulo": "LO MÁS VENDIDO",
+   "texto": "y ahora con descuento"
+  },
+  {
+   "tipo": "texto",
+   "titulo": "Miles de ventas",
+   "texto": "Elegimos productos con muchas ventas y buenas calificaciones: menos riesgo al comprar."
+  },
+  {
+   "tipo": "productos",
+   "elegir": "vendidos",
+   "cuantos": 3
+  }
+ ]
+}

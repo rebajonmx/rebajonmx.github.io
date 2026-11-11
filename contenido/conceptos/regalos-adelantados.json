@@ -1,0 +1,35 @@
+{
+ "id": "regalos-adelantados",
+ "nombre": "Adelanta tus regalos",
+ "objetivo": "Conectar Buen Fin con Navidad",
+ "temporada": "durante",
+ "publicacion": "🎁 ¿Ya pensaste en los regalos de diciembre? En el {campana} salen más baratos. Aquí van ideas con descuento real.",
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "emoji": "🎁",
+   "titulo": "REGALOS",
+   "texto": "más baratos que en diciembre",
+   "etiqueta": "{campana}"
+  },
+  {
+   "tipo": "texto",
+   "titulo": "Truco",
+   "texto": "Compra hoy los regalos de Navidad y ahorra lo que pagarías en diciembre."
+  },
+  {
+   "tipo": "productos",
+   "elegir": "variado",
+   "cuantos": 3,
+   "seg_cada": 2.4,
+   "categorias": [
+    "Juguetes",
+    "Tecnología",
+    "Belleza"
+   ]
+  }
+ ],
+ "requiere": {
+  "minimo": 3
+ }
+}
