@@ -14,7 +14,8 @@ Dueño: opera desde el navegador y quiere intervención humana e IA **mínimas**
 ```
 data/links.txt  (lo único que edita una persona: links de afiliado)
       │
-GitHub Actions  (.github/workflows/rebajon.yml, 7:00 y 19:00 CDMX = 13:00 y 01:00 UTC)
+GitHub Actions  (.github/workflows/rebajon.yml, 7:00 y 19:00 CDMX = 13:00 y 01:00 UTC;
+                 durante la campaña también 12:00 y 17:00 CDMX — job "turno", config publicaciones_extra_en_campana)
   1 actualizar_ofertas.py  links.txt → data/ofertas.json (API oficial de Mercado Libre si hay secretos; si no, precios manuales)
   2 construir_sitio.py     plantilla/sitio.html + ofertas → public/index.html y public/whatsapp.txt
   3 generar_video.py       contenido.py elige concepto+color → plantilla/motor.js dibuja en Chromium (Playwright)
@@ -32,7 +33,7 @@ GitHub Actions  (.github/workflows/rebajon.yml, 7:00 y 19:00 CDMX = 13:00 y 01:0
 | Archivo | Qué hace / reglas |
 |---|---|
 | `config/marca.json` | **Única** configuración por marca/cliente: nombre, logo, web, WhatsApp, Telegram, hashtags, descuento mínimo, vigencia de precios, campaña (fechas), redes, colores de temas, modelo de IA. |
-| `data/links.txt` | Entrada humana. `link | categoría | precio antes | precio ahora | nombre`. Lo manual manda sobre la API salvo precios cuando hay API. |
+| `data/links.txt` | Entrada humana. `link | categoría | precio antes | precio ahora | nombre | foto | calificación | vendidos` (las 3 últimas opcionales). Lo manual manda sobre la API salvo precios cuando hay API. |
 | `data/ofertas.json` | Generado. Campos: url, cat, name, now, was, off, img, active, revisado, firma, product, ml_id, ml_tipo, e. No editar a mano. |
 | `data/historial.json` | Generado. Cada publicación: fecha, concepto, tema (color), categoria, archivo, ids de Buffer, errores. Base para métricas. |
 | `data/pendientes.json` | Generado. Links sin datos completos. |
@@ -78,9 +79,13 @@ GitHub Actions  (.github/workflows/rebajon.yml, 7:00 y 19:00 CDMX = 13:00 y 01:0
 - 2026-11-11: sistema en producción. Buffer conectado a Instagram @rebajonmx, Facebook página Rebajón MX y TikTok @rebajonmx.
   Secretos configurados: NETLIFY_AUTH_TOKEN, NETLIFY_SITE_ID, BUFFER_API_KEY.
 - Motor v2 con 10 conceptos y 3 colores. Campaña activa: Buen Fin 2026 (13–17 nov).
-- 10 ofertas activas con precios manuales en links.txt (sin API de ML todavía).
+- 40 ofertas activas (11 nov) con precios, foto, calificación y ventas manuales en links.txt (sin API de ML todavía).
+  Los links se generaron en la Central de afiliados de ML (sesión del dueño): Compartir → Copiar link.
+- 13 conceptos. Nuevos para la campaña: ultimas-horas, regalos-adelantados (durante) y lo-mas-vendido (siempre).
+  `elegir: "variado"` rota productos en cada publicación; la categoría del turno cambia en cada publicación.
+- 4 publicaciones al día durante la campaña (7am, 12pm, 5pm, 7pm CDMX); fuera de campaña 2.
 - Pendiente del dueño (opcional): app de Mercado Libre (ML_CLIENT_ID/SECRET), canal de Telegram, GEMINI_API_KEY,
-  más ofertas (meta 30–40 para el Buen Fin), cambiar la llave de Buffer (quedó visible en una captura).
+  cambiar la llave de Buffer (quedó visible en una captura).
 - Por verificar cuando exista la app de ML: que `client_credentials` dé acceso a /items y /products (si no, cambiar
   a flujo authorization_code con refresh token guardado como secreto).
 
