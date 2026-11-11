@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   ideas:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04   # fijo: probado así (ubuntu-latest cambia de versión)
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
