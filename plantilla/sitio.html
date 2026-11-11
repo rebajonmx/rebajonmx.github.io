@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rebajón MX · Las ofertas que sí valen la pena</title>
+<meta name="description" content="Ofertas reales en México, verificadas todos los días: precio de antes vs. ahora y link directo a la tienda. Buen Fin 2026, del 13 al 17 de noviembre.">
+<meta property="og:title" content="Rebajón MX · Las ofertas que sí valen la pena">
+<meta property="og:description" content="Ofertas reales en México, verificadas todos los días. Precio de antes vs. ahora y link directo a la tienda.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#2340d9">
+<meta name="color-scheme" content="light only">
+<link rel="icon" type="image/png" href="data:image/png;base64,__FAV__">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Figtree:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout: price-tag hero with live countdown, sticky category chips, grid of deal cards with product photos */
+:root{
+  --bg:#eef1fd; --surface:#ffffff; --ink:#141a33; --muted:#5b6385;
+  --line:#e2e5f0; --cobalt:#2340d9; --rosa:#e4006f; --sol:#ffcf2e; --ok:#0f8a5f; --photo:#ffffff;
+  --display:"Bowlby One","Arial Black",Impact,sans-serif;
+  --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sol);outline-offset:2px}
+
+.bar{background:var(--cobalt);color:#fff}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:14px;flex-wrap:wrap}
+.logo{font-family:var(--display);font-size:1.25rem;letter-spacing:.01em;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:6px}
+.logo span{background:var(--sol);padding:4px 14px;border-radius:12px;transform:rotate(-3deg);display:inline-block;box-shadow:0 4px 0 rgba(0,0,0,.12)}
+.logo b{background:var(--rosa);color:#fff;font-size:.8rem;padding:2px 8px;border-radius:6px;transform:rotate(4deg) translateY(6px);display:inline-block;font-weight:400}
+.bar nav{display:flex;gap:18px;font-weight:700;font-size:.95rem;color:rgba(255,255,255,.85)}
+.bar nav a{text-decoration:none}
+.bar nav a:hover{color:var(--sol)}
+
+.hero{position:relative;overflow:hidden;background:var(--cobalt);color:#fff;padding-block:36px 48px}
+.hero::before{content:"";position:absolute;width:520px;height:520px;right:-140px;top:-180px;border-radius:50%;border:3px dashed rgba(255,255,255,.18)}
+.hero::after{content:"";position:absolute;width:640px;height:640px;left:-320px;bottom:-460px;border-radius:50%;background:rgba(255,255,255,.06)}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:center}
+.eyebrow{font-size:.8rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--sol)}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,6vw,3.8rem);line-height:1.02;margin:.3em 0 .35em;text-wrap:balance}
+h1 em{font-style:normal;color:var(--sol)}
+.lede{color:rgba(255,255,255,.92);font-size:1.12rem;font-weight:500;max-width:34em;margin:0}
+.lede b{color:var(--sol)}
+.pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.pills span{font-family:var(--display);font-size:.95rem;padding:8px 16px;border-radius:12px;box-shadow:0 4px 0 rgba(0,0,0,.15)}
+.pills .y{background:var(--sol);color:var(--ink);transform:rotate(-1deg)}
+.pills .p{background:var(--rosa);color:#fff;transform:rotate(1deg)}
+.tag{position:relative;background:var(--sol);color:#141a33;border-radius:16px;padding:24px 24px 22px 40px;transform:rotate(2deg);box-shadow:0 18px 36px -14px rgba(0,0,0,.45)}
+.tag::before{content:"";position:absolute;left:14px;top:50%;width:12px;height:12px;margin-top:-6px;border-radius:50%;background:var(--cobalt);box-shadow:inset 0 0 0 2px rgba(20,26,51,.25)}
+.tag small{font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:.72rem}
+.count{display:flex;gap:14px;margin:8px 0 6px;font-variant-numeric:tabular-nums}
+.count div{display:flex;flex-direction:column;align-items:center}
+.count span{font-family:var(--display);font-size:2.4rem;line-height:1}
+.count i{font-style:normal;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.tag p{margin:0;font-weight:600;font-size:.95rem}
+
+.filters{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.filters .wrap{display:flex;gap:10px;align-items:center;padding-block:12px;overflow-x:auto;scrollbar-width:none}
+.chip{flex:none;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);font:600 .92rem var(--body);padding:8px 14px;border-radius:999px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--cobalt);border-color:var(--cobalt);color:#fff}
+.chip:hover{border-color:var(--cobalt)}
+.sort{margin-left:auto;flex:none;font:600 .92rem var(--body);padding:8px 10px;border-radius:10px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink)}
+
+.updated{margin:18px 0 0;font-size:.9rem;color:var(--muted)}
+.updated b{color:var(--ok)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px;padding-block:16px 48px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.photo{position:relative;text-decoration:none;background:var(--photo);aspect-ratio:1/1;max-width:100%;display:grid;place-items:center;padding:18px;border-bottom:1px solid var(--line)}
+.photo img{width:100%;height:100%;object-fit:contain}
+.off{position:absolute;top:12px;left:12px;font-family:var(--display);background:var(--rosa);color:#fff;padding:3px 10px;border-radius:6px;font-size:1rem}
+.body{padding:16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.store{font-size:.74rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.card h3{margin:0;font-size:1.05rem;line-height:1.3;font-weight:700;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.prices{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;font-variant-numeric:tabular-nums}
+.now{font-family:var(--display);font-size:1.55rem;color:#6f86ff}
+.was{color:var(--muted);text-decoration:line-through}
+.save{font-size:.85rem;font-weight:700;color:var(--ok)}
+.meta{display:flex;gap:6px;flex-wrap:wrap;font-size:.8rem;color:var(--muted)}
+.pill{border:1px solid var(--line);border-radius:999px;padding:2px 9px}
+.go{margin-top:auto;display:block;text-align:center;text-decoration:none;font-weight:800;background:var(--cobalt);color:#fff;padding:11px;border-radius:10px}
+.go:hover{background:var(--sol);color:var(--ink)}
+
+.band{background:var(--cobalt);color:#fff;border-top:6px solid var(--sol)}
+.band .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:center;padding-block:36px}
+.band h2{font-family:var(--display);font-weight:400;font-size:clamp(1.6rem,4vw,2.3rem);line-height:1.08;margin:0 0 .3em;text-wrap:balance}
+.band p{margin:0;opacity:.9}
+.wa{display:inline-block;text-decoration:none;padding:14px 22px;border-radius:12px;background:#ffcf2e;color:#141a33;font:800 1.05rem var(--body)}
+.wa:hover{filter:brightness(1.05)}
+.msg{margin-top:10px;font-weight:600;opacity:.85}
+.socials{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.socials a{color:#fff;font-weight:700;text-decoration:none;border:1.5px solid rgba(255,255,255,.5);padding:6px 12px;border-radius:999px;font-size:.9rem}
+.socials a:hover{background:rgba(255,255,255,.12)}
+
+footer{padding-block:28px 40px;color:var(--muted);font-size:.86rem}
+footer .wrap{display:grid;gap:10px;max-width:820px}
+footer strong{color:var(--ink)}
+footer p{margin:0}
+
+@media (max-width:760px){
+  .hero .wrap,.band .wrap{grid-template-columns:1fr}
+  .tag{transform:rotate(1deg)}
+  .bar nav{display:none}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .photo{padding:10px}
+  .body{padding:12px}
+  .card h3{font-size:.95rem}
+  .now{font-size:1.25rem}
+  .meta .pill:nth-child(n+2){display:none}
+}
+@media (prefers-reduced-motion:no-preference){.card{transition:transform .15s,box-shadow .15s}.card:hover{transform:translateY(-3px);box-shadow:0 14px 30px -18px rgba(20,26,51,.5)}}
+</style>
+</head>
+<body>
+<header class="bar"><div class="wrap">
+  <a class="logo" href="#"><span>REBAJÓN</span><b>MX</b></a>
+  <nav><a href="#ofertas">Ofertas</a><a href="#alertas">Alertas</a><a href="#como-funciona">Cómo funciona</a></nav>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <div>
+    <div class="eyebrow">Temporada de descuentos · noviembre 2026</div>
+    <h1>Las ofertas que <em>sí valen la pena</em>, en un solo lugar.</h1>
+    <p class="lede">Revisamos a diario los precios por ti y te dejamos <b>solo las ofertas reales</b>, con el precio de antes y el link directo para comprar.</p>
+    <div class="pills"><span class="y">Antes vs. ahora</span><span class="p">Precios verificados</span></div>
+  </div>
+  <div class="tag" aria-live="polite">
+    <small id="countLabel">Arranca la temporada en</small>
+    <div class="count">
+      <div><span id="d">0</span><i>días</i></div>
+      <div><span id="h">00</span><i>horas</i></div>
+      <div><span id="m">00</span><i>min</i></div>
+    </div>
+    <p>13 al 17 de noviembre. Te avisamos de las mejores primero.</p>
+  </div>
+</div></section>
+
+<div class="filters" id="ofertas"><div class="wrap" role="toolbar" aria-label="Filtrar ofertas">
+  <button class="chip" aria-pressed="true" data-cat="todas">Todas</button>
+  <button class="chip" aria-pressed="false" data-cat="Tecnología">Tecnología</button>
+  <button class="chip" aria-pressed="false" data-cat="Hogar">Hogar</button>
+  <button class="chip" aria-pressed="false" data-cat="Electrodomésticos">Electrodomésticos</button>
+  <select class="sort" id="sort" aria-label="Ordenar">
+    <option value="off">Mayor descuento</option>
+    <option value="low">Menor precio</option>
+    <option value="pop">Más vendidos</option>
+  </select>
+</div></div>
+
+<main class="wrap">
+  <p class="updated">Precios revisados el <b>__FECHA__</b>. Pueden cambiar en cualquier momento; confirma en la tienda antes de pagar.</p>
+  <div class="grid" id="grid"></div>
+</main>
+
+<section class="band" id="alertas"><div class="wrap">
+  <div>
+    <h2>Recibe las mejores ofertas del día en WhatsApp.</h2>
+    <p>Síguenos en nuestro canal y te avisamos al momento. Gratis.</p>
+  </div>
+  <div>
+    <a class="wa" href="https://whatsapp.com/channel/0029VbDg01SAYlUKlEiiDX1O" target="_blank" rel="noopener">Unirme al canal de WhatsApp →</a>
+    <div class="msg">Tu número no se comparte. Sales cuando quieras.</div>
+    <div class="socials">
+      <a href="https://www.tiktok.com/@rebajonmx" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.instagram.com/rebajonmx" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61596109632617" target="_blank" rel="noopener">Facebook</a>
+    </div>
+  </div>
+</div></section>
+
+<footer id="como-funciona"><div class="wrap">
+  <p><strong>Cómo funciona.</strong> Buscamos descuentos en tiendas en línea, verificamos el precio anterior y publicamos solo los que realmente bajan. Al dar clic vas a la tienda original y compras ahí, con sus garantías y envíos.</p>
+  <p><strong>Transparencia.</strong> Los enlaces son de afiliado: si compras, la tienda nos paga una pequeña comisión sin costo extra para ti. Así mantenemos el sitio gratis.</p>
+  <p id="privacidad"><strong>Privacidad.</strong> Este sitio no te pide datos personales ni usa formularios. El canal de WhatsApp lo administra WhatsApp y tu número no es visible para nosotros.</p>
+  <p>Rebajón MX es un sitio independiente. No somos el sitio oficial de El Buen Fin ni estamos afiliados a sus organizadores ni a las tiendas mencionadas. Contacto: mxrebajon@gmail.com</p>
+</div></footer>
+
+<script>
+const deals=__DEALS__;
+const fmt=n=>"$"+n.toLocaleString("es-MX",{minimumFractionDigits:n%1?2:0,maximumFractionDigits:2});
+const soldN=s=>{const m=String(s).match(/(\d+)(mil|M)?/);if(!m)return 0;return +m[1]*(m[2]==="M"?1e6:m[2]==="mil"?1e3:1)};
+let cat="todas", sort="off";
+function render(){
+  let list=deals.filter(d=>cat==="todas"||d.cat===cat);
+  list.sort(sort==="off"?(a,b)=>b.off-a.off:sort==="low"?(a,b)=>a.now-b.now:(a,b)=>soldN(b.sold)-soldN(a.sold));
+  document.getElementById("grid").innerHTML=list.map(d=>`
+   <article class="card">
+     <a class="photo" href="${d.url}" target="_blank" rel="noopener sponsored" aria-label="${d.name}">
+       <img src="${d.img}" alt="${d.name}" loading="lazy" referrerpolicy="no-referrer">
+       <span class="off">-${d.off}%</span>
+     </a>
+     <div class="body">
+       <span class="store">Mercado Libre</span>
+       <h3>${d.name}</h3>
+       <div class="prices"><span class="now">${fmt(d.now)}</span><span class="was">${fmt(d.was)}</span></div>
+       <span class="save">Ahorras ${fmt(Math.round(d.was-d.now))}</span>
+       <div class="meta"><span class="pill">★ ${d.rating}</span><span class="pill">+${d.sold} vendidos</span><span class="pill">${d.cat}</span></div>
+       <a class="go" href="${d.url}" target="_blank" rel="noopener sponsored">Ver oferta →</a>
+     </div>
+   </article>`).join("");
+}
+document.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>{
+  document.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed","false"));
+  c.setAttribute("aria-pressed","true"); cat=c.dataset.cat; render();
+}));
+document.getElementById("sort").addEventListener("change",e=>{sort=e.target.value;render();});
+render();
+
+const start=new Date("2026-11-13T00:00:00-06:00"), end=new Date("2026-11-18T00:00:00-06:00");
+function tick(){
+  const now=new Date(); let target=start;
+  const label=document.getElementById("countLabel");
+  if(now>=start&&now<end){target=end;label.textContent="El Buen Fin termina en";}
+  else if(now>=end){label.textContent="Temporada terminada · siguen las ofertas diarias";}
+  let s=Math.max(0,Math.floor((target-now)/1000));
+  document.getElementById("d").textContent=Math.floor(s/86400);
+  document.getElementById("h").textContent=String(Math.floor(s%86400/3600)).padStart(2,"0");
+  document.getElementById("m").textContent=String(Math.floor(s%3600/60)).padStart(2,"0");
+}
+tick(); setInterval(tick,30000);
+</script>
+</body>
+</html>
