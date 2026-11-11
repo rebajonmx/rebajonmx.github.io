@@ -1,9 +1,12 @@
 name: Rebajón MX automático
 
-# Corre solo 2 veces al día. También se puede correr a mano: pestaña Actions → "Rebajón MX automático" → Run workflow.
+# Corre solo 2 veces al día (4 durante una campaña, ver config/marca.json → publicaciones_extra_en_campana).
+# También se puede correr a mano: pestaña Actions → "Rebajón MX automático" → Run workflow.
 on:
   schedule:
     - cron: "0 13 * * *"   # 7:00 a. m. Ciudad de México
+    - cron: "0 18 * * *"   # 12:00 p. m. Ciudad de México (solo durante campaña)
+    - cron: "0 23 * * *"   # 5:00 p. m. Ciudad de México (solo durante campaña)
     - cron: "0 1 * * *"    # 7:00 p. m. Ciudad de México
   workflow_dispatch:
     inputs:
@@ -26,7 +29,27 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  turno:
+    # Decide si este horario toca: los horarios extra solo corren durante la campaña.
+    runs-on: ubuntu-latest
+    outputs:
+      seguir: ${{ steps.r.outputs.seguir }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: r
+        working-directory: scripts
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          from comun import CONFIG, campana
+          extra = "${{ github.event.schedule }}" in ("0 18 * * *", "0 23 * * *")
+          seguir = (not extra) or (CONFIG.get("publicaciones_extra_en_campana", True) and campana()["etapa"] == "durante")
+          print("seguir=" + ("true" if seguir else "false"))
+          PY
+          cat "$GITHUB_OUTPUT"
+
   ciclo:
+    needs: turno
+    if: needs.turno.outputs.seguir == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
