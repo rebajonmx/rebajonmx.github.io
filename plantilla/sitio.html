@@ -145,9 +145,7 @@ footer p{margin:0}
 
 <div class="filters" id="ofertas"><div class="wrap" role="toolbar" aria-label="Filtrar ofertas">
   <button class="chip" aria-pressed="true" data-cat="todas">Todas</button>
-  <button class="chip" aria-pressed="false" data-cat="Tecnología">Tecnología</button>
-  <button class="chip" aria-pressed="false" data-cat="Hogar">Hogar</button>
-  <button class="chip" aria-pressed="false" data-cat="Electrodomésticos">Electrodomésticos</button>
+  <span id="cats" style="display:contents"></span>
   <select class="sort" id="sort" aria-label="Ordenar">
     <option value="off">Mayor descuento</option>
     <option value="low">Menor precio</option>
@@ -202,11 +200,13 @@ function render(){
        <h3>${d.name}</h3>
        <div class="prices"><span class="now">${fmt(d.now)}</span><span class="was">${fmt(d.was)}</span></div>
        <span class="save">Ahorras ${fmt(Math.round(d.was-d.now))}</span>
-       <div class="meta"><span class="pill">★ ${d.rating}</span><span class="pill">+${d.sold} vendidos</span><span class="pill">${d.cat}</span></div>
+       <div class="meta">${d.rating?`<span class="pill">★ ${d.rating}</span>`:""}${d.sold?`<span class="pill">+${d.sold} vendidos</span>`:""}<span class="pill">${d.cat}</span></div>
        <a class="go" href="${d.url}" target="_blank" rel="noopener sponsored">Ver oferta →</a>
      </div>
    </article>`).join("");
 }
+{const n={};deals.forEach(d=>n[d.cat]=(n[d.cat]||0)+1);
+ document.getElementById("cats").innerHTML=Object.keys(n).sort((a,b)=>n[b]-n[a]).map(c=>`<button class="chip" aria-pressed="false" data-cat="${c}">${c}</button>`).join("");}
 document.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>{
   document.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed","false"));
   c.setAttribute("aria-pressed","true"); cat=c.dataset.cat; render();
