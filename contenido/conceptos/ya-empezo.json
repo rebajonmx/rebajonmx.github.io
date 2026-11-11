@@ -1,0 +1,21 @@
+{
+ "id": "ya-empezo",
+ "nombre": "¡Ya empezó!",
+ "objetivo": "Urgencia durante la campaña",
+ "temporada": "durante",
+ "publicacion": "🚀 ¡Ya empezó el {campana}! Quedan {dias_restantes} días. Estas son las rebajas reales de hoy.",
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "emoji": "🚀",
+   "titulo": "¡YA EMPEZÓ!",
+   "texto": "el {campana}",
+   "etiqueta": "quedan {dias_restantes} días"
+  },
+  {
+   "tipo": "productos",
+   "elegir": "top",
+   "cuantos": 3
+  }
+ ]
+}

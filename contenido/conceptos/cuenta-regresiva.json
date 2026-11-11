@@ -1,0 +1,26 @@
+{
+ "id": "cuenta-regresiva",
+ "nombre": "Cuenta regresiva",
+ "objetivo": "Urgencia antes de la campaña",
+ "temporada": "antes",
+ "publicacion": "⏰ Faltan {dias} días para el {campana}. Activa las alertas para no perderte las rebajas reales.",
+ "escenas": [
+  {
+   "tipo": "numero",
+   "titulo": "Faltan",
+   "numero": "{dias} DÍAS",
+   "texto": "para el {campana}"
+  },
+  {
+   "tipo": "texto",
+   "titulo": "Prepárate",
+   "texto": "Haz tu lista y revisa precios desde hoy para detectar trucos.",
+   "etiqueta": "🔔 activa las alertas"
+  },
+  {
+   "tipo": "producto",
+   "elegir": "top",
+   "etiqueta": "spoiler 👀"
+  }
+ ]
+}

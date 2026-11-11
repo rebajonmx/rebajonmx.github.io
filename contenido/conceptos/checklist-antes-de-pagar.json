@@ -1,0 +1,33 @@
+{
+ "id": "checklist-antes-de-pagar",
+ "nombre": "Checklist antes de pagar",
+ "objetivo": "Valor práctico, se guarda y se comparte",
+ "temporada": "siempre",
+ "publicacion": "✅ Antes de pagar en el {campana}, revisa esta lista. Compártela con quien siempre compra de más 😅",
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "emoji": "✋",
+   "titulo": "ANTES DE PAGAR",
+   "texto": "revisa estas 5 cosas",
+   "etiqueta": "no falla 💯"
+  },
+  {
+   "tipo": "lista",
+   "titulo": "Checklist del comprador",
+   "items": [
+    "Precio real de antes",
+    "Reseñas del vendedor",
+    "Costo de envío",
+    "Garantía y devoluciones",
+    "Meses sin intereses reales"
+   ]
+  },
+  {
+   "tipo": "texto",
+   "titulo": "¿Flojera de revisar?",
+   "texto": "Nosotros ya revisamos las ofertas y te dejamos el link directo.",
+   "etiqueta": "te ahorramos tiempo ⏱️"
+  }
+ ]
+}

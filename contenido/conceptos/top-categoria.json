@@ -1,0 +1,25 @@
+{
+ "id": "top-categoria",
+ "nombre": "Lo más rebajado por categoría",
+ "objetivo": "Segmentar público",
+ "temporada": "siempre",
+ "requiere": {
+  "minimo": 2,
+  "por_categoria": true
+ },
+ "publicacion": "🏷️ Lo más rebajado hoy en {categoria}. Precios revisados y link directo en nuestra página.",
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "emoji": "🏷️",
+   "titulo": "{categoria_mayus}",
+   "texto": "lo más rebajado de hoy"
+  },
+  {
+   "tipo": "productos",
+   "elegir": "top",
+   "cuantos": 3,
+   "categoria": "{categoria}"
+  }
+ ]
+}

@@ -1,0 +1,41 @@
+{
+ "id": "por-que-confiar",
+ "nombre": "¿Por qué confiar en nosotros?",
+ "objetivo": "Confianza y marca",
+ "temporada": "siempre",
+ "publicacion": "🤝 ¿Por qué confiar en {marca}? No vendemos nada: te mostramos las rebajas reales y compras directo en {tienda}.",
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "emoji": "🤝",
+   "titulo": "¿Es confiable?",
+   "texto": "Te contamos cómo trabajamos"
+  },
+  {
+   "tipo": "lista",
+   "titulo": "Así trabajamos",
+   "items": [
+    "No vendemos nada",
+    "Compras directo en {tienda}",
+    "Revisamos el precio de antes",
+    "Solo descuentos de {descuento_minimo}% o más",
+    "Es 100% gratis"
+   ]
+  },
+  {
+   "tipo": "comparacion",
+   "titulo": "Tú decides",
+   "izq": {
+    "titulo": "Sin nosotros",
+    "valor": "2 h",
+    "texto": "buscando y comparando"
+   },
+   "der": {
+    "titulo": "Con nosotros",
+    "valor": "2 min",
+    "texto": "ofertas ya revisadas"
+   },
+   "texto": "Tu tiempo también vale 💛"
+  }
+ ]
+}

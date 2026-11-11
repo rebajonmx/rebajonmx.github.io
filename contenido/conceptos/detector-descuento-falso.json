@@ -1,0 +1,40 @@
+{
+ "id": "detector-descuento-falso",
+ "nombre": "3 señales de un descuento FALSO",
+ "objetivo": "Educar y generar confianza (valor)",
+ "temporada": "siempre",
+ "publicacion": "🚨 3 señales de que un descuento es FALSO. Guarda este video antes del {campana}: nosotros revisamos el precio de antes vs. ahora por ti.",
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "emoji": "🚨",
+   "titulo": "¿Descuento FALSO?",
+   "texto": "3 señales para detectarlo en 5 segundos",
+   "etiqueta": "guárdalo 📌"
+  },
+  {
+   "tipo": "numero",
+   "numero": "1",
+   "titulo": "El precio de \"antes\"",
+   "texto": "subió justo días antes de la oferta"
+  },
+  {
+   "tipo": "numero",
+   "numero": "2",
+   "titulo": "Todo dice",
+   "texto": "\"solo hoy\" y \"últimas piezas\" todo el año"
+  },
+  {
+   "tipo": "numero",
+   "numero": "3",
+   "titulo": "El % es enorme",
+   "texto": "pero el precio final es igual al de otras tiendas"
+  },
+  {
+   "tipo": "texto",
+   "titulo": "Nosotros lo revisamos por ti",
+   "texto": "Solo publicamos descuentos de {descuento_minimo}% o más, comparando el precio real.",
+   "etiqueta": "✅ precios verificados"
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+{
+ "id": "datos-curiosos-buen-fin",
+ "nombre": "Datos curiosos del Buen Fin",
+ "objetivo": "Curiosidad, alcance",
+ "temporada": "antes",
+ "publicacion": "🤯 Datos del Buen Fin que casi nadie sabe. Este año es del 13 al 17 de noviembre y te avisamos de las rebajas reales.",
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "emoji": "🤯",
+   "titulo": "¿SABÍAS QUE...?",
+   "texto": "3 datos del Buen Fin que casi nadie sabe"
+  },
+  {
+   "tipo": "numero",
+   "numero": "2011",
+   "titulo": "El primer Buen Fin fue en",
+   "texto": "y desde entonces se repite cada noviembre"
+  },
+  {
+   "tipo": "numero",
+   "numero": "5 días",
+   "titulo": "Este año dura",
+   "texto": "del 13 al 17 de noviembre"
+  },
+  {
+   "tipo": "texto",
+   "titulo": "Profeco vigila los precios",
+   "texto": "Si un precio te parece inflado, puedes denunciarlo.",
+   "etiqueta": "tus derechos 💪"
+  },
+  {
+   "tipo": "texto",
+   "titulo": "Y nosotros te avisamos",
+   "texto": "de las rebajas que sí valen la pena, con link directo."
+  }
+ ]
+}

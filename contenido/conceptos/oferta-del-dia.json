@@ -1,0 +1,26 @@
+{
+ "id": "oferta-del-dia",
+ "nombre": "La oferta más fuerte de hoy",
+ "objetivo": "Conversión (clics)",
+ "temporada": "siempre",
+ "publicacion": "🔥 La oferta más fuerte de hoy: {top_nombre} a {top_precio} (-{top_off}%). Link directo en nuestra página.",
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "emoji": "🔥",
+   "titulo": "OFERTA DEL DÍA",
+   "texto": "la rebaja más fuerte que encontramos hoy"
+  },
+  {
+   "tipo": "producto",
+   "elegir": "top",
+   "etiqueta": "#1 de hoy"
+  },
+  {
+   "tipo": "texto",
+   "titulo": "Antes {top_antes}",
+   "texto": "Hoy {top_precio} y te ahorras {top_ahorro}",
+   "etiqueta": "⚡ los precios cambian rápido"
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+{
+ "id": "ahorro-total",
+ "nombre": "Cuánto te ahorras",
+ "objetivo": "Valor tangible",
+ "temporada": "siempre",
+ "requiere": {
+  "minimo": 3
+ },
+ "publicacion": "🧮 Si compras estas 3 ofertas te ahorras {ahorro_top3}. Todas con precio verificado y link directo.",
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "emoji": "🧮",
+   "titulo": "¿CUÁNTO TE AHORRAS?",
+   "texto": "hicimos la cuenta con 3 ofertas de hoy"
+  },
+  {
+   "tipo": "productos",
+   "elegir": "top",
+   "cuantos": 3
+  },
+  {
+   "tipo": "numero",
+   "titulo": "Ahorro total",
+   "numero": "{ahorro_top3}",
+   "texto": "comprando estas 3 en {tienda}"
+  }
+ ]
+}

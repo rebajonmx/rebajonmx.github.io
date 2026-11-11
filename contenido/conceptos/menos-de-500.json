@@ -1,0 +1,25 @@
+{
+ "id": "menos-de-500",
+ "nombre": "Ofertas de menos de $500",
+ "objetivo": "Conversión, público amplio",
+ "temporada": "siempre",
+ "requiere": {
+  "max_precio": 500,
+  "minimo": 2
+ },
+ "publicacion": "💸 Rebajas reales por menos de $500. Ideales para regalar o darte un gusto sin culpa.",
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "emoji": "💸",
+   "titulo": "MENOS DE $500",
+   "texto": "rebajas reales que sí valen la pena"
+  },
+  {
+   "tipo": "productos",
+   "elegir": "barato",
+   "cuantos": 3,
+   "max_precio": 500
+  }
+ ]
+}
