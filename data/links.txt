@@ -1,0 +1,21 @@
+# OFERTAS DE REBAJÓN MX — una por renglón. Edita este archivo desde GitHub (lápiz ✏️) y guarda.
+#
+# Formato:  link | categoría | precio antes | precio ahora | nombre corto
+# - Con la API de Mercado Libre activada basta con el link: lo demás se llena solo.
+# - Sin API, escribe los 5 datos. Si cambias los precios, la oferta cuenta como revisada hoy.
+# - Los precios vencen a los 10 días sin revisión (config/marca.json → dias_vigencia_precio).
+# - Para quitar una oferta, borra su renglón o ponle # al inicio.
+# - Categorías actuales: Tecnología, Hogar, Electrodomésticos (puedes crear otras).
+
+https://meli.la/1UAiFTn | Tecnología | 4999 | 2969 | Samsung Galaxy A16 · 128 GB, 4 GB RAM
+https://meli.la/137GPYX | Tecnología | 2999 | 1898 | Smart TV 32" TFL con Android TV
+# https://meli.la/2ubeMhu | Tecnología | | | Echo Dot 5ª generación con Alexa   (sin descuento suficiente)
+https://meli.la/1791MiM | Tecnología | 999 | 378 | Bocina Bluetooth Aiwa 20 W, resistente al agua
+https://meli.la/1adL9cm | Tecnología | 1876.58 | 783.89 | Barra de sonido 160 W con subwoofer
+https://meli.la/1k482W7 | Tecnología | 899.99 | 270.62 | Power bank 42,000 mAh con carga rápida 66 W
+https://meli.la/2dE81EK | Hogar | 3926.51 | 1599.18 | Colchón individual Noite con memory foam
+https://meli.la/2wTXXiJ | Hogar | 499.6 | 189.84 | 2 almohadas de microfibra Azteca
+# https://meli.la/2PxLbSg | Hogar | | | 5 recipientes herméticos de vidrio   (sin descuento suficiente)
+https://meli.la/2LSVPP5 | Electrodomésticos | 1599 | 1099 | Freidora de aire Oster digital 6 L
+https://meli.la/2qYQXju | Electrodomésticos | 400 | 153 | Báscula digital con Bluetooth, hasta 180 kg
+https://meli.la/2gZhRgq | Electrodomésticos | 891.84 | 478.25 | Licuadora portátil 500 W con 2 vasos
