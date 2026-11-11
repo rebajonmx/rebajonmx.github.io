@@ -2,28 +2,34 @@
  {
   "cat": "Tecnología",
   "name": "Samsung Galaxy A16 · 128 GB, 4 GB RAM",
-  "now": 2969,
-  "was": 4999,
+  "now": 2969.0,
+  "was": 4999.0,
   "off": 41,
   "rating": "4.8",
   "sold": "10mil",
   "img": "https://http2.mlstatic.com/D_Q_NP_2X_790939-MLA99551674904_122025-AB.webp",
   "url": "https://meli.la/1UAiFTn",
   "product": "https://www.mercadolibre.com.mx/celular-samsung-galaxy-a16-4g-128gb-4-gb-ram-negro/p/MLM45806032",
-  "active": true
+  "active": true,
+  "firma": "4999.0|2969.0",
+  "revisado": "2026-11-11",
+  "e": "📱"
  },
  {
   "cat": "Tecnología",
   "name": "Smart TV 32\" TFL con Android TV",
-  "now": 1898,
-  "was": 2999,
+  "now": 1898.0,
+  "was": 2999.0,
   "off": 37,
   "rating": "4.6",
   "sold": "10mil",
   "img": "https://http2.mlstatic.com/D_Q_NP_2X_963816-MLA113632832217_062026-AB.webp",
   "url": "https://meli.la/137GPYX",
   "product": "https://www.mercadolibre.com.mx/pantalla-smart-tv-32-pulgadas-tfl-android-tv-dled-bluetooth/p/MLM62369518",
-  "active": true
+  "active": true,
+  "firma": "2999.0|1898.0",
+  "revisado": "2026-11-11",
+  "e": "📺"
  },
  {
   "cat": "Tecnología",
@@ -41,15 +47,18 @@
  {
   "cat": "Tecnología",
   "name": "Bocina Bluetooth Aiwa 20 W, resistente al agua",
-  "now": 378,
-  "was": 999,
+  "now": 378.0,
+  "was": 999.0,
   "off": 62,
   "rating": "4.9",
   "sold": "10mil",
   "img": "https://http2.mlstatic.com/D_Q_NP_2X_868838-MLA114381982302_082026-AB.webp",
   "url": "https://meli.la/1791MiM",
   "product": "https://www.mercadolibre.com.mx/bocina-portatil-bluetooth-aiwa-20w-ipx5-radio-fm-aw-sj215-color-negro/p/MLM30899627",
-  "active": true
+  "active": true,
+  "firma": "999.0|378.0",
+  "revisado": "2026-11-11",
+  "e": "🔊"
  },
  {
   "cat": "Tecnología",
@@ -62,7 +71,10 @@
   "img": "https://http2.mlstatic.com/D_Q_NP_2X_992085-MLA118419949247_092026-AB.webp",
   "url": "https://meli.la/1adL9cm",
   "product": "https://www.mercadolibre.com.mx/barra-de-sonido-con-subwoofer-160w-home-theater-21-canales-audishako-bs-400-teatro-en-casa-con-bluetooth-hdmi-arcauxusb-conector-110v-color-negro-control-remoto/p/MLM47291372",
-  "active": true
+  "active": true,
+  "firma": "1876.58|783.89",
+  "revisado": "2026-11-11",
+  "e": "🔊"
  },
  {
   "cat": "Tecnología",
@@ -75,7 +87,10 @@
   "img": "https://http2.mlstatic.com/D_Q_NP_2X_918717-MLM118972148935_102026-AB.webp",
   "url": "https://meli.la/1k482W7",
   "product": "https://www.mercadolibre.com.mx/power-bank-42000mah-bateria-portatil-pila-66w-carga-rapida/up/MLMU3051432418",
-  "active": true
+  "active": true,
+  "firma": "899.99|270.62",
+  "revisado": "2026-11-11",
+  "e": "🔋"
  },
  {
   "cat": "Hogar",
@@ -88,7 +103,10 @@
   "img": "https://http2.mlstatic.com/D_Q_NP_2X_803768-MLA99934454495_112025-AB.webp",
   "url": "https://meli.la/2dE81EK",
   "product": "https://www.mercadolibre.com.mx/colchon-individual-noite-basic-con-memory-adapt-gris/p/MLM50224717",
-  "active": true
+  "active": true,
+  "firma": "3926.51|1599.18",
+  "revisado": "2026-11-11",
+  "e": "🛏️"
  },
  {
   "cat": "Hogar",
@@ -101,7 +119,10 @@
   "img": "https://http2.mlstatic.com/D_Q_NP_2X_950068-MLA119258624374_112026-AB.webp",
   "url": "https://meli.la/2wTXXiJ",
   "product": "https://www.mercadolibre.com.mx/almohadas-2-pack-estandar-microfibra-densidad-media-blancos-azteca/p/MLM26030984",
-  "active": true
+  "active": true,
+  "firma": "499.6|189.84",
+  "revisado": "2026-11-11",
+  "e": "🛏️"
  },
  {
   "cat": "Hogar",
@@ -119,28 +140,34 @@
  {
   "cat": "Electrodomésticos",
   "name": "Freidora de aire Oster digital 6 L",
-  "now": 1099,
-  "was": 1599,
+  "now": 1099.0,
+  "was": 1599.0,
   "off": 31,
   "rating": "4.9",
   "sold": "10mil",
   "img": "https://http2.mlstatic.com/D_Q_NP_2X_628664-MLA113412472815_062026-AB.webp",
   "url": "https://meli.la/2LSVPP5",
   "product": "https://www.mercadolibre.com.mx/oster-freidora-de-aire-digital-recubrimiento-oster-diamondforce-con-ventana-y-luz-interna-6l-de-capacidad-con-10-programas-automaticos-ckstaf60wddf/p/MLM42517479",
-  "active": true
+  "active": true,
+  "firma": "1599.0|1099.0",
+  "revisado": "2026-11-11",
+  "e": "🍟"
  },
  {
   "cat": "Electrodomésticos",
   "name": "Báscula digital con Bluetooth, hasta 180 kg",
-  "now": 153,
-  "was": 400,
+  "now": 153.0,
+  "was": 400.0,
   "off": 62,
   "rating": "4.8",
   "sold": "100mil",
   "img": "https://http2.mlstatic.com/D_Q_NP_2X_776558-MLA119273003497_102026-AB.webp",
   "url": "https://meli.la/2qYQXju",
   "product": "https://www.mercadolibre.com.mx/bascula-digital-personal-femmto-peso-corporal-con-bluetooth-moderna-minimalista-180-kg-bano/p/MLM15503957",
-  "active": true
+  "active": true,
+  "firma": "400.0|153.0",
+  "revisado": "2026-11-11",
+  "e": "⚖️"
  },
  {
   "cat": "Electrodomésticos",
@@ -153,6 +180,9 @@
   "img": "https://http2.mlstatic.com/D_Q_NP_2X_889462-MLA120642145027_112026-AB.webp",
   "url": "https://meli.la/2gZhRgq",
   "product": "https://www.mercadolibre.com.mx/xinest-500w-plata-licuadora-portatil-con-2x700ml-vaso-de-plastico-color-plateadolicuadoras-baratas-de-acero-inoxidable-para-vida-sana-electrodomesticos-y-accesorios-de-cocina/p/MLM39274925",
-  "active": true
+  "active": true,
+  "firma": "891.84|478.25",
+  "revisado": "2026-11-11",
+  "e": "🥤"
  }
 ]
