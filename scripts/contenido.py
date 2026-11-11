@@ -33,20 +33,32 @@ def producto_video(o):
 
 def filtrar(ofertas, esc):
     lista = [o for o in ofertas if (not esc.get("categoria") or o.get("cat") == esc["categoria"])
+             and (not esc.get("categorias") or o.get("cat") in esc["categorias"])
              and (not esc.get("max_precio") or o["now"] <= esc["max_precio"])]
     if esc.get("elegir") == "barato":
         lista.sort(key=lambda o: o["now"])
     elif esc.get("elegir") == "aleatorio":
         random.Random(hoy().toordinal()).shuffle(lista)
+    elif esc.get("elegir") == "vendidos":
+        def n(v):
+            m = re.match(r"(\d+(?:\.\d+)?)\s*(mil|M)?", str(v or ""))
+            return float(m.group(1)) * {"mil": 1e3, "M": 1e6}.get(m.group(2), 1) if m else 0
+        lista.sort(key=lambda o: -n(o.get("sold")))
+    elif esc.get("elegir") == "variado" and lista:
+        # Rota por número de publicaciones: cada video muestra productos distintos (sigue ordenado por descuento)
+        k = len(leer_json(HISTORIAL, [])) * esc.get("cuantos", 1) % len(lista)
+        lista = lista[k:] + lista[:k]
     return lista
 
 
 def categoria_del_dia(ofertas):
+    """Categoría del turno: cambia en cada publicación (no solo cada día)."""
     cats = {}
     for o in ofertas:
         cats.setdefault(o.get("cat", ""), []).append(o)
     validas = sorted([c for c, v in cats.items() if c and len(v) >= 2])
-    return validas[hoy().toordinal() % len(validas)] if validas else ""
+    n = hoy().toordinal() + len(leer_json(HISTORIAL, []))
+    return validas[n % len(validas)] if validas else ""
 
 
 def variables(ofertas, cat):

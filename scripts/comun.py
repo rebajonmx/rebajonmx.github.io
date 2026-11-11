@@ -98,7 +98,12 @@ def texto_alerta(top):
     return "\n".join(lineas)
 
 
-EMOJI = [("bocina|barra|audífono|sonido", "🔊"), ("power bank|batería", "🔋"), ("tv|pantalla", "📺"),
+EMOJI = [("batería de cocina|sartén|olla", "🍳"), ("bocina|barra|audífono|sonido", "🔊"), ("power bank|batería", "🔋"),
+         ("tv|pantalla", "📺"), ("laptop|computadora", "💻"), ("tablet", "📲"), ("smartwatch|reloj", "⌚"),
+         ("nintendo|consola|lego|muñeca|juguete", "🎁"), ("perfume|eau de", "💐"), ("secadora|plancha de cabello|capilar", "💇"),
+         ("cafetera|espresso", "☕"), ("microondas", "🍲"), ("aspiradora", "🧹"), ("taladro|hidrolavadora", "🛠️"),
+         ("croqueta|perro|gato", "🐾"), ("mochila", "🎒"), ("sábana|ganchos", "🧺"), ("vaso térmico|termo", "🥤"),
+         ("mesa", "🪑"), ("baumanómetro", "🩺"),
          ("colchón|almohada", "🛏️"), ("freidora", "🍟"), ("licuadora", "🥤"), ("báscula", "⚖️"),
          ("celular|samsung|iphone|xiaomi", "📱"), ("echo|alexa", "🔵"), ("recipiente|vidrio", "🥡")]
 

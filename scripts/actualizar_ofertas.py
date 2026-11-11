@@ -2,7 +2,7 @@
 
 - Agrega las ofertas nuevas de links.txt y completa sus datos.
 - Con la API de Mercado Libre (ML_CLIENT_ID/ML_CLIENT_SECRET): nombre, foto y precios automáticos.
-- Sin API: usa lo que venga en el renglón: link | categoría | precio antes | precio ahora | nombre
+- Sin API: usa lo que venga en el renglón: link | categoría | precio antes | precio ahora | nombre [| foto | calificación | vendidos]
 - Recalcula descuento; una oferta se publica solo con descuento >= descuento_minimo (config/marca.json).
 - Los links que se borran de links.txt dejan de publicarse (no se borran del historial).
 - Lo que no se pudo completar queda en data/pendientes.json (aparece en ESTADO.md).
@@ -30,7 +30,10 @@ def leer_links():
         p = [x.strip() for x in linea.split("|")]
         filas.append({"url": p[0], "cat": p[1] if len(p) > 1 and p[1] else "",
                       "was": num(p[2]) if len(p) > 2 else None, "now": num(p[3]) if len(p) > 3 else None,
-                      "name": p[4] if len(p) > 4 else ""})
+                      "name": p[4] if len(p) > 4 else "",
+                      # Opcionales: foto (link .webp/.jpg de mlstatic), calificación y ventas
+                      "img": p[5] if len(p) > 5 else "", "rating": p[6] if len(p) > 6 else "",
+                      "sold": p[7] if len(p) > 7 else ""})
     return filas
 
 
@@ -58,8 +61,8 @@ def main():
             ofertas.append(o)
             por_url[f["url"]] = o
         # Lo escrito a mano en links.txt manda (sirve para corregir)
-        for k in ("cat", "name", "now", "was"):
-            if f[k]:
+        for k in ("cat", "name", "now", "was", "img", "rating", "sold"):
+            if f.get(k):
                 o[k] = f[k]
         # Si cambiaste los precios del renglón, cuenta como revisión de hoy (los precios vencen en N días)
         firma = f"{f['was']}|{f['now']}"
