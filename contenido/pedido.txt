@@ -1,0 +1,6 @@
+# IDEAS PARA VIDEOS NUEVOS — escribe una idea por renglón (sin # al inicio) y guarda.
+# Si está activado Gemini (secreto GEMINI_API_KEY), GitHub la convierte sola en un concepto de video
+# y la marca como "HECHO". Si no, sirve como lista de pendientes para crearlos a mano (docs/CONCEPTOS.md).
+# Ejemplos:
+# video en rosa con 3 errores que comete la gente en el Buen Fin
+# video en blanco tipo tendencia "POV: encontraste la oferta perfecta" con la oferta más fuerte
