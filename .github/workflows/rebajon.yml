@@ -1,21 +1,29 @@
 name: Rebajón MX automático
 
+# Corre solo 2 veces al día. También se puede correr a mano: pestaña Actions → "Rebajón MX automático" → Run workflow.
 on:
   schedule:
-    - cron: "0 13 * * *"   # 7:00 a. m. en Ciudad de México
-    - cron: "0 1 * * *"    # 7:00 p. m. en Ciudad de México
+    - cron: "0 13 * * *"   # 7:00 a. m. Ciudad de México
+    - cron: "0 1 * * *"    # 7:00 p. m. Ciudad de México
   workflow_dispatch:
     inputs:
-      video:
-        description: "Video a publicar (1 campaña, 2 top 5, 3 tips). Vacío = automático"
+      concepto:
+        description: "Concepto a usar (nombre del archivo en contenido/conceptos, sin .json). Vacío = automático"
+        required: false
+      tema:
+        description: "Color: azul, blanco o rosa. Vacío = automático"
         required: false
       publicar:
-        description: "¿Publicar en Instagram, Facebook y TikTok?"
+        description: "¿Publicar en redes? (desmarca para solo probar)"
         type: boolean
         default: true
 
 permissions:
   contents: write
+
+concurrency:
+  group: rebajon
+  cancel-in-progress: false
 
 jobs:
   ciclo:
@@ -34,50 +42,64 @@ jobs:
           pip install -q requests==2.32.3 playwright==1.48.0
           python -m playwright install --with-deps chromium
 
-      - name: 1. Revisar precios en Mercado Libre
+      - name: 1. Ofertas (links.txt + API de Mercado Libre)
         working-directory: scripts
-        run: python actualizar_precios.py || echo "Precios sin actualizar (ver registro)"
+        env:
+          ML_CLIENT_ID: ${{ secrets.ML_CLIENT_ID }}
+          ML_CLIENT_SECRET: ${{ secrets.ML_CLIENT_SECRET }}
+        run: python actualizar_ofertas.py
 
-      - name: 2. Construir sitio
+      - name: 2. Construir página
         working-directory: scripts
         run: python construir_sitio.py
 
-      - name: 3. Elegir video del turno
-        id: turno
-        run: |
-          N="${{ github.event.inputs.video }}"
-          if [ -z "$N" ]; then N=$(( ( $(date +%j) * 2 + $(date +%H) / 12 ) % 3 + 1 )); fi
-          echo "n=$N" >> "$GITHUB_OUTPUT"
-
-      - name: 4. Generar videos
+      - name: 3. Crear video del turno
         working-directory: scripts
-        run: python generar_videos.py 1 2 3
+        run: python generar_video.py --concepto "${{ github.event.inputs.concepto }}" --tema "${{ github.event.inputs.tema }}"
 
-      - name: 5. Publicar sitio en Netlify
+      - name: 4. Publicar página en Netlify
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         run: npx -y netlify-cli@17.38.1 deploy --prod --dir public --site "$NETLIFY_SITE_ID" --auth "$NETLIFY_AUTH_TOKEN" --message "Actualización automática"
 
-      - name: 6. Publicar en Instagram, Facebook y TikTok (Buffer)
+      - name: 5. Publicar en Instagram, Facebook y TikTok (Buffer)
+        id: buffer
         if: github.event_name == 'schedule' || github.event.inputs.publicar == 'true'
         working-directory: scripts
         env:
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
-        run: sleep 20 && python publicar_buffer.py ${{ steps.turno.outputs.n }}
+        run: sleep 20 && python publicar_buffer.py
 
-      - name: 7. Guardar precios nuevos
+      - name: 6. Publicar en Telegram (opcional)
+        if: github.event_name == 'schedule' || github.event.inputs.publicar == 'true'
+        continue-on-error: true
+        working-directory: scripts
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python publicar_telegram.py
+
+      - name: 7. Auditoría (escribe ESTADO.md)
+        if: always()
+        working-directory: scripts
+        run: sleep 15 && python auditar.py "${{ steps.buffer.outcome }}"
+
+      - name: 8. Guardar registro
+        if: always()
         run: |
           git config user.name "rebajon-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add data/ofertas.json
-          git diff --cached --quiet || git commit -m "Precios $(date -u +%F\ %H:%M)" && git push
+          for f in data/ofertas.json data/historial.json data/pendientes.json ESTADO.md; do [ -f "$f" ] && git add "$f"; done
+          git diff --cached --quiet || (git commit -m "Registro $(date -u +%F\ %H:%M)" && git pull --rebase -q && git push)
 
-      - name: Guardar videos del día (descargables 7 días)
+      - name: Guardar video (descargable 7 días)
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: contenido-${{ github.run_number }}
+          name: video-${{ github.run_number }}
           path: |
             public/media/*.mp4
+            public/media/turno.json
             public/whatsapp.txt
           retention-days: 7
