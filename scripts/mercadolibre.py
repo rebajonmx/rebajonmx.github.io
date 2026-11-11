@@ -27,8 +27,15 @@ def token():
     return _token
 
 
+_fallas = 0
+
+
 def _get(ruta):
+    global _fallas
     r = requests.get(API + ruta, headers={"Authorization": f"Bearer {token()}"}, timeout=30)
+    if not r.ok and _fallas < 5:
+        _fallas += 1
+        print(f"  ! API {ruta}: {r.status_code} {r.text[:150]}")
     return r.json() if r.ok else None
 
 
@@ -42,6 +49,7 @@ def resolver(link):
             pass
     m = re.search(r"/p/(MLM\d+)", url) or re.search(r"(MLM)-?(\d+)", url)
     if not m:
+        print(f"  ! No se encontró el producto en el link: {link} -> {url[:120]}")
         return url, None, None
     if m.re.pattern.startswith("/p/"):
         return url, "producto", m.group(1)
