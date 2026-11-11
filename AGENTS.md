@@ -45,6 +45,8 @@ GitHub Actions  (.github/workflows/rebajon.yml, 7:00 y 19:00 CDMX = 13:00 y 01:0
 | `scripts/mercadolibre.py` | API oficial de ML (client_credentials). **No** leer páginas de ML desde servidores: ML las bloquea y no se debe intentar rodear el bloqueo. |
 | `scripts/auditar.py` | Auditoría sin IA → `ESTADO.md`. |
 | `docs/MANUAL.md` | Manual para personas. `docs/CONCEPTOS.md` formato de videos (también se le pasa a Gemini). |
+| `docs/PLAN.md` | Plan de continuidad (qué IA gratuita hace qué), rutina semanal, calendario de campañas, ideas de crecimiento y riesgos. |
+| `docs/PROMPTS.md` | Instrucciones listas para Jules/Gemini (arreglar errores, campañas, escenas nuevas, YouTube, SEO, métricas, clientes). |
 
 ## Reglas que no se rompen
 
@@ -64,6 +66,12 @@ GitHub Actions  (.github/workflows/rebajon.yml, 7:00 y 19:00 CDMX = 13:00 y 01:0
 - Rápido, sin publicar: Actions → "Rebajón MX automático" → Run workflow → desmarcar "¿Publicar en redes?".
 - Local (si alguien tiene Python): `pip install requests playwright && playwright install chromium`, tener ffmpeg,
   luego `cd scripts && python actualizar_ofertas.py && python construir_sitio.py && python generar_video.py --concepto oferta-del-dia --tema rosa`.
+
+## Herramientas de IA gratuitas recomendadas (desde el 17 nov 2026 ya no hay Claude)
+
+- **Jules** (jules.google.com): cambios de código directo en este repositorio (lee este archivo).
+- **Gemini** (gemini.google.com): ideas, textos, imágenes. **Gemini API** gratis (Flash) dentro de `ideas_gemini.py`.
+- Detalle y reparto de trabajo: `docs/PLAN.md`.
 
 ## Estado actual (actualízalo al terminar cada cambio importante)
 
