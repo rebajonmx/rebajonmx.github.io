@@ -8,6 +8,9 @@
 <meta property="og:title" content="Rebajón MX · Las ofertas que sí valen la pena">
 <meta property="og:description" content="Ofertas reales en México, verificadas todos los días. Precio de antes vs. ahora y link directo a la tienda.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://rebajonmx.netlify.app/">
+<meta property="og:image" content="https://rebajonmx.netlify.app/media/portada.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#2340d9">
 <meta name="color-scheme" content="light only">
 <link rel="icon" type="image/png" href="data:image/png;base64,__FAV__">
@@ -88,6 +91,14 @@ h1 em{font-style:normal;color:var(--sol)}
 .pill{border:1px solid var(--line);border-radius:999px;padding:2px 9px}
 .go{margin-top:auto;display:block;text-align:center;text-decoration:none;font-weight:800;background:var(--cobalt);color:#fff;padding:11px;border-radius:10px}
 .go:hover{background:var(--sol);color:var(--ink)}
+.acts{margin-top:auto;display:flex;gap:8px}
+.acts .go{flex:1;margin-top:0}
+.share{display:flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;font-weight:800;font-size:.9rem;
+ background:#e8f8ee;color:#0b6b3a;border:1px solid #bfe9cf;padding:11px 12px;border-radius:10px;white-space:nowrap}
+.share:hover{background:#d4f3e0}
+.share svg{width:18px;height:18px;flex:none}
+.acts .go{white-space:nowrap;padding-inline:8px}
+@media (max-width:620px){.share span{display:none}.share{padding:11px 13px}.acts .go{font-size:.9rem}}
 
 .band{background:var(--cobalt);color:#fff;border-top:6px solid var(--sol)}
 .band .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:center;padding-block:36px}
@@ -186,6 +197,8 @@ const deals=__DEALS__;
 const fmt=n=>"$"+n.toLocaleString("es-MX",{minimumFractionDigits:n%1?2:0,maximumFractionDigits:2});
 const soldN=s=>{const m=String(s).match(/(\d+)(mil|M)?/);if(!m)return 0;return +m[1]*(m[2]==="M"?1e6:m[2]==="mil"?1e3:1)};
 let cat="todas", sort="off";
+const WAICON='<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.6-1.3.1-.1 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3z"/></svg>';
+const wa=d=>"https://wa.me/?text="+encodeURIComponent(`🔥 ${d.name} a ${fmt(d.now)} (antes ${fmt(d.was)}, -${d.off}%)\n👉 ${d.url}\n\nMás ofertas verificadas: https://rebajonmx.netlify.app`);
 function render(){
   let list=deals.filter(d=>cat==="todas"||d.cat===cat);
   list.sort(sort==="off"?(a,b)=>b.off-a.off:sort==="low"?(a,b)=>a.now-b.now:(a,b)=>soldN(b.sold)-soldN(a.sold));
@@ -201,7 +214,10 @@ function render(){
        <div class="prices"><span class="now">${fmt(d.now)}</span><span class="was">${fmt(d.was)}</span></div>
        <span class="save">Ahorras ${fmt(Math.round(d.was-d.now))}</span>
        <div class="meta">${d.rating?`<span class="pill">★ ${d.rating}</span>`:""}${d.sold?`<span class="pill">+${d.sold} vendidos</span>`:""}<span class="pill">${d.cat}</span></div>
-       <a class="go" href="${d.url}" target="_blank" rel="noopener sponsored">Ver oferta →</a>
+       <div class="acts">
+         <a class="go" href="${d.url}" target="_blank" rel="noopener sponsored">Ver oferta →</a>
+         <a class="share" href="${wa(d)}" target="_blank" rel="noopener" aria-label="Compartir ${d.name} por WhatsApp">${WAICON}<span>Compartir</span></a>
+       </div>
      </div>
    </article>`).join("");
 }
