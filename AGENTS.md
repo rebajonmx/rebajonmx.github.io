@@ -45,10 +45,13 @@ GitHub Actions  (.github/workflows/rebajon.yml, 7:00 y 19:00 CDMX = 13:00 y 01:0
 | `scripts/comun.py` | Utilidades: config, fechas CDMX, carga de ofertas, vigencia, campaña, pie de publicación. |
 | `scripts/contenido.py` | Elige concepto+color sin IA (temporada, requisitos, no repetir, reparte colores) y resuelve variables y productos. |
 | `scripts/mercadolibre.py` | API oficial de ML (client_credentials, funciona: /products, /items, /highlights). **No** leer páginas de ML desde servidores: ML las bloquea y no se debe intentar rodear el bloqueo. **Nunca** generar links de afiliado a mano: solo los de la Central de afiliados (Compartir → Copiar link), si no se pierde la comisión. |
+| `scripts/generar_carrusel.py` | Carrusel "Top 5 ofertas de hoy" (7 imágenes 1080x1350, Playwright). `publicar_buffer.py --carrusel` lo publica 1 vez al día desde las 11:00 (IG post, FB post, TikTok fotos). |
+| `docs/MARKETING.md` | Estrategia de crecimiento para personas (bios, grupos de Facebook, estados de WhatsApp, anuncios baratos, colaboraciones). |
 | `scripts/auditar.py` | Auditoría sin IA → `ESTADO.md`. |
 | `docs/MANUAL.md` | Manual para personas. `docs/CONCEPTOS.md` formato de videos (también se le pasa a Gemini). |
 | `docs/PLAN.md` | Plan de continuidad (qué IA gratuita hace qué), rutina semanal, calendario de campañas, ideas de crecimiento y riesgos. |
 | `docs/PROMPTS.md` | Instrucciones listas para Jules/Gemini (arreglar errores, campañas, escenas nuevas, YouTube, SEO, métricas, clientes). |
+| `docs/CRECIMIENTO.md` | Estrategia de crecimiento: rutina diaria, textos para grupos/bio, anuncios baratos. |
 
 ## Reglas que no se rompen
 
@@ -83,9 +86,11 @@ GitHub Actions  (.github/workflows/rebajon.yml, 7:00 y 19:00 CDMX = 13:00 y 01:0
   actualizan precio solo; power bank (/up/MLMU…) y tablet quedan con precio manual (vencen 21 nov).
 - Motor v2 con 10 conceptos y 3 colores. Campaña activa: Buen Fin 2026 (13–17 nov).
 - 51 ofertas (12 nov): 40 del 11 nov + 11 tomadas de data/sugerencias.md. Todas con URL del producto salvo 2.
+- 2026-11-12: carrusel diario (probado: publicado en IG, FB y TikTok), 19 conceptos de video, botón "Compartir por WhatsApp" en cada oferta, docs/MARKETING.md.
 - Los horarios de GitHub se retrasan ~1 hora (el turno de 7:00 sale ~8:10). Es normal.
   Los links se generaron en la Central de afiliados de ML (sesión del dueño): Compartir → Copiar link.
-- 13 conceptos. Nuevos para la campaña: ultimas-horas, regalos-adelantados (durante) y lo-mas-vendido (siempre).
+- 18 conceptos. Nuevos para la campaña: ultimas-horas, regalos-adelantados (durante), lo-mas-vendido, errores-buen-fin,
+  meses-sin-intereses, si-tuviera-1000, marcas-a-mitad, pide-tu-oferta (siempre). Textos con llamado a la acción rotativo.
   `elegir: "variado"` rota productos en cada publicación; la categoría del turno cambia en cada publicación.
 - 4 publicaciones al día durante la campaña (7am, 12pm, 5pm, 7pm CDMX); fuera de campaña 2.
 - Pendiente del dueño (opcional): canal y grupo de Telegram, GEMINI_API_KEY, conectar Jules,

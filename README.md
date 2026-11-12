@@ -12,7 +12,9 @@ Página de ofertas verificadas + videos diarios en Instagram, Facebook y TikTok.
 | Cambiar marca, colores, campaña, hashtags | **[config/marca.json](config/marca.json)** |
 | Instrucciones completas para personas | **[docs/MANUAL.md](docs/MANUAL.md)** |
 | Contexto completo para una IA (Gemini, Jules, etc.) | **[AGENTS.md](AGENTS.md)** |
+| **Estrategia para ganar seguidores (copiar y pegar)** | **[docs/MARKETING.md](docs/MARKETING.md)** |
 | Plan de continuidad y crecimiento | **[docs/PLAN.md](docs/PLAN.md)** |
+| Conseguir más seguidores (rutina diaria, textos listos, anuncios baratos) | **[docs/CRECIMIENTO.md](docs/CRECIMIENTO.md)** |
 | Instrucciones listas para pegar en una IA gratis | **[docs/PROMPTS.md](docs/PROMPTS.md)** |
 | Correr ahora o probar sin publicar | Pestaña **Actions** → "Rebajón MX automático" → **Run workflow** |
 
