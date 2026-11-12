@@ -1,0 +1,36 @@
+{
+ "id": "regalos-para-ella",
+ "nombre": "Regalos para ella",
+ "objetivo": "Regalos de belleza, se comparte",
+ "temporada": "siempre",
+ "temas": [
+  "rosa",
+  "blanco"
+ ],
+ "requiere": {
+  "minimo": 3
+ },
+ "publicacion": "💄 Ideas de regalo para ella con descuento real: belleza y cuidado personal de marcas conocidas. Etiqueta a quien se lo regalarías 👇",
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "emoji": "💄",
+   "titulo": "REGALOS PARA ELLA",
+   "texto": "con descuento real",
+   "etiqueta": "marcas que sí conoce"
+  },
+  {
+   "tipo": "productos",
+   "elegir": "variado",
+   "cuantos": 3,
+   "categorias": [
+    "Belleza"
+   ]
+  },
+  {
+   "tipo": "texto",
+   "titulo": "Etiquétala 👇",
+   "texto": "Así sabe qué pedir esta temporada."
+  }
+ ]
+}

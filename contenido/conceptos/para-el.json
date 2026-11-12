@@ -1,0 +1,37 @@
+{
+ "id": "para-el",
+ "nombre": "Regalos para él",
+ "objetivo": "Regalos herramientas/deportes",
+ "temporada": "siempre",
+ "temas": [
+  "azul",
+  "blanco"
+ ],
+ "requiere": {
+  "minimo": 3
+ },
+ "publicacion": "🛠️ Ideas de regalo para él: herramientas, deporte y aire libre con descuento real. Etiqueta a quien le encantaría 👇",
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "emoji": "🛠️",
+   "titulo": "REGALOS PARA ÉL",
+   "texto": "herramientas, deporte y más",
+   "etiqueta": "con descuento real"
+  },
+  {
+   "tipo": "productos",
+   "elegir": "variado",
+   "cuantos": 3,
+   "categorias": [
+    "Herramientas",
+    "Deportes"
+   ]
+  },
+  {
+   "tipo": "texto",
+   "titulo": "Etiquétalo 👇",
+   "texto": "Para que sepa qué pedir esta temporada."
+  }
+ ]
+}

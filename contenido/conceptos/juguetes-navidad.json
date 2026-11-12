@@ -1,0 +1,36 @@
+{
+ "id": "juguetes-navidad",
+ "nombre": "Juguetes para Navidad",
+ "objetivo": "Padres, regalos de diciembre",
+ "temporada": "siempre",
+ "temas": [
+  "rosa",
+  "azul"
+ ],
+ "requiere": {
+  "minimo": 3
+ },
+ "publicacion": "🎄 Juguetes para Navidad y Reyes, con descuento real. Cómpralos ahora y evita los precios de diciembre.",
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "emoji": "🧸",
+   "titulo": "JUGUETES",
+   "texto": "para Navidad y Reyes",
+   "etiqueta": "más baratos que en diciembre"
+  },
+  {
+   "tipo": "productos",
+   "elegir": "variado",
+   "cuantos": 3,
+   "categorias": [
+    "Juguetes"
+   ]
+  },
+  {
+   "tipo": "texto",
+   "titulo": "Tip de papás",
+   "texto": "Compra ahora y guárdalos: en diciembre suben de precio."
+  }
+ ]
+}

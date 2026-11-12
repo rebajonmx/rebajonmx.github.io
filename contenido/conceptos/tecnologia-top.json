@@ -1,0 +1,36 @@
+{
+ "id": "tecnologia-top",
+ "nombre": "Tecnología con descuento",
+ "objetivo": "Alto interés en Buen Fin",
+ "temporada": "siempre",
+ "temas": [
+  "azul",
+  "blanco"
+ ],
+ "requiere": {
+  "minimo": 3
+ },
+ "publicacion": "📱 Tecnología con descuento real: audífonos, pantallas, celulares y más. Precios revisados hoy.",
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "emoji": "📱",
+   "titulo": "TECNOLOGÍA",
+   "texto": "con descuento real",
+   "etiqueta": "precios revisados hoy"
+  },
+  {
+   "tipo": "productos",
+   "elegir": "variado",
+   "cuantos": 3,
+   "categorias": [
+    "Tecnología"
+   ]
+  },
+  {
+   "tipo": "texto",
+   "titulo": "Truco",
+   "texto": "Compara siempre el precio de antes: en la página te lo mostramos."
+  }
+ ]
+}

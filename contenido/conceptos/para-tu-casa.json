@@ -1,0 +1,37 @@
+{
+ "id": "para-tu-casa",
+ "nombre": "Para tu casa",
+ "objetivo": "Hogar y electrodomésticos",
+ "temporada": "siempre",
+ "temas": [
+  "blanco",
+  "azul"
+ ],
+ "requiere": {
+  "minimo": 3
+ },
+ "publicacion": "🏠 Lo que tu casa necesita, con descuento real: cocina, electrodomésticos y hogar. Precios revisados hoy.",
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "emoji": "🏠",
+   "titulo": "PARA TU CASA",
+   "texto": "cocina, electrodomésticos y hogar",
+   "etiqueta": "precios revisados hoy"
+  },
+  {
+   "tipo": "productos",
+   "elegir": "variado",
+   "cuantos": 3,
+   "categorias": [
+    "Hogar",
+    "Electrodomésticos"
+   ]
+  },
+  {
+   "tipo": "texto",
+   "titulo": "¿Cuál te falta?",
+   "texto": "Coméntalo y te avisamos si baja más."
+  }
+ ]
+}

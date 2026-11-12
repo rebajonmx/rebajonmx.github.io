@@ -1,0 +1,32 @@
+{
+ "id": "compra-segura",
+ "nombre": "Cómo comprar seguro",
+ "objetivo": "Confianza y guardados",
+ "temporada": "siempre",
+ "publicacion": "🛡️ Cómo comprar seguro en el {campana}. Guárdalo y compártelo con quien va a comprar estos días.",
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "emoji": "🛡️",
+   "titulo": "COMPRA SEGURA",
+   "texto": "en el {campana}",
+   "etiqueta": "guárdalo 💾"
+  },
+  {
+   "tipo": "lista",
+   "titulo": "Antes de comprar",
+   "items": [
+    "Revisa la reputación del vendedor",
+    "Lee opiniones con fotos",
+    "Compara con el precio de antes",
+    "Paga dentro de la tienda, nunca por fuera",
+    "Guarda tu comprobante"
+   ]
+  },
+  {
+   "tipo": "texto",
+   "titulo": "Nosotros te ayudamos",
+   "texto": "Solo publicamos ofertas con descuento real y link directo a la tienda."
+  }
+ ]
+}
