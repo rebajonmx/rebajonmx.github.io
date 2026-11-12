@@ -33,7 +33,9 @@ def leer_links():
                       "name": p[4] if len(p) > 4 else "",
                       # Opcionales: foto (link .webp/.jpg de mlstatic), calificación y ventas
                       "img": p[5] if len(p) > 5 else "", "rating": p[6] if len(p) > 6 else "",
-                      "sold": p[7] if len(p) > 7 else ""})
+                      "sold": p[7] if len(p) > 7 else "",
+                      # Opcional: URL del producto en Mercado Libre (…/p/MLM123…) para que la API actualice precios
+                      "producto": p[8] if len(p) > 8 else ""})
     return filas
 
 
@@ -70,8 +72,12 @@ def main():
             o["firma"], o["revisado"] = firma, hoy().isoformat()
         if api:
             try:
-                if not o.get("product") or not o.get("ml_id"):
-                    o["product"], o["ml_tipo"], o["ml_id"] = ml.resolver(o["url"])
+                if f.get("producto") and f["producto"] != o.get("product"):
+                    o["product"], o["ml_id"] = f["producto"], None
+                if not o.get("ml_id"):
+                    # El link corto de afiliado abre tu perfil social, no el producto: se usa la URL del producto
+                    url, o["ml_tipo"], o["ml_id"] = ml.resolver(o.get("product") or o["url"])
+                    o["product"] = o.get("product") or url
                 d = ml.datos(o["ml_tipo"], o["ml_id"]) if o.get("ml_id") else None
                 if d and d.get("now"):
                     o["now"] = d["now"]

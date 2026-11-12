@@ -48,8 +48,8 @@ def resolver(link):
         except requests.RequestException:
             pass
     m = re.search(r"/p/(MLM\d+)", url) or re.search(r"(MLM)-?(\d+)", url)
-    if not m:
-        print(f"  ! No se encontró el producto en el link: {link} -> {url[:120]}")
+    if not m or "/social/" in url:
+        print(f"  ! Falta la URL del producto (columna 9 de links.txt) para: {link}")
         return url, None, None
     if m.re.pattern.startswith("/p/"):
         return url, "producto", m.group(1)
