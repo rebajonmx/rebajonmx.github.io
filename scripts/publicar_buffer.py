@@ -1,4 +1,5 @@
 """Publica el video del turno en Instagram (Reel), Facebook (Reel) y TikTok a la vez, vía Buffer (plan gratis).
+Con --carrusel publica el carrusel de imágenes del día (public/media/carrusel.json), una vez al día.
 
 Necesita el secreto BUFFER_API_KEY (Buffer → Settings → API). El video ya debe estar en la página
 (Buffer lo descarga de https://<web>/media/<archivo>.mp4). Lee el texto y el archivo de public/media/turno.json
@@ -11,6 +12,9 @@ API = "https://api.buffer.com"
 META = {"instagram": {"instagram": {"type": "reel", "shouldShareToFeed": True}},
         "facebook": {"facebook": {"type": "reel"}},
         "tiktok": {"tiktok": {"isAiGenerated": False}}}
+META_FOTOS = {"instagram": {"instagram": {"type": "post", "shouldShareToFeed": True}},
+              "facebook": {"facebook": {"type": "post"}},
+              "tiktok": {"tiktok": {"title": "Top ofertas de hoy"}}}
 CREAR = """mutation($input: CreatePostInput!) {
   createPost(input: $input) { ... on PostActionSuccess { post { id } } ... on MutationError { message } } }"""
 
@@ -36,7 +40,19 @@ def canales():
 
 
 def main():
-    turno = leer_json(MEDIA / "turno.json", None)
+    carrusel = "--carrusel" in sys.argv
+    if carrusel:
+        from generar_carrusel import toca_carrusel
+        turno = leer_json(MEDIA / "carrusel.json", {})
+        if not turno.get("archivos"):
+            print("No hay carrusel listo: se omite.")
+            return
+        if not toca_carrusel() and "--forzar" not in sys.argv:
+            print("Hoy ya se publicó el carrusel (o aún no son las 11:00): se omite.")
+            return
+        turno = {**turno, "concepto": "carrusel", "archivo": turno["archivos"][0]}
+    else:
+        turno = leer_json(MEDIA / "turno.json", None)
     if not turno:
         sys.exit("No hay public/media/turno.json: primero corre generar_video.py")
     if not os.environ.get("BUFFER_API_KEY"):
@@ -48,8 +64,14 @@ def main():
     for c in canales():
         if c["service"] not in redes:
             continue
+        if carrusel:
+            activos = [{"image": {"url": f"https://{WEB}/media/{a}"}} for a in turno["archivos"]]
+            meta = META_FOTOS[c["service"]]
+        else:
+            activos = [{"video": {"url": url, "metadata": {"thumbnailOffset": 1500}}}]
+            meta = META[c["service"]]
         entrada = {"text": turno["publicacion"], "channelId": c["id"], "schedulingType": "automatic", "mode": "shareNow",
-                   "metadata": META[c["service"]], "assets": [{"video": {"url": url, "metadata": {"thumbnailOffset": 1500}}}]}
+                   "metadata": meta, "assets": activos}
         try:
             r = gql(CREAR, {"input": entrada})["createPost"]
             if "post" in r:
@@ -65,7 +87,7 @@ def main():
     escribir_json(HISTORIAL, hist)
     for f in fallas:
         print("  ✗", f)
-    if fallas and not ids:
+    if fallas and not ids and not carrusel:
         sys.exit(1)
 
 
