@@ -24,5 +24,31 @@
    "instagram": "6af5c9778c7215122320c531"
   },
   "errores": []
+ },
+ {
+  "fecha": "2026-11-12 17:42",
+  "concepto": "tecnologia-top",
+  "tema": "azul",
+  "categoria": "Mascotas",
+  "archivo": "video-20261112-1740.mp4",
+  "buffer": {
+   "tiktok": "6af64ec4da25c4db3e825a1a",
+   "facebook": "6af64ecfe1d8eff6108b3633",
+   "instagram": "6af64edafb90ccefdd086fd6"
+  },
+  "errores": []
+ },
+ {
+  "fecha": "2026-11-12 17:43",
+  "concepto": "carrusel",
+  "tema": "blanco",
+  "categoria": "",
+  "archivo": "carrusel-20261112-1740-1.jpg",
+  "buffer": {
+   "tiktok": "6af64ee5fb90ccefdd087163",
+   "facebook": "6af64eefba218f326367b262",
+   "instagram": "6af64efada25c4db3e82651a"
+  },
+  "errores": []
  }
 ]
