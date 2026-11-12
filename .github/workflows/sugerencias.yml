@@ -1,0 +1,38 @@
+name: Sugerencias de ofertas
+
+# Cada lunes y jueves busca solo las mejores ofertas nuevas (API oficial de Mercado Libre)
+# y deja la lista en data/sugerencias.md, lista para copiar y pegar en data/links.txt.
+on:
+  schedule:
+    - cron: "17 14 * * 1,4"   # lunes y jueves 8:17 a. m. Ciudad de México
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rebajon
+  cancel-in-progress: false
+
+jobs:
+  sugerencias:
+    runs-on: ubuntu-24.04   # fijo: probado así (ubuntu-latest cambia de versión)
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q requests==2.32.3
+      - name: Buscar ofertas
+        working-directory: scripts
+        env:
+          ML_CLIENT_ID: ${{ secrets.ML_CLIENT_ID }}
+          ML_CLIENT_SECRET: ${{ secrets.ML_CLIENT_SECRET }}
+        run: python sugerencias.py
+      - name: Guardar
+        run: |
+          git config user.name "rebajon-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/sugerencias.md
+          git diff --cached --quiet || (git commit -m "Sugerencias $(date -u +%F)" && git pull --rebase -q && git push)
