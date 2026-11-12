@@ -16,21 +16,30 @@ Abre **`ESTADO.md`** en el repositorio:
 - Si algo falla, GitHub también manda un correo a mxrebajon@gmail.com ("Run failed").
 - Para ver el detalle: pestaña **Actions** → la última ejecución → el paso en rojo.
 
-## 3. Agregar, cambiar o quitar ofertas
+## 3. Agregar, cambiar o quitar ofertas (copiar y pegar)
 
-Edita **`data/links.txt`**. Una oferta por renglón:
+**Lo más fácil: usa las sugerencias.** Cada lunes y jueves el sistema busca solo (API de Mercado Libre) los productos
+más vendidos con 25% o más de descuento y los deja en **`data/sugerencias.md`**, cada uno con su renglón listo.
+Para agregar uno:
 
+1. Mercado Libre → **Mi cuenta → Afiliados y creadores** → en "Busca productos" escribe el nombre →
+   en el producto: **Compartir → Copiar link** (link de afiliado, empieza con `https://meli.la/`).
+2. En `data/sugerencias.md` copia el renglón gris del producto (botón de copiar).
+3. Abre **`data/links.txt`** → lápiz ✏️ → pega el renglón al final → cambia `PEGA_AQUI_TU_LINK` por tu link → **Commit changes**.
+
+**Formato de cada renglón** (una oferta por renglón):
 ```
-link | categoría | precio antes | precio ahora | nombre corto | foto | calificación | vendidos
-https://meli.la/abc123 | Hogar | 999 | 499 | Freidora de aire 5 L | https://http2.mlstatic.com/....webp | 4.8 | 10mil
+link de afiliado | categoría | precio antes | precio ahora | nombre corto | foto | calificación | vendidos | URL del producto
+https://meli.la/abc123 | Hogar | 999 | 499 | Freidora de aire 5 L | https://http2.mlstatic.com/....webp | 4.8 | 10mil | https://www.mercadolibre.com.mx/p/MLM123
 ```
-- Las 3 últimas son opcionales pero recomendadas: sin foto el video usa un emoji.
-- **Cómo sacar los datos rápido:** Mercado Libre → Afiliados y creadores → buscar el producto → **Compartir → Copiar link**
-  (ese es el link de afiliado). Para la foto: abre el producto, clic derecho en la foto → *Copiar dirección de imagen*.
-- Con la API de Mercado Libre activada (sección 7) basta con pegar el link.
-- Sin la API, escribe los 5 datos. Cuando cambien los precios, actualízalos (cuentan como revisados ese día).
-- Una oferta se publica solo si tiene **15% o más** de descuento y precio revisado en los últimos **10 días**.
-- Quitar: borra el renglón o ponle `#` al inicio.
+- **Siempre** usa el link de "Compartir → Copiar link" de la Central de afiliados: es el que te paga comisión.
+  No armes links a mano.
+- La **URL del producto** (columna 9) es la dirección normal del producto en Mercado Libre (la que tiene `/p/MLM…`).
+  Con ella el sistema actualiza solo precio y foto 2 a 4 veces al día. El link corto `meli.la` no sirve para esto porque
+  abre tu perfil de afiliado, no el producto.
+- Sin URL del producto, el precio que escribas vale 10 días; después la oferta se oculta hasta que lo actualices.
+- Una oferta se publica solo si tiene **15% o más** de descuento. Si el precio sube y deja de ser oferta, se oculta sola.
+- Quitar: borra el renglón o ponle `#` al inicio. Un renglón que no empieza con `http` se ignora.
 - Los cambios salen en la siguiente ejecución. Para verlos ya: Actions → "Rebajón MX automático" → **Run workflow**
   (desmarca "¿Publicar en redes?" si solo quieres actualizar la página).
 
@@ -62,14 +71,14 @@ y cruza con el historial. Lo que funcione mejor: haz más conceptos parecidos o 
      `TELEGRAM_BOT_TOKEN` = el token, `TELEGRAM_CHAT_ID` = `@rebajonmx`.
   5. En `config/marca.json` pon el link del canal en `"telegram"` (así sale en videos y textos).
 
-## 7. API de Mercado Libre (para pegar solo links)
+## 7. API de Mercado Libre (ya está activa)
 
-Mercado Libre bloquea la lectura de sus páginas desde servidores; con su API oficial gratuita no.
-1. Entra a **developers.mercadolibre.com.mx** con tu cuenta de Mercado Libre → "Crear aplicación".
-2. Nombre: Rebajón MX · URL de redirección: `https://rebajonmx.netlify.app` · Permisos: solo lectura.
-3. Copia el **Client ID** y el **Client Secret**.
-4. En GitHub agrega los secretos `ML_CLIENT_ID` y `ML_CLIENT_SECRET`.
-5. Corre el flujo a mano y revisa el paso "1. Ofertas": debe decir "API de Mercado Libre: sí".
+App de desarrollador **"Rebajon MX Ofertas"** (Client ID 7642238823271133) en developers.mercadolibre.com.mx con la
+cuenta de Samuel. Secretos `ML_CLIENT_ID` y `ML_CLIENT_SECRET` ya guardados en GitHub.
+- Actualiza precio, foto y nombre de cada oferta con URL del producto, y genera `data/sugerencias.md`.
+- Si algún día falla (el paso "1. Ofertas" dice "Mercado Libre no dio acceso"): developers.mercadolibre.com.mx →
+  Mis aplicaciones → la app → copiar de nuevo el **Client Secret** → GitHub → Settings → Secrets → `ML_CLIENT_SECRET` → Update.
+- Sugerencias a mano: Actions → "Sugerencias de ofertas" → Run workflow.
 
 ## 8. Llaves y secretos (GitHub → Settings → Secrets and variables → Actions)
 
@@ -77,7 +86,7 @@ Mercado Libre bloquea la lectura de sus páginas desde servidores; con su API of
 |---|---|---|
 | `NETLIFY_AUTH_TOKEN`, `NETLIFY_SITE_ID` | Publicar la página | Sí |
 | `BUFFER_API_KEY` | Publicar en Instagram, Facebook y TikTok | Sí |
-| `ML_CLIENT_ID`, `ML_CLIENT_SECRET` | Datos automáticos de Mercado Libre | No |
+| `ML_CLIENT_ID`, `ML_CLIENT_SECRET` | Precios automáticos y sugerencias de Mercado Libre | Sí (ya están) |
 | `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` | Canal de Telegram | No |
 | `GEMINI_API_KEY` | Convertir ideas en videos (gratis en aistudio.google.com/apikey) | No |
 

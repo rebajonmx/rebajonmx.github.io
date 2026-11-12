@@ -9,7 +9,9 @@ y cualquier IA gratuita (o tú) puede mantenerlo con este repositorio. **Nada de
 |---|---|---|
 | Revisar ofertas, armar página, crear y publicar videos | **GitHub Actions** (automático, sin IA) | 2 veces al día |
 | Auditoría | **GitHub Actions** → `ESTADO.md` + correo si falla | 2 veces al día |
-| Agregar/actualizar ofertas | **Tú**: pegar links en `data/links.txt` (5 min) | 2-3 veces por semana |
+| Buscar ofertas nuevas | **GitHub Actions** → `data/sugerencias.md` (API de Mercado Libre) | Lunes y jueves |
+| Precios de las ofertas | **GitHub Actions** (API de Mercado Libre) | En cada publicación |
+| Sacar links de afiliado de las sugerencias | **Tú** (Compartir → Copiar link, pegar renglón; ver MANUAL §3) | 5-10 min, 2 veces por semana |
 | Ideas de videos nuevos | **Tú** (una frase en `contenido/pedido.txt`) + **Gemini API** (lo convierte solo) | Cuando quieras |
 | Cambios al código, arreglos, funciones nuevas | **Jules** (agente de Google, plan gratis, trabaja directo en GitHub) | Cuando haga falta |
 | Textos, estrategia, preguntas, imágenes | **App de Gemini** (gemini.google.com, gratis) | Cuando haga falta |
@@ -39,14 +41,14 @@ siempre). Una IA de video gratuita da pocos segundos al día y estilo inconsiste
 - [x] 4 publicaciones al día durante la campaña y 3 conceptos nuevos de Buen Fin.
 - [ ] Llave de Gemini (`GEMINI_API_KEY`) y prueba de `pedido.txt`.
 - [ ] Canal de Telegram + secretos.
-- [ ] App de Mercado Libre (`ML_CLIENT_ID/SECRET`) y prueba de "solo pegar links".
+- [x] App de Mercado Libre: precios automáticos (38/40 ofertas) y sugerencias de ofertas lunes y jueves.
 - [ ] Cambiar la llave de Buffer (quedó visible en una captura) y borrar las llaves viejas.
 - [ ] Conectar Jules al repositorio y hacer una tarea de prueba pequeña.
 
 ## 3. Rutina semanal (15 minutos, sin IA)
 
 1. Abrir `ESTADO.md`. Si está 🔴 o 🟡, seguir lo que dice (o pedirle a Jules: ver `docs/PROMPTS.md`).
-2. Actualizar precios y agregar 5-10 ofertas nuevas en `data/links.txt`.
+2. Abrir `data/sugerencias.md` y agregar 5-10 ofertas nuevas a `data/links.txt` (MANUAL §3).
 3. Revisar en Buffer → Analytics qué videos tuvieron más vistas; anotar el concepto y color ganador.
 4. Escribir 2-3 ideas nuevas en `contenido/pedido.txt` parecidas a lo que funcionó.
 
