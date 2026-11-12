@@ -5,7 +5,8 @@ Página de ofertas verificadas + videos diarios en Instagram, Facebook y TikTok.
 | Quiero… | Dónde |
 |---|---|
 | Ver si todo está bien | **[ESTADO.md](ESTADO.md)** (🟢 / 🟡 / 🔴) |
-| Agregar o quitar ofertas | **[data/links.txt](data/links.txt)** (una por renglón) |
+| Ofertas nuevas sugeridas (lunes y jueves) | **[data/sugerencias.md](data/sugerencias.md)** |
+| Agregar o quitar ofertas | **[data/links.txt](data/links.txt)** (una por renglón; guía en [MANUAL §3](docs/MANUAL.md)) |
 | Pedir un video nuevo con una frase | **[contenido/pedido.txt](contenido/pedido.txt)** (con Gemini) |
 | Crear o editar videos a mano | **[contenido/conceptos/](contenido/conceptos)** · guía: [docs/CONCEPTOS.md](docs/CONCEPTOS.md) |
 | Cambiar marca, colores, campaña, hashtags | **[config/marca.json](config/marca.json)** |

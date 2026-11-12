@@ -33,7 +33,8 @@ GitHub Actions  (.github/workflows/rebajon.yml, 7:00 y 19:00 CDMX = 13:00 y 01:0
 | Archivo | Qué hace / reglas |
 |---|---|
 | `config/marca.json` | **Única** configuración por marca/cliente: nombre, logo, web, WhatsApp, Telegram, hashtags, descuento mínimo, vigencia de precios, campaña (fechas), redes, colores de temas, modelo de IA. |
-| `data/links.txt` | Entrada humana. `link | categoría | precio antes | precio ahora | nombre | foto | calificación | vendidos` (las 3 últimas opcionales). Lo manual manda sobre la API salvo precios cuando hay API. |
+| `data/links.txt` | Entrada humana. `link | categoría | precio antes | precio ahora | nombre | foto | calificación | vendidos | URL del producto` (las 4 últimas opcionales). La URL del producto (`/p/MLM…`) es la que usa la API: el link `meli.la` redirige al perfil social del afiliado, no al producto. Renglones que no empiezan con http se ignoran. |
+| `data/sugerencias.md` | Generado lunes y jueves por `scripts/sugerencias.py` (.github/workflows/sugerencias.yml): más vendidos por categoría (API `/highlights`) con ≥25% de descuento, con renglón listo para links.txt (falta solo el link de afiliado). |
 | `data/ofertas.json` | Generado. Campos: url, cat, name, now, was, off, img, active, revisado, firma, product, ml_id, ml_tipo, e. No editar a mano. |
 | `data/historial.json` | Generado. Cada publicación: fecha, concepto, tema (color), categoria, archivo, ids de Buffer, errores. Base para métricas. |
 | `data/pendientes.json` | Generado. Links sin datos completos. |
@@ -43,7 +44,7 @@ GitHub Actions  (.github/workflows/rebajon.yml, 7:00 y 19:00 CDMX = 13:00 y 01:0
 | `plantilla/sitio.html` | Página (HTML+CSS+JS en un archivo). Marcadores `__DEALS__`, `__FAV__`, `__FECHA__`. |
 | `scripts/comun.py` | Utilidades: config, fechas CDMX, carga de ofertas, vigencia, campaña, pie de publicación. |
 | `scripts/contenido.py` | Elige concepto+color sin IA (temporada, requisitos, no repetir, reparte colores) y resuelve variables y productos. |
-| `scripts/mercadolibre.py` | API oficial de ML (client_credentials). **No** leer páginas de ML desde servidores: ML las bloquea y no se debe intentar rodear el bloqueo. |
+| `scripts/mercadolibre.py` | API oficial de ML (client_credentials, funciona: /products, /items, /highlights). **No** leer páginas de ML desde servidores: ML las bloquea y no se debe intentar rodear el bloqueo. **Nunca** generar links de afiliado a mano: solo los de la Central de afiliados (Compartir → Copiar link), si no se pierde la comisión. |
 | `scripts/auditar.py` | Auditoría sin IA → `ESTADO.md`. |
 | `docs/MANUAL.md` | Manual para personas. `docs/CONCEPTOS.md` formato de videos (también se le pasa a Gemini). |
 | `docs/PLAN.md` | Plan de continuidad (qué IA gratuita hace qué), rutina semanal, calendario de campañas, ideas de crecimiento y riesgos. |
@@ -77,17 +78,18 @@ GitHub Actions  (.github/workflows/rebajon.yml, 7:00 y 19:00 CDMX = 13:00 y 01:0
 ## Estado actual (actualízalo al terminar cada cambio importante)
 
 - 2026-11-11: sistema en producción. Buffer conectado a Instagram @rebajonmx, Facebook página Rebajón MX y TikTok @rebajonmx.
-  Secretos configurados: NETLIFY_AUTH_TOKEN, NETLIFY_SITE_ID, BUFFER_API_KEY.
+  Secretos configurados: NETLIFY_AUTH_TOKEN, NETLIFY_SITE_ID, BUFFER_API_KEY, ML_CLIENT_ID, ML_CLIENT_SECRET.
+- 2026-11-11: API de Mercado Libre activa (app "Rebajon MX Ofertas", Client ID 7642238823271133). 38 de 40 ofertas
+  actualizan precio solo; power bank (/up/MLMU…) y tablet quedan con precio manual (vencen 21 nov).
 - Motor v2 con 10 conceptos y 3 colores. Campaña activa: Buen Fin 2026 (13–17 nov).
 - 40 ofertas activas (11 nov) con precios, foto, calificación y ventas manuales en links.txt (sin API de ML todavía).
   Los links se generaron en la Central de afiliados de ML (sesión del dueño): Compartir → Copiar link.
 - 13 conceptos. Nuevos para la campaña: ultimas-horas, regalos-adelantados (durante) y lo-mas-vendido (siempre).
   `elegir: "variado"` rota productos en cada publicación; la categoría del turno cambia en cada publicación.
 - 4 publicaciones al día durante la campaña (7am, 12pm, 5pm, 7pm CDMX); fuera de campaña 2.
-- Pendiente del dueño (opcional): app de Mercado Libre (ML_CLIENT_ID/SECRET), canal de Telegram, GEMINI_API_KEY,
+- Pendiente del dueño (opcional): canal y grupo de Telegram, GEMINI_API_KEY, conectar Jules,
   cambiar la llave de Buffer (quedó visible en una captura).
-- Por verificar cuando exista la app de ML: que `client_credentials` dé acceso a /items y /products (si no, cambiar
-  a flujo authorization_code con refresh token guardado como secreto).
+- WhatsApp: decidido NO automatizar (no hay vía oficial). Se publica a mano con el texto de /whatsapp.txt.
 
 ## Ideas siguientes (por prioridad)
 
