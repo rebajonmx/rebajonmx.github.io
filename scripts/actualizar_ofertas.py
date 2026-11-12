@@ -28,6 +28,9 @@ def leer_links():
         if not linea or linea.startswith("#"):
             continue
         p = [x.strip() for x in linea.split("|")]
+        if not p[0].startswith("http"):
+            print(f"  ! Renglón sin link de afiliado (se ignora hasta que pegues el link): {linea[:60]}")
+            continue
         filas.append({"url": p[0], "cat": p[1] if len(p) > 1 and p[1] else "",
                       "was": num(p[2]) if len(p) > 2 else None, "now": num(p[3]) if len(p) > 3 else None,
                       "name": p[4] if len(p) > 4 else "",
