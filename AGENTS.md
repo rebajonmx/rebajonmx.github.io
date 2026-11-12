@@ -82,7 +82,8 @@ GitHub Actions  (.github/workflows/rebajon.yml, 7:00 y 19:00 CDMX = 13:00 y 01:0
 - 2026-11-11: API de Mercado Libre activa (app "Rebajon MX Ofertas", Client ID 7642238823271133). 38 de 40 ofertas
   actualizan precio solo; power bank (/up/MLMU…) y tablet quedan con precio manual (vencen 21 nov).
 - Motor v2 con 10 conceptos y 3 colores. Campaña activa: Buen Fin 2026 (13–17 nov).
-- 40 ofertas activas (11 nov) con precios, foto, calificación y ventas manuales en links.txt (sin API de ML todavía).
+- 51 ofertas (12 nov): 40 del 11 nov + 11 tomadas de data/sugerencias.md. Todas con URL del producto salvo 2.
+- Los horarios de GitHub se retrasan ~1 hora (el turno de 7:00 sale ~8:10). Es normal.
   Los links se generaron en la Central de afiliados de ML (sesión del dueño): Compartir → Copiar link.
 - 13 conceptos. Nuevos para la campaña: ultimas-horas, regalos-adelantados (durante) y lo-mas-vendido (siempre).
   `elegir: "variado"` rota productos en cada publicación; la categoría del turno cambia en cada publicación.
