@@ -1,6 +1,7 @@
 # OFERTAS DE REBAJÓN MX — una por renglón. Edita este archivo desde GitHub (lápiz ✏️) y guarda.
 #
-# Formato:  link | categoría | precio antes | precio ahora | nombre corto | foto (opcional) | calificación (opcional) | vendidos (opcional)
+# Formato:  link | categoría | precio antes | precio ahora | nombre corto | foto | calificación | vendidos | URL del producto
+# (las 4 últimas son opcionales; con la URL del producto la API de Mercado Libre actualiza precio y foto sola)
 # - Con la API de Mercado Libre activada basta con el link: lo demás se llena solo.
 # - Sin API, escribe los 5 datos. Si cambias los precios, la oferta cuenta como revisada hoy.
 # - Los precios vencen a los 10 días sin revisión (config/marca.json → dias_vigencia_precio).
@@ -8,47 +9,47 @@
 # - La foto es el link de la imagen del producto (clic derecho en la foto → Copiar dirección de imagen).
 # - Categorías actuales: Tecnología, Hogar, Electrodomésticos, Belleza, Juguetes, Herramientas, Mascotas, Moda, Salud.
 
-https://meli.la/1UAiFTn | Tecnología | 4999 | 2969 | Samsung Galaxy A16 · 128 GB, 4 GB RAM
-https://meli.la/137GPYX | Tecnología | 2999 | 1898 | Smart TV 32" TFL con Android TV
+https://meli.la/1UAiFTn | Tecnología | 4999 | 2969 | Samsung Galaxy A16 · 128 GB, 4 GB RAM |  |  |  | https://www.mercadolibre.com.mx/p/MLM45806032
+https://meli.la/137GPYX | Tecnología | 2999 | 1898 | Smart TV 32" TFL con Android TV |  |  |  | https://www.mercadolibre.com.mx/p/MLM62369518
 # https://meli.la/2ubeMhu | Tecnología | | | Echo Dot 5ª generación con Alexa   (sin descuento suficiente)
-https://meli.la/1791MiM | Tecnología | 999 | 378 | Bocina Bluetooth Aiwa 20 W, resistente al agua
-https://meli.la/1adL9cm | Tecnología | 1876.58 | 783.89 | Barra de sonido 160 W con subwoofer
+https://meli.la/1791MiM | Tecnología | 999 | 378 | Bocina Bluetooth Aiwa 20 W, resistente al agua |  |  |  | https://www.mercadolibre.com.mx/p/MLM30899627
+https://meli.la/1adL9cm | Tecnología | 1876.58 | 783.89 | Barra de sonido 160 W con subwoofer |  |  |  | https://www.mercadolibre.com.mx/p/MLM47291372
 https://meli.la/1k482W7 | Tecnología | 899.99 | 270.62 | Power bank 42,000 mAh con carga rápida 66 W
-https://meli.la/2dE81EK | Hogar | 3926.51 | 1599.18 | Colchón individual Noite con memory foam
-https://meli.la/2wTXXiJ | Hogar | 499.6 | 189.84 | 2 almohadas de microfibra Azteca
+https://meli.la/2dE81EK | Hogar | 3926.51 | 1599.18 | Colchón individual Noite con memory foam |  |  |  | https://www.mercadolibre.com.mx/p/MLM50224717
+https://meli.la/2wTXXiJ | Hogar | 499.6 | 189.84 | 2 almohadas de microfibra Azteca |  |  |  | https://www.mercadolibre.com.mx/p/MLM26030984
 # https://meli.la/2PxLbSg | Hogar | | | 5 recipientes herméticos de vidrio   (sin descuento suficiente)
-https://meli.la/2LSVPP5 | Electrodomésticos | 1599 | 1099 | Freidora de aire Oster digital 6 L
-https://meli.la/2qYQXju | Electrodomésticos | 400 | 153 | Báscula digital con Bluetooth, hasta 180 kg
-https://meli.la/2gZhRgq | Electrodomésticos | 891.84 | 478.25 | Licuadora portátil 500 W con 2 vasos
+https://meli.la/2LSVPP5 | Electrodomésticos | 1599 | 1099 | Freidora de aire Oster digital 6 L |  |  |  | https://www.mercadolibre.com.mx/p/MLM42517479
+https://meli.la/2qYQXju | Electrodomésticos | 400 | 153 | Báscula digital con Bluetooth, hasta 180 kg |  |  |  | https://www.mercadolibre.com.mx/p/MLM15503957
+https://meli.la/2gZhRgq | Electrodomésticos | 891.84 | 478.25 | Licuadora portátil 500 W con 2 vasos |  |  |  | https://www.mercadolibre.com.mx/p/MLM39274925
 
 # — Buen Fin 2026 (agregadas el 11 nov desde la Central de afiliados) —
-https://meli.la/2fCtMUa | Tecnología | 8499 | 4925 | Smart TV Aiwa Roku 50" QLED 4K | https://http2.mlstatic.com/D_Q_NP_2X_615872-MLA109791452087_032026-AB.webp | 4.9 | 10mil
-https://meli.la/1Vorzkh | Tecnología | 23499 | 14199 | Laptop Lenovo IdeaPad Slim 3 Core i5, 24 GB, 1 TB | https://http2.mlstatic.com/D_Q_NP_2X_624784-MLA99939865977_112025-AB.webp | 4.9 | 10mil
-https://meli.la/2M7aYsF | Tecnología | 3599 | 2512 | Tablet Samsung Galaxy Tab A11 64 GB | https://http2.mlstatic.com/D_Q_NP_2X_947631-MLA105471084807_012026-AB.webp | 4.8 | 10mil
-https://meli.la/1HEAVj7 | Tecnología | 1858 | 613 | Smartwatch Honor Watch X5i | https://http2.mlstatic.com/D_Q_NP_2X_856454-MLA110914449360_052026-AB.webp | 4.8 | 5mil
-https://meli.la/1Q3HHtm | Tecnología | 338 | 182 | Audífonos inalámbricos 1HORA Bluetooth 6.0 | https://http2.mlstatic.com/D_Q_NP_2X_725168-MLA100077728739_122025-AB.webp | 4.7 | 250mil
-https://meli.la/1jyi5oY | Tecnología | 5000 | 3699 | Celular Xiaomi Poco M7 128 GB, 6 GB RAM | https://http2.mlstatic.com/D_Q_NP_2X_794691-MLA99451551274_112025-AB.webp | 4.8 | 10mil
-https://meli.la/26KoKuw | Hogar | 2569 | 1229 | Batería de cocina Ekco 32 piezas antiadherente | https://http2.mlstatic.com/D_Q_NP_2X_973364-MLA119438371426_112026-AB.webp | 4.7 | 50mil
-https://meli.la/1sRDpfR | Hogar | 398 | 175 | Juego de sábanas matrimonial 3000 hilos | https://http2.mlstatic.com/D_Q_NP_2X_868396-MLA99605202268_122025-AB.webp | 4.7 | 100mil
-https://meli.la/2FwgYJy | Hogar | 298 | 139 | Vaso térmico 30 oz de acero inoxidable | https://http2.mlstatic.com/D_Q_NP_2X_904623-MLA108859342000_032026-AB.webp | 4.9 | 50mil
-https://meli.la/1ywgkyN | Hogar | 399 | 259 | 50 ganchos de terciopelo antideslizantes | https://http2.mlstatic.com/D_Q_NP_2X_905314-MLA114206085312_082026-AB.webp | 4.9 | 100mil
-https://meli.la/1CSCyEq | Hogar | 1300 | 669 | Mesa plegable tipo portafolio 1.80 m | https://http2.mlstatic.com/D_Q_NP_2X_835044-MLA82957913699_032025-AB.webp | 4.7 | 100mil
-https://meli.la/28HnCZB | Electrodomésticos | 2118 | 953 | Cafetera eléctrica programable 12 tazas | https://http2.mlstatic.com/D_Q_NP_2X_782713-MLA99938782775_112025-AB.webp | 4.9 | 10mil
-https://meli.la/1hDZ29E | Electrodomésticos | 2499 | 1129 | Nutribullet 600 W con 6 piezas | https://http2.mlstatic.com/D_Q_NP_2X_947281-MLA99935352867_112025-AB.webp | 4.9 | 10mil
-https://meli.la/2oU7Zq7 | Electrodomésticos | 3732 | 1670 | Aspiradora robot que barre y trapea | https://http2.mlstatic.com/D_Q_NP_2X_835999-MLA119419098842_112026-AB.webp | 4.7 | 5mil
-https://meli.la/2rsDaHB | Electrodomésticos | 5525 | 2219 | Cafetera espresso con molino y vaporizador | https://http2.mlstatic.com/D_Q_NP_2X_822030-MLA99908871201_112025-AB.webp | 4.8 | 10mil
-https://meli.la/2bjdajo | Electrodomésticos | 2199 | 1387 | Horno de microondas Midea 20 L | https://http2.mlstatic.com/D_Q_NP_2X_806657-MLA113155424483_062026-AB.webp | 4.8 | 10mil
-https://meli.la/31s5GYp | Belleza | 1299 | 705 | Perfume Rasasi Hawas Malibu 100 ml | https://http2.mlstatic.com/D_Q_NP_2X_630055-MLA110564420513_042026-AB.webp | 4.8 | 10mil
-https://meli.la/16d7QuB | Belleza | 1098 | 550 | Perfume Armaf Odyssey Marshmallow 100 ml | https://http2.mlstatic.com/D_Q_NP_2X_778079-MLA91427961184_092025-AB.webp | 4.9 | 5mil
-https://meli.la/1Xg6TqU | Belleza | 834 | 388 | Secadora de cabello profesional Tensky 1800 W | https://http2.mlstatic.com/D_Q_NP_2X_736401-MLA95664947624_102025-AB.webp | 4.9 | 5mil
-https://meli.la/2QXpPxG | Belleza | 1263 | 586 | Plancha de cabello infrarroja profesional | https://http2.mlstatic.com/D_Q_NP_2X_802126-MLA120207316967_102026-AB.webp | 4.8 | 10mil
-https://meli.la/22biiB4 | Belleza | 205 | 95 | Aceite capilar L'Oréal Elvive Óleo Extraordinario | https://http2.mlstatic.com/D_Q_NP_2X_740759-MLA116058657374_092026-AB.webp | 4.9 | 500mil
-https://meli.la/13bSFL1 | Juguetes | 8598 | 5981 | Nintendo Switch OLED + Super Mario Bros. Wonder | https://http2.mlstatic.com/D_Q_NP_2X_708545-MLA91725553793_092025-AB.webp | 4.9 | 5mil
-https://meli.la/2rtPUi1 | Juguetes | 349 | 252 | LEGO Harry Potter Ford Anglia volador | https://http2.mlstatic.com/D_Q_NP_2X_878725-MLA120428976319_102026-AB.webp | 4.9 | 10mil
-https://meli.la/2GtQzvZ | Juguetes | 679 | 490 | LEGO Speed Champions Ferrari F1 | https://http2.mlstatic.com/D_Q_NP_2X_773959-MLA99468694168_112025-AB.webp | 4.9 | 10mil
-https://meli.la/19u6ieN | Juguetes | 399 | 248 | Muñeca Gabby's Dollhouse con diadema | https://http2.mlstatic.com/D_Q_NP_2X_723677-MLA99960282861_112025-AB.webp | 4.9 | 10mil
-https://meli.la/1XbWs3b | Herramientas | 1204 | 398 | Kit de taladro inalámbrico con impacto RUOMU | https://http2.mlstatic.com/D_Q_NP_2X_795114-MLA117886377682_102026-AB.webp | 4.7 | 50mil
-https://meli.la/27XihjN | Herramientas | 646 | 292 | Hidrolavadora inalámbrica portátil para auto | https://http2.mlstatic.com/D_Q_NP_2X_915645-MLA118968220969_102026-AB.webp | 4.6 | 250mil
-https://meli.la/28V1s8a | Mascotas | 824 | 510 | Croquetas Purina Beneful perro adulto 10 kg | https://http2.mlstatic.com/D_Q_NP_2X_796843-MLA99930306865_112025-AB.webp | 4.9 | 100mil
-https://meli.la/2i42XmS | Mascotas | 745 | 504 | Croquetas Minino Plus gato adulto 10 kg | https://http2.mlstatic.com/D_Q_NP_2X_798645-MLA95494123680_102025-AB.webp | 4.9 | 250mil
-https://meli.la/2KMErdY | Moda | 627 | 251 | Mochila antirrobo impermeable con puerto USB | https://http2.mlstatic.com/D_Q_NP_2X_610234-MLA99991086711_112025-AB.webp | 4.9 | 50mil
+https://meli.la/2fCtMUa | Tecnología | 8499 | 4925 | Smart TV Aiwa Roku 50" QLED 4K | https://http2.mlstatic.com/D_Q_NP_2X_615872-MLA109791452087_032026-AB.webp | 4.9 | 10mil | https://www.mercadolibre.com.mx/pantalla-smart-tv-aiwa-roku-50-pulgadas-qled-4k-ultra-hd/p/MLM63172085
+https://meli.la/1Vorzkh | Tecnología | 23499 | 14199 | Laptop Lenovo IdeaPad Slim 3 Core i5, 24 GB, 1 TB | https://http2.mlstatic.com/D_Q_NP_2X_624784-MLA99939865977_112025-AB.webp | 4.9 | 10mil | https://www.mercadolibre.com.mx/laptop-ideapad-slim-3-153-intel-core-i5-24gb-ram-1tb-ssd-lenovo/p/MLM53153939
+https://meli.la/2M7aYsF | Tecnología | 3599 | 2512 | Tablet Samsung Galaxy Tab A11 | https://http2.mlstatic.com/D_Q_NP_2X_947631-MLA105471084807_012026-AB.webp | 4.8 | 10mil
+https://meli.la/1HEAVj7 | Tecnología | 1858 | 613 | Smartwatch Honor Watch X5i | https://http2.mlstatic.com/D_Q_NP_2X_856454-MLA110914449360_052026-AB.webp | 4.8 | 5mil | https://www.mercadolibre.com.mx/reloj-inteligente-honor-watch-x5i/p/MLM69982449
+https://meli.la/1Q3HHtm | Tecnología | 338 | 182 | Audífonos inalámbricos 1HORA Bluetooth 6.0 | https://http2.mlstatic.com/D_Q_NP_2X_725168-MLA100077728739_122025-AB.webp | 4.7 | 250mil | https://www.mercadolibre.com.mx/audifonos-inalambricos-1hora-aut205-in-ear-bluetooth-60-con-microfono-auriculares-bluetooth-negro/p/MLM20922199
+https://meli.la/1jyi5oY | Tecnología | 5000 | 3699 | Celular Xiaomi Poco M7 256 GB, 8 GB RAM | https://http2.mlstatic.com/D_Q_NP_2X_794691-MLA99451551274_112025-AB.webp | 4.8 | 10mil | https://www.mercadolibre.com.mx/xiaomi-pocophone-poco-m7-8-gb256-gb-dual-sim-negro/p/MLM53792007
+https://meli.la/26KoKuw | Hogar | 2569 | 1229 | Batería de cocina Ekco 32 piezas antiadherente | https://http2.mlstatic.com/D_Q_NP_2X_973364-MLA119438371426_112026-AB.webp | 4.7 | 50mil | https://www.mercadolibre.com.mx/p/MLM32486305
+https://meli.la/1sRDpfR | Hogar | 398 | 175 | Juego de sábanas matrimonial 3000 hilos | https://http2.mlstatic.com/D_Q_NP_2X_868396-MLA99605202268_122025-AB.webp | 4.7 | 100mil | https://www.mercadolibre.com.mx/p/MLM36766418
+https://meli.la/2FwgYJy | Hogar | 298 | 139 | Vaso térmico 30 oz de acero inoxidable | https://http2.mlstatic.com/D_Q_NP_2X_904623-MLA108859342000_032026-AB.webp | 4.9 | 50mil | https://www.mercadolibre.com.mx/p/MLM67345866
+https://meli.la/1ywgkyN | Hogar | 399 | 259 | 50 ganchos de terciopelo antideslizantes | https://http2.mlstatic.com/D_Q_NP_2X_905314-MLA114206085312_082026-AB.webp | 4.9 | 100mil | https://www.mercadolibre.com.mx/p/MLM37178455
+https://meli.la/1CSCyEq | Hogar | 1300 | 669 | Mesa plegable tipo portafolio 1.80 m | https://http2.mlstatic.com/D_Q_NP_2X_835044-MLA82957913699_032025-AB.webp | 4.7 | 100mil | https://www.mercadolibre.com.mx/p/MLM47003664
+https://meli.la/28HnCZB | Electrodomésticos | 2118 | 953 | Cafetera eléctrica programable 12 tazas | https://http2.mlstatic.com/D_Q_NP_2X_782713-MLA99938782775_112025-AB.webp | 4.9 | 10mil | https://www.mercadolibre.com.mx/p/MLM43030420
+https://meli.la/1hDZ29E | Electrodomésticos | 2499 | 1129 | Nutribullet 600 W con 6 piezas | https://http2.mlstatic.com/D_Q_NP_2X_947281-MLA99935352867_112025-AB.webp | 4.9 | 10mil | https://www.mercadolibre.com.mx/p/MLM11719997
+https://meli.la/2oU7Zq7 | Electrodomésticos | 3732 | 1670 | Aspiradora robot que barre y trapea | https://http2.mlstatic.com/D_Q_NP_2X_835999-MLA119419098842_112026-AB.webp | 4.7 | 5mil | https://www.mercadolibre.com.mx/p/MLM36904137
+https://meli.la/2rsDaHB | Electrodomésticos | 5525 | 2219 | Cafetera espresso con molino y vaporizador | https://http2.mlstatic.com/D_Q_NP_2X_822030-MLA99908871201_112025-AB.webp | 4.8 | 10mil | https://www.mercadolibre.com.mx/p/MLM41991775
+https://meli.la/2bjdajo | Electrodomésticos | 2199 | 1387 | Horno de microondas Midea 20 L | https://http2.mlstatic.com/D_Q_NP_2X_806657-MLA113155424483_062026-AB.webp | 4.8 | 10mil | https://www.mercadolibre.com.mx/p/MLM18553094
+https://meli.la/31s5GYp | Belleza | 1299 | 705 | Perfume Rasasi Hawas Malibu 100 ml | https://http2.mlstatic.com/D_Q_NP_2X_630055-MLA110564420513_042026-AB.webp | 4.8 | 10mil | https://www.mercadolibre.com.mx/p/MLM68254703
+https://meli.la/16d7QuB | Belleza | 1098 | 550 | Perfume Armaf Odyssey Marshmallow 100 ml | https://http2.mlstatic.com/D_Q_NP_2X_778079-MLA91427961184_092025-AB.webp | 4.9 | 5mil | https://www.mercadolibre.com.mx/p/MLM54800146
+https://meli.la/1Xg6TqU | Belleza | 834 | 388 | Secadora de cabello profesional Tensky 1800 W | https://http2.mlstatic.com/D_Q_NP_2X_736401-MLA95664947624_102025-AB.webp | 4.9 | 5mil | https://www.mercadolibre.com.mx/p/MLM53116614
+https://meli.la/2QXpPxG | Belleza | 1263 | 586 | Plancha de cabello infrarroja profesional | https://http2.mlstatic.com/D_Q_NP_2X_802126-MLA120207316967_102026-AB.webp | 4.8 | 10mil | https://www.mercadolibre.com.mx/p/MLM44144470
+https://meli.la/22biiB4 | Belleza | 205 | 95 | Aceite capilar L'Oréal Elvive Óleo Extraordinario | https://http2.mlstatic.com/D_Q_NP_2X_740759-MLA116058657374_092026-AB.webp | 4.9 | 500mil | https://www.mercadolibre.com.mx/p/MLM24750853
+https://meli.la/13bSFL1 | Juguetes | 8598 | 5981 | Nintendo Switch OLED + Super Mario Bros. Wonder | https://http2.mlstatic.com/D_Q_NP_2X_708545-MLA91725553793_092025-AB.webp | 4.9 | 5mil | https://www.mercadolibre.com.mx/p/MLM54621976
+https://meli.la/2rtPUi1 | Juguetes | 349 | 252 | LEGO Harry Potter Ford Anglia volador | https://http2.mlstatic.com/D_Q_NP_2X_878725-MLA120428976319_102026-AB.webp | 4.9 | 10mil | https://www.mercadolibre.com.mx/p/MLM34816216
+https://meli.la/2GtQzvZ | Juguetes | 679 | 490 | LEGO Speed Champions Ferrari F1 | https://http2.mlstatic.com/D_Q_NP_2X_773959-MLA99468694168_112025-AB.webp | 4.9 | 10mil | https://www.mercadolibre.com.mx/p/MLM45423403
+https://meli.la/19u6ieN | Juguetes | 399 | 248 | Muñeca Gabby's Dollhouse con diadema | https://http2.mlstatic.com/D_Q_NP_2X_723677-MLA99960282861_112025-AB.webp | 4.9 | 10mil | https://www.mercadolibre.com.mx/p/MLM44894938
+https://meli.la/1XbWs3b | Herramientas | 1204 | 398 | Kit de taladro inalámbrico con impacto RUOMU | https://http2.mlstatic.com/D_Q_NP_2X_795114-MLA117886377682_102026-AB.webp | 4.7 | 50mil | https://www.mercadolibre.com.mx/p/MLM37174616
+https://meli.la/27XihjN | Herramientas | 646 | 292 | Hidrolavadora inalámbrica portátil para auto | https://http2.mlstatic.com/D_Q_NP_2X_915645-MLA118968220969_102026-AB.webp | 4.6 | 250mil | https://www.mercadolibre.com.mx/p/MLM47700596
+https://meli.la/28V1s8a | Mascotas | 824 | 510 | Croquetas Purina Beneful perro adulto 10 kg | https://http2.mlstatic.com/D_Q_NP_2X_796843-MLA99930306865_112025-AB.webp | 4.9 | 100mil | https://www.mercadolibre.com.mx/p/MLM21259835
+https://meli.la/2i42XmS | Mascotas | 745 | 504 | Croquetas Minino Plus gato adulto 10 kg | https://http2.mlstatic.com/D_Q_NP_2X_798645-MLA95494123680_102025-AB.webp | 4.9 | 250mil | https://www.mercadolibre.com.mx/p/MLM15219071
+https://meli.la/2KMErdY | Moda | 627 | 251 | Mochila antirrobo impermeable con puerto USB | https://http2.mlstatic.com/D_Q_NP_2X_610234-MLA99991086711_112025-AB.webp | 4.9 | 50mil | https://www.mercadolibre.com.mx/p/MLM27439359
