@@ -80,6 +80,11 @@ jobs:
         working-directory: scripts
         run: python generar_video.py --concepto "${{ github.event.inputs.concepto }}" --tema "${{ github.event.inputs.tema }}"
 
+      - name: 3b. Crear carrusel de imágenes del día
+        continue-on-error: true
+        working-directory: scripts
+        run: python generar_carrusel.py
+
       - name: 4. Publicar página en Netlify
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
@@ -93,6 +98,14 @@ jobs:
         env:
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
         run: sleep 20 && python publicar_buffer.py
+
+      - name: 5b. Publicar carrusel (1 al día, desde las 11:00)
+        if: github.event_name == 'schedule' || github.event.inputs.publicar == 'true'
+        continue-on-error: true
+        working-directory: scripts
+        env:
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+        run: python publicar_buffer.py --carrusel
 
       - name: 6. Publicar en Telegram (opcional)
         if: github.event_name == 'schedule' || github.event.inputs.publicar == 'true'
@@ -123,6 +136,7 @@ jobs:
           name: video-${{ github.run_number }}
           path: |
             public/media/*.mp4
+            public/media/carrusel-*.jpg
             public/media/turno.json
             public/whatsapp.txt
           retention-days: 7
