@@ -1,1 +1,15 @@
-[]
+[
+ {
+  "fecha": "2026-11-11 20:12",
+  "concepto": "ahorro-total",
+  "tema": "azul",
+  "categoria": "Hogar",
+  "archivo": "video-20261111-2010.mp4",
+  "buffer": {
+   "tiktok": "6af520588a1a2f52b5188c8b",
+   "facebook": "6af520622f7f0a6952e50b3f",
+   "instagram": "6af5206c8a1a2f52b5189094"
+  },
+  "errores": []
+ }
+]
