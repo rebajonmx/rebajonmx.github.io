@@ -20,9 +20,9 @@
  {
   "cat": "Tecnología",
   "name": "Smart TV 32\" TFL con Android TV",
-  "now": 1919,
-  "was": 2855.71,
-  "off": 33,
+  "now": 1898,
+  "was": 2999,
+  "off": 37,
   "rating": "4.6",
   "sold": "10mil",
   "img": "https://http2.mlstatic.com/D_Q_NP_2X_963816-MLA113632832217_062026-AB.webp",
@@ -123,9 +123,9 @@
  {
   "cat": "Hogar",
   "name": "2 almohadas de microfibra Azteca",
-  "now": 169,
+  "now": 165.52,
   "was": 499.6,
-  "off": 66,
+  "off": 67,
   "rating": "4.7",
   "sold": "500mil",
   "img": "https://http2.mlstatic.com/D_Q_NP_2X_950068-MLA119258624374_112026-AB.webp",
@@ -389,7 +389,7 @@
   "url": "https://meli.la/1CSCyEq",
   "cat": "Hogar",
   "name": "Mesa plegable tipo portafolio 1.80 m",
-  "now": 669.34,
+  "now": 629,
   "was": 1300,
   "img": "https://http2.mlstatic.com/D_Q_NP_2X_835044-MLA82957913699_032025-AB.webp",
   "rating": "4.7",
@@ -398,7 +398,7 @@
   "firma": "1300.0|669.0",
   "revisado": "2026-11-13",
   "e": "🪑",
-  "off": 49,
+  "off": 52,
   "product": "https://www.mercadolibre.com.mx/p/MLM47003664",
   "ml_tipo": "producto",
   "ml_id": "MLM47003664"
@@ -803,8 +803,8 @@
   "url": "https://meli.la/1atNucX",
   "cat": "Belleza",
   "name": "Sérum Garnier Express Aclara anti manchas 30 ml",
-  "now": 134,
-  "was": 225.0,
+  "now": 71.3,
+  "was": 225,
   "img": "https://http2.mlstatic.com/D_NQ_NP_753989-MLA119183426348_112026-F.jpg",
   "rating": "",
   "sold": "",
@@ -815,13 +815,13 @@
   "ml_id": "MLM18957818",
   "ml_tipo": "producto",
   "e": "🛒",
-  "off": 40
+  "off": 68
  },
  {
   "url": "https://meli.la/1WmUQrE",
   "cat": "Belleza",
   "name": "Base Maybelline Super Stay Lumi Matte",
-  "now": 172,
+  "now": 164.5,
   "was": 345,
   "img": "https://http2.mlstatic.com/D_NQ_NP_873362-MLA92306999274_092025-F.jpg",
   "rating": "",
@@ -833,13 +833,13 @@
   "ml_id": "MLM34341029",
   "ml_tipo": "producto",
   "e": "🛒",
-  "off": 50
+  "off": 52
  },
  {
   "url": "https://meli.la/1ZpTouG",
   "cat": "Juguetes",
   "name": "Barbie Casa con resbaladilla",
-  "now": 1500,
+  "now": 1612.17,
   "was": 3499,
   "img": "https://http2.mlstatic.com/D_NQ_NP_918403-MLA120424208679_102026-F.jpg",
   "rating": "",
@@ -851,7 +851,7 @@
   "ml_id": "MLM81246938",
   "ml_tipo": "producto",
   "e": "🛒",
-  "off": 57
+  "off": 54
  },
  {
   "url": "https://meli.la/2u55tqx",
@@ -929,8 +929,8 @@
   "url": "https://meli.la/2EkJQbm",
   "cat": "Electrodomésticos",
   "name": "Horno de microondas Mirage 0.7 ft³",
-  "now": 1370.92,
-  "was": 2490,
+  "now": 1345,
+  "was": 2999,
   "img": "https://http2.mlstatic.com/D_NQ_NP_944928-MLA112812361117_062026-F.jpg",
   "rating": "",
   "sold": "",
@@ -941,6 +941,6 @@
   "ml_id": "MLM18439163",
   "ml_tipo": "producto",
   "e": "🍲",
-  "off": 45
+  "off": 55
  }
 ]
