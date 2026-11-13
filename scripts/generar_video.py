@@ -83,26 +83,10 @@ def sintetizar(texto, ruta):
     if not texto or not bin_ or not modelo or not os.path.exists(bin_) or not os.path.exists(modelo):
         return 0
     try:
-        crudo = ruta.with_name(ruta.stem + "_crudo.wav")
-        # Misma voz, ritmo, pausas y pronunciación que el Rebi original (es_MX-claude-high, 0.92 / 0.12)...
-        subprocess.run([bin_, "--model", modelo, "--output_file", str(crudo), "--length_scale", "0.92",
+        # Rebi: mismo ritmo y pausas del original (0.92 / 0.12) con voz real de hombre (es_MX-ald-medium), sin efectos.
+        subprocess.run([bin_, "--model", modelo, "--output_file", str(ruta), "--length_scale", "0.92",
                         "--sentence_silence", "0.12"], input=en_palabras(texto).encode(), check=True,
                        capture_output=True, timeout=120)
-        with wave.open(str(crudo)) as w:
-            sr = w.getframerate()
-        # ...solo que en voz de hombre: se baja el tono ~4 semitonos (con sus formantes) sin cambiar la velocidad.
-        # Si falla rubberband, mismo efecto con asetrate + atempo. Ajuste fino: TONO (0.78 = más grave si se baja).
-        TONO = 0.78
-        filtros = [f"rubberband=pitch={TONO}:pitchq=quality:transients=smooth,aresample={SR}",
-                   f"asetrate={sr}*{TONO},aresample={SR},atempo={1/TONO:.4f}"]
-        for af in filtros:
-            r = subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(crudo), "-af", af,
-                                "-ac", "1", "-ar", str(SR), str(ruta)], capture_output=True, timeout=60)
-            if r.returncode == 0:
-                break
-        else:
-            raise RuntimeError("no se pudo cambiar el tono: " + r.stderr.decode()[:100])
-        crudo.unlink()
         with wave.open(str(ruta)) as w:
             return w.getnframes() / w.getframerate()
     except Exception as ex:
