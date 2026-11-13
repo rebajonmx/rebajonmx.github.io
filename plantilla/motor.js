@@ -59,7 +59,7 @@ const rebi=(X,Y,sc,t,boca=0,ola=1)=>{const bob=Math.sin(t*4.2)*10,sq=1+boca*.05;
  // cejas amables
  x.strokeStyle=ink;x.lineWidth=7;[-46,46].forEach(ex=>{x.beginPath();x.arc(ex,-78,22,Math.PI*1.2,Math.PI*1.8);x.stroke()});
  // cachetes
- x.fillStyle='rgba(244,114,182,.55)';[-82,82].forEach(cx=>{x.beginPath();x.ellipse(cx,12,20,13,0,0,7);x.fill()});
+ x.fillStyle=V.chapas||'rgba(244,114,182,.55)';[-82,82].forEach(cx=>{x.beginPath();x.ellipse(cx,12,20,13,0,0,7);x.fill()});
  // boca: sonrisa cerrada o abierta con la voz
  if(boca<.08){x.strokeStyle=ink;x.lineWidth=8;x.beginPath();x.arc(0,18,30,.15*Math.PI,.85*Math.PI);x.stroke()}
  else{const h=12+boca*46;x.fillStyle='#7a1030';x.beginPath();x.ellipse(0,34,30+boca*6,h/2,0,0,7);x.fill();x.lineWidth=7;x.strokeStyle=ink;x.stroke();
