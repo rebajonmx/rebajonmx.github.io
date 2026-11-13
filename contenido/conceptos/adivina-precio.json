@@ -1,0 +1,30 @@
+{
+ "id": "adivina-precio",
+ "nombre": "Adivina el precio",
+ "objetivo": "Juego viral, comentarios",
+ "temporada": "siempre",
+ "temas": [
+  "rosa",
+  "azul",
+  "blanco"
+ ],
+ "publicacion": "🤔 ¿Cuánto crees que cuesta? Comenta tu respuesta ANTES de ver el precio 👇",
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "emoji": "🤔",
+   "titulo": "¿ADIVINAS?",
+   "texto": "el precio de estas ofertas",
+   "etiqueta": "comenta tu respuesta 👇"
+  },
+  {
+   "tipo": "productos",
+   "elegir": "variado",
+   "cuantos": 3,
+   "como": "adivina"
+  },
+  {
+   "tipo": "cierre"
+  }
+ ]
+}

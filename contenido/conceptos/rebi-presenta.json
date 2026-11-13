@@ -1,0 +1,25 @@
+{
+ "id": "rebi-presenta",
+ "nombre": "Rebi presenta las ofertas",
+ "objetivo": "Mascota: confianza y cercanía",
+ "temporada": "siempre",
+ "mascota": true,
+ "peso": 3,
+ "publicacion": "👋 ¡Hola! Soy Rebi, de Rebajón MX. Reviso precios todos los días para que tú solo compres rebajas de verdad. Mira lo que encontré hoy 👇",
+ "escenas": [
+  {
+   "tipo": "rebi",
+   "titulo": "¡Hola! Soy Rebi 👋",
+   "etiqueta": "reviso precios por ti",
+   "dice": "¡Hola! Soy Rebi, de Rebajón MX. Yo reviso los precios por ti, para que solo compres rebajas de verdad. Mira lo que encontré hoy."
+  },
+  {
+   "tipo": "productos",
+   "elegir": "variado",
+   "cuantos": 3
+  },
+  {
+   "tipo": "cierre"
+  }
+ ]
+}

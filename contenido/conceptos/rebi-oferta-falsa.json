@@ -1,0 +1,37 @@
+{
+ "id": "rebi-oferta-falsa",
+ "nombre": "Rebi: cómo detectar una oferta falsa",
+ "objetivo": "Confianza, se guarda y comparte",
+ "temporada": "siempre",
+ "mascota": true,
+ "peso": 2,
+ "publicacion": "🕵️ Rebi te enseña a detectar una oferta falsa en el {campana}. Guárdalo y compártelo con quien va a comprar estos días.",
+ "escenas": [
+  {
+   "tipo": "rebi",
+   "titulo": "¿Oferta falsa? 🕵️",
+   "etiqueta": "te enseño a detectarla",
+   "dice": "A veces un producto sube de precio antes del Buen Fin y luego lo bajan, para que parezca rebaja. Te enseño a detectarlo."
+  },
+  {
+   "tipo": "lista",
+   "titulo": "Revisa esto",
+   "items": [
+    "El precio de semanas atrás",
+    "El descuento contra ese precio",
+    "Opiniones de compradores",
+    "Que la tienda sea confiable"
+   ],
+   "dice": "Revisa el precio de semanas atrás, el descuento real, las opiniones y que la tienda sea confiable."
+  },
+  {
+   "tipo": "rebi",
+   "titulo": "Yo lo hago por ti ✅",
+   "etiqueta": "solo rebajas reales",
+   "dice": "Y si no tienes tiempo, yo lo hago por ti. Solo publico ofertas con descuento real."
+  },
+  {
+   "tipo": "cierre"
+  }
+ ]
+}

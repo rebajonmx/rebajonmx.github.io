@@ -1,0 +1,30 @@
+{
+ "id": "rebi-adivina",
+ "nombre": "Rebi: adivina el precio",
+ "objetivo": "Juego viral + mascota",
+ "temporada": "siempre",
+ "mascota": true,
+ "peso": 3,
+ "temas": [
+  "rosa",
+  "azul"
+ ],
+ "publicacion": "🤔 ¿Adivinaste el precio? Comenta cuánto creías que costaba 👇 Juega con Rebi y descubre ofertas de verdad.",
+ "escenas": [
+  {
+   "tipo": "rebi",
+   "titulo": "¿Adivinas el precio?",
+   "etiqueta": "juega con Rebi 🎯",
+   "dice": "¡Vamos a jugar! Adivina el precio de estas ofertas. Escribe en los comentarios cuánto crees que cuestan."
+  },
+  {
+   "tipo": "productos",
+   "elegir": "variado",
+   "cuantos": 2,
+   "como": "adivina"
+  },
+  {
+   "tipo": "cierre"
+  }
+ ]
+}

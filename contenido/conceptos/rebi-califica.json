@@ -1,0 +1,30 @@
+{
+ "id": "rebi-califica",
+ "nombre": "Rebi califica ofertas",
+ "objetivo": "Tendencia 'calificando' + mascota",
+ "temporada": "siempre",
+ "mascota": true,
+ "peso": 3,
+ "temas": [
+  "blanco",
+  "azul"
+ ],
+ "publicacion": "⭐ Rebi califica ofertas del 1 al 10 (según el descuento real y las opiniones de compradores). ¿Estás de acuerdo? 👇",
+ "escenas": [
+  {
+   "tipo": "rebi",
+   "titulo": "Calificando ofertas",
+   "etiqueta": "del 1 al 10 ⭐",
+   "dice": "Hoy califico ofertas del uno al diez, según su descuento real y lo que opinan los compradores."
+  },
+  {
+   "tipo": "productos",
+   "elegir": "variado",
+   "cuantos": 3,
+   "como": "califica"
+  },
+  {
+   "tipo": "cierre"
+  }
+ ]
+}

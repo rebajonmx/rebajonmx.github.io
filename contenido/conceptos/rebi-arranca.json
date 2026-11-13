@@ -1,0 +1,29 @@
+{
+ "id": "rebi-arranca",
+ "nombre": "Rebi: ¡ya empezó!",
+ "objetivo": "Arranque de campaña",
+ "temporada": "durante",
+ "mascota": true,
+ "peso": 3,
+ "temas": [
+  "azul",
+  "rosa"
+ ],
+ "publicacion": "🎉 ¡Ya empezó el {campana}! Rebi ya revisó los precios: estas son rebajas de verdad 👇",
+ "escenas": [
+  {
+   "tipo": "rebi",
+   "titulo": "¡Ya empezó! 🎉",
+   "etiqueta": "{campana}",
+   "dice": "¡Ya empezó el Buen Fin! Yo ya revisé los precios, y estas sí son rebajas de verdad."
+  },
+  {
+   "tipo": "productos",
+   "elegir": "variado",
+   "cuantos": 3
+  },
+  {
+   "tipo": "cierre"
+  }
+ ]
+}

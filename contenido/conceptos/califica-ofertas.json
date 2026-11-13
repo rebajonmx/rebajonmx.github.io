@@ -1,0 +1,29 @@
+{
+ "id": "califica-ofertas",
+ "nombre": "Calificando ofertas del 1 al 10",
+ "objetivo": "Formato tendencia 'rating'",
+ "temporada": "siempre",
+ "temas": [
+  "azul",
+  "blanco"
+ ],
+ "publicacion": "⭐ Calificando ofertas del 1 al 10 según su descuento real y las opiniones de compradores. ¿Cuál le pondrías tú? 👇",
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "emoji": "⭐",
+   "titulo": "CALIFICANDO",
+   "texto": "ofertas del 1 al 10",
+   "etiqueta": "sin pelos en la lengua"
+  },
+  {
+   "tipo": "productos",
+   "elegir": "variado",
+   "cuantos": 3,
+   "como": "califica"
+  },
+  {
+   "tipo": "cierre"
+  }
+ ]
+}

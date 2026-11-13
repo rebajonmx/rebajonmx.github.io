@@ -1,0 +1,28 @@
+{
+ "id": "pov-buen-fin",
+ "nombre": "POV: Buen Fin sin ofertas falsas",
+ "objetivo": "Formato tendencia POV",
+ "temporada": "siempre",
+ "temas": [
+  "blanco",
+  "rosa"
+ ],
+ "publicacion": "😎 POV: encontraste ofertas de verdad sin perder horas buscando. Guárdalo para tu lista 💾",
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "emoji": "😎",
+   "titulo": "POV:",
+   "texto": "encontraste ofertas de verdad sin perder horas buscando",
+   "etiqueta": "te ahorramos tiempo ⏱️"
+  },
+  {
+   "tipo": "productos",
+   "elegir": "variado",
+   "cuantos": 3
+  },
+  {
+   "tipo": "cierre"
+  }
+ ]
+}

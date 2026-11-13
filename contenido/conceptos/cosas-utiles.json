@@ -1,0 +1,33 @@
+{
+ "id": "cosas-utiles",
+ "nombre": "Cosas útiles que no sabías que necesitabas",
+ "objetivo": "Tendencia 'cosas que no sabías'",
+ "temporada": "siempre",
+ "temas": [
+  "rosa",
+  "blanco"
+ ],
+ "requiere": {
+  "max_precio": 600,
+  "minimo": 3
+ },
+ "publicacion": "🤯 Cosas útiles que no sabías que necesitabas (y con descuento real). ¿Cuál te llevas? 👇",
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "emoji": "🤯",
+   "titulo": "COSAS ÚTILES",
+   "texto": "que no sabías que necesitabas",
+   "etiqueta": "y con descuento real"
+  },
+  {
+   "tipo": "productos",
+   "elegir": "variado",
+   "cuantos": 3,
+   "max_precio": 600
+  },
+  {
+   "tipo": "cierre"
+  }
+ ]
+}
