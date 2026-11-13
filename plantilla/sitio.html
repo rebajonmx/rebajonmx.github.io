@@ -78,7 +78,8 @@ h1 em{font-style:normal;color:var(--sol)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px;padding-block:16px 48px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
 .photo{position:relative;text-decoration:none;background:var(--photo);aspect-ratio:1/1;max-width:100%;display:grid;place-items:center;padding:18px;border-bottom:1px solid var(--line)}
-.photo img{width:100%;height:100%;object-fit:contain}
+.photo{overflow:hidden}
+.photo img{position:absolute;inset:18px;width:calc(100% - 36px);height:calc(100% - 36px);object-fit:contain}
 .off{position:absolute;top:12px;left:12px;font-family:var(--display);background:var(--rosa);color:#fff;padding:3px 10px;border-radius:6px;font-size:1rem}
 .body{padding:16px;display:flex;flex-direction:column;gap:8px;flex:1}
 .store{font-size:.74rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
@@ -122,6 +123,7 @@ footer p{margin:0}
   .bar nav{display:none}
   .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
   .photo{padding:10px}
+  .photo img{inset:10px;width:calc(100% - 20px);height:calc(100% - 20px)}
   .body{padding:12px}
   .card h3{font-size:.95rem}
   .now{font-size:1.25rem}

@@ -33,6 +33,44 @@ const precio=(d,t,t0,yN,yP,yA)=>{T(d.n,W/2,yN,60,C.tx,{al:(t-t0)/.15,max:900});
  const cnt=d.was-(d.was-d.now)*E((t-t0-.1)/.55);T(money(t>t0+.7?d.now:Math.round(cnt)),W/2,yP,112,C.ac,{al:(t-t0-.05)/.1,sc:B((t-t0-.05)/.3)});
  x.save();x.font=F(50,700);const ws='antes '+money(d.was),ww=x.measureText(ws).width;T(ws,W/2,yA,50,C.tm,{w:700,al:(t-t0-.2)/.15});x.globalAlpha=cl((t-t0-.2)/.15);x.fillStyle=C.a2;x.fillRect(W/2-ww/2,yA-3,ww,5);x.restore();
  pill('🛒 en '+V.tienda,W/2,yA+95,36,'#fff',C.in,{al:(t-t0-.35)/.2})};
+// ---------- Rebi: mascota de Rebajón MX (etiqueta de precio amarilla, amable). Personaje original. ----------
+// boca: 0..1 (apertura según la voz). ola: brazo saludando. Se dibuja con figuras simples: no usa imágenes.
+const VOZ=V.voz||[],SUBS=V.subs||[];
+const rebi=(X,Y,sc,t,boca=0,ola=1)=>{const bob=Math.sin(t*4.2)*10,sq=1+boca*.05;x.save();x.translate(X,Y+bob);x.scale(sc,sc*sq);
+ const ink='#141a33',amar='#ffcf2e',lw=9;x.lineJoin='round';x.lineCap='round';
+ // sombra
+ x.save();x.globalAlpha=.18;x.fillStyle=ink;x.beginPath();x.ellipse(0,190-bob/sc,120,22,0,0,7);x.fill();x.restore();
+ // hilo de la etiqueta
+ x.strokeStyle=ink;x.lineWidth=6;x.beginPath();x.moveTo(0,-150);x.bezierCurveTo(22,-180,-26,-195,6,-215);x.stroke();
+ // brazos
+ const brazo=(lado,ang)=>{x.save();x.translate(lado*118,10);x.rotate(ang);x.strokeStyle=ink;x.lineWidth=14;x.beginPath();x.moveTo(0,0);x.lineTo(lado*70,-10);x.stroke();
+  x.fillStyle=amar;x.beginPath();x.arc(lado*78,-12,22,0,7);x.fill();x.lineWidth=7;x.stroke();x.restore()};
+ brazo(-1,.35+Math.sin(t*3)*.08);brazo(1,ola?-.9+Math.sin(t*9)*.45:.35+Math.sin(t*3+1)*.08);
+ // pies
+ x.fillStyle=ink;[-50,50].forEach(px=>{x.beginPath();x.ellipse(px,182,34,16,0,0,7);x.fill()});
+ // cuerpo (etiqueta con esquina superior en punta suave)
+ x.beginPath();x.moveTo(-60,-160);x.lineTo(60,-160);x.lineTo(120,-100);x.lineTo(120,140);x.quadraticCurveTo(120,175,85,175);x.lineTo(-85,175);x.quadraticCurveTo(-120,175,-120,140);x.lineTo(-120,-100);x.closePath();
+ x.fillStyle=amar;x.fill();x.strokeStyle=ink;x.lineWidth=lw;x.stroke();
+ // agujero de la etiqueta
+ x.fillStyle=C.bg;x.beginPath();x.arc(0,-118,16,0,7);x.fill();x.lineWidth=6;x.stroke();
+ // ojos (parpadean)
+ const blink=(t%3.4)<.12?.12:1;[-46,46].forEach(ex=>{x.save();x.translate(ex,-40);x.scale(1,blink);x.fillStyle='#fff';x.beginPath();x.ellipse(0,0,30,36,0,0,7);x.fill();x.lineWidth=6;x.stroke();
+  x.fillStyle=ink;x.beginPath();x.arc(ex>0?-4:4,6,15,0,7);x.fill();x.fillStyle='#fff';x.beginPath();x.arc(ex>0?-9:-1,-1,5,0,7);x.fill();x.restore()});
+ // cejas amables
+ x.strokeStyle=ink;x.lineWidth=7;[-46,46].forEach(ex=>{x.beginPath();x.arc(ex,-78,22,Math.PI*1.2,Math.PI*1.8);x.stroke()});
+ // cachetes
+ x.fillStyle='rgba(244,114,182,.55)';[-82,82].forEach(cx=>{x.beginPath();x.ellipse(cx,12,20,13,0,0,7);x.fill()});
+ // boca: sonrisa cerrada o abierta con la voz
+ if(boca<.08){x.strokeStyle=ink;x.lineWidth=8;x.beginPath();x.arc(0,18,30,.15*Math.PI,.85*Math.PI);x.stroke()}
+ else{const h=12+boca*46;x.fillStyle='#7a1030';x.beginPath();x.ellipse(0,34,30+boca*6,h/2,0,0,7);x.fill();x.lineWidth=7;x.strokeStyle=ink;x.stroke();
+  x.fillStyle='#f472b6';x.beginPath();x.ellipse(0,34+h*.22,18,h*.2,0,0,7);x.fill()}
+ // sello de % en la panza
+ x.fillStyle=C.ac;x.beginPath();x.arc(0,112,34,0,7);x.fill();x.lineWidth=6;x.strokeStyle=ink;x.stroke();x.fillStyle=C.sa;x.font=F(40);x.textAlign='center';x.textBaseline='middle';x.fillText('%',0,114);
+ x.restore()};
+const bocaEn=t=>VOZ.length?(VOZ[Math.min(VOZ.length-1,Math.round(t*FPS))]||0):0;
+const subtitulo=t=>{const s=SUBS.find(u=>t>=u.a&&t<=u.b);if(!s)return;const ls=lines(s.t,46,860,800).slice(0,3),h=ls.length*58+40;
+ x.save();x.globalAlpha=cl((t-s.a)/.12)*.96;x.fillStyle='#ffffff';x.shadowColor='rgba(20,26,51,.25)';x.shadowBlur=20;x.beginPath();x.roundRect(W/2-470,1545-h/2,940,h,28);x.fill();x.restore();
+ ls.forEach((l,i)=>T(l,W/2,1545+(i-(ls.length-1)/2)*58,46,'#141a33',{w:800,max:880}))};
 // ---------- Tipos de escena (ver docs/CONCEPTOS.md) ----------
 const ESC={
  gancho:(s,t)=>{bg(t);logo();const [a,b]=shake(t,18);x.save();x.translate(a,b);if(s.emoji)T(s.emoji,W/2,560,150,C.tx,{sc:B(t/.35)});T(s.titulo,W/2,s.emoji?760:700,150,C.ac,{sc:B(t/.35),max:960});x.restore();
@@ -51,6 +89,18 @@ const ESC={
  producto:(s,t)=>{const d=s.producto;bg(t);logo();foto(d,W/2,720,430,.6+.4*E(t/.35),t/.2);
   if(s.etiqueta)pill(s.etiqueta,W/2-250,535,52,C.ac,C.sa,{rot:-.08,sc:B(t/.3)});const [a,b]=shake(t-.3,18);x.save();x.translate(a,b);pill('-'+d.off+'%',W/2+245,550,78,C.a2,C.wh,{rot:.1,sc:t<.3?0:2-1*E((t-.3)/.2)});x.restore();
   precio(d,t,.35,1015,1125,1225)},
+ rebi:(s,t,T0)=>{bg(t);logo();if(s.titulo)P(s.titulo,W/2,560,78,C.ac,{w:900,al:t/.15,max:920});
+  rebi(W/2,1010,1.7*(.7+.3*B(t/.4)),T0,bocaEn(T0),1);if(s.etiqueta)pill(s.etiqueta,W/2,1380,50,C.a2,C.wh,{al:(t-.6)/.15,sc:B((t-.6)/.35),rot:-.03})},
+ adivina:(s,t)=>{const d=s.producto,rev=Math.max(1.6,(s.dur||4.2)-1.5);bg(t);logo();P(s.pregunta||'¿Cuánto crees que cuesta?',W/2,520,64,C.tx,{w:900,al:t/.15});
+  foto(d,W/2,830,420,.6+.4*E(t/.35),t/.2);T(d.n,W/2,1090,56,C.tx,{al:(t-.2)/.15,max:900});
+  if(t<rev){const k=Math.ceil((rev-t)/(rev/3));T(String(Math.max(1,Math.min(3,k))),W/2,1260,170,C.ac,{sc:B(((t%(rev/3))/(rev/3))/.4)});T('antes '+money(d.was),W/2,1390,46,C.tm,{w:700})}
+  else{const tt=t-rev;conf(tt);T(money(d.now),W/2,1240,130,C.ac,{sc:B(tt/.35)});pill('-'+d.off+'%  ·  antes '+money(d.was),W/2,1385,44,C.a2,C.wh,{sc:B((tt-.15)/.35),al:(tt-.15)/.1})}},
+ califica:(s,t)=>{const d=s.producto,cal=d.calif||8;bg(t);logo();if(s.etiqueta)pill(s.etiqueta,W/2-250,535,52,C.ac,C.sa,{rot:-.08,sc:B(t/.3)});
+  foto(d,W/2,740,400,.6+.4*E(t/.35),t/.2);T(d.n,W/2,1000,56,C.tx,{al:(t-.2)/.15,max:900});
+  T(money(d.now)+'  (-'+d.off+'%)',W/2,1085,58,C.ac,{al:(t-.3)/.15});
+  const v=cal*E((t-.6)/1.1);x.save();x.globalAlpha=cl((t-.5)/.15);x.fillStyle='rgba(20,26,51,.12)';x.beginPath();x.roundRect(170,1180,740,44,22);x.fill();
+  x.fillStyle=cal>=8?C.ok:C.ac;x.beginPath();x.roundRect(170,1180,Math.max(44,740*v/10),44,22);x.fill();x.restore();
+  T(v.toFixed(1)+' / 10',W/2,1300,96,C.tx,{al:(t-.5)/.15,sc:t>1.7?B((t-1.7)/.3):1});T('Calificación Rebajón',W/2,1395,40,C.tm,{w:700,al:(t-.6)/.2})},
  cierre:(s,t)=>{bg(t);conf(t);logo();
   T(s.titulo||'Solo ofertas',W/2,560,104,C.tx,{sc:B(t/.4),al:t/.15});T(s.titulo2||'REALES ✅',W/2,685,124,C.ac,{sc:B((t-.15)/.4),al:(t-.15)/.15});
   T('con link directo a la tienda',W/2,795,48,C.tm,{w:700,al:(t-.4)/.3});
@@ -58,10 +108,13 @@ const ESC={
   pill(V.telegram?'🔔 Alertas gratis: WhatsApp y Telegram':'🔔 Alertas gratis en WhatsApp',W/2,1050,46,C.ok,C.wh,{sc:B((t-.9)/.4),al:(t-.9)/.15});
   T('📌 Links en el perfil y en los comentarios',W/2,1185,44,C.tx,{al:(t-1.2)/.3});
   T('Síguenos para más rebajas 🔥',W/2,1290,42,C.tm,{w:700,al:(t-1.5)/.3})}};
-const DUR={gancho:2.6,texto:3.2,numero:2.8,lista:3.8,comparacion:3.8,producto:2.4,cierre:3.4};
-const S=V.escenas.map(s=>({s,d:s.seg||DUR[s.tipo]||3}));
+const DUR={gancho:2.6,texto:3.2,numero:2.8,lista:3.8,comparacion:3.8,producto:2.4,cierre:3.4,rebi:3.2,adivina:4.2,califica:3.6};
+const S=V.escenas.map(s=>({s,d:s.seg||DUR[s.tipo]||3}));S.forEach(e=>e.s.dur=e.d);
 const dur=S.reduce((a,e)=>a+e.d,0);
-const draw=t=>{let a=0;for(const e of S){if(t<a+e.d||e===S[S.length-1]){(ESC[e.s.tipo]||ESC.texto)(e.s,Math.min(t-a,e.d));break}a+=e.d}};
+// Rebi pequeño en la esquina mientras habla (en videos con mascota), salvo en escenas donde ya aparece o no cabe
+const SIN_REBI=['rebi','lista','cierre','comparacion'];
+const draw=t=>{let a=0;for(const e of S){if(t<a+e.d||e===S[S.length-1]){const tl=Math.min(t-a,e.d);(ESC[e.s.tipo]||ESC.texto)(e.s,tl,t);
+  if(V.mascota&&!SIN_REBI.includes(e.s.tipo))rebi(118,1385,.55,t,bocaEn(t),0);break}a+=e.d}if(V.mascota)subtitulo(t)};
 return {c,x,dur,draw}}
 // Música propia sin derechos: cambia con cada video y cada día (tempo, tono, bajo y melodía).
 function beat(ac,out,dur){let s=(SEED%2147483646)+1;const R=()=>(s=s*16807%2147483647)/2147483647;
