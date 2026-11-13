@@ -125,8 +125,28 @@ jobs:
 
       # 4. Página en GitHub Pages (gratis, sin límite de publicaciones). Antes era Netlify: su plan gratis
       #    se quedó sin créditos el 12 nov 2026. Página: https://rebajonmx.github.io
-      - name: 4a. Preparar página
-        run: touch public/.nojekyll
+      - name: 4a. Preparar página (y conservar videos recientes)
+        run: |
+          touch public/.nojekyll
+          # Cada publicación reemplaza la página completa. Facebook procesa el video minutos después y, si el
+          # archivo ya no está, falla ("unable to process the media", pasó el 12-nov-2026). Se conservan los
+          # videos de las últimas 8 publicaciones bajándolos de la página actual.
+          python3 - <<'PY'
+          import json, pathlib, urllib.request
+          media = pathlib.Path("public/media")
+          try:
+              hist = json.load(open("data/historial.json", encoding="utf-8"))
+          except Exception:
+              hist = []
+          for h in hist[-8:]:
+              a = h.get("archivo", "")
+              if a.endswith(".mp4") and not (media / a).exists():
+                  try:
+                      urllib.request.urlretrieve("https://rebajonmx.github.io/media/" + a, media / a)
+                      print("conservado", a)
+                  except Exception as e:
+                      print("no disponible", a, e)
+          PY
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
