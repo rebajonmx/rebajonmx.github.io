@@ -162,6 +162,14 @@ jobs:
             sleep 10
           done
 
+      - name: 4c. Copia del video para Facebook (CDN)
+        if: github.event_name == 'schedule' || github.event.inputs.publicar == 'true'
+        continue-on-error: true
+        working-directory: scripts
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python copia_cdn.py
+
       - name: 5. Publicar en Instagram, Facebook y TikTok (Buffer)
         id: buffer
         if: github.event_name == 'schedule' || github.event.inputs.publicar == 'true'

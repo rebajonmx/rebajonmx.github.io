@@ -1,0 +1,41 @@
+name: Reintentar Facebook (video actual)
+
+# Vuelve a mandar a Facebook el video que está ahora en la página (rebajonmx.github.io/media/turno.json),
+# usando la copia en CDN (ver scripts/copia_cdn.py). Úsalo si Buffer muestra
+# "Facebook was unable to process the media". Pestaña Actions → este flujo → Run workflow.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rebajon
+  cancel-in-progress: false
+
+jobs:
+  facebook:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - name: Bajar el video actual de la página
+        run: |
+          mkdir -p public/media
+          curl -sSf -o public/media/turno.json https://rebajonmx.github.io/media/turno.json
+          A=$(python3 -c "import json;print(json.load(open('public/media/turno.json'))['archivo'])")
+          curl -sSf -o "public/media/$A" "https://rebajonmx.github.io/media/$A"
+          ls -la public/media
+      - name: Copia en CDN
+        working-directory: scripts
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python copia_cdn.py
+      - name: Publicar solo en Facebook
+        working-directory: scripts
+        env:
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+        run: python publicar_buffer.py --solo facebook
