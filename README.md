@@ -18,5 +18,5 @@ Página de ofertas verificadas + videos diarios en Instagram, Facebook y TikTok.
 | Instrucciones listas para pegar en una IA gratis | **[docs/PROMPTS.md](docs/PROMPTS.md)** |
 | Correr ahora o probar sin publicar | Pestaña **Actions** → "Rebajón MX automático" → **Run workflow** |
 
-Herramientas (todas gratis): GitHub Actions (servidor y horario), Netlify (página), Buffer (publicación en redes),
+Herramientas (todas gratis): GitHub Actions (servidor y horario), GitHub Pages (página, rebajonmx.github.io), Buffer (publicación en redes),
 API de Mercado Libre (datos de productos, opcional), Telegram (alertas, opcional), Gemini (ideas, opcional).

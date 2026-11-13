@@ -5,7 +5,7 @@ Lee este archivo completo antes de cambiar algo. Aquí está todo lo necesario; 
 ## Qué es
 
 **Rebajón MX** es una página de ofertas verificadas de Mercado Libre para México (programa de afiliados:
-cada oferta usa un link de afiliado `meli.la/...`). Página: https://rebajonmx.netlify.app.
+cada oferta usa un link de afiliado `meli.la/...`). Página: https://rebajonmx.github.io.
 Gana dinero por comisiones de afiliado. **Presupuesto: $0** — todo debe seguir siendo gratis.
 Dueño: opera desde el navegador y quiere intervención humana e IA **mínimas**: el sistema debe correr solo.
 
@@ -20,7 +20,7 @@ GitHub Actions  (.github/workflows/rebajon.yml, 7:00 y 19:00 CDMX = 13:00 y 01:0
   2 construir_sitio.py     plantilla/sitio.html + ofertas → public/index.html y public/whatsapp.txt
   3 generar_video.py       contenido.py elige concepto+color → plantilla/motor.js dibuja en Chromium (Playwright)
                            cuadro por cuadro → ffmpeg → public/media/video-AAAAMMDD-HHMM.mp4 + turno.json
-  4 Netlify CLI            publica public/ (página + video) en rebajonmx.netlify.app
+  4 GitHub Pages           publica public/ (página + video) en rebajonmx.github.io (deploy-pages; repo PÚBLICO)
   5 publicar_buffer.py     API de Buffer (GraphQL, api.buffer.com) → Reel en Instagram, Reel en Facebook, video en TikTok
   6 publicar_telegram.py   canal de Telegram (opcional)
   7 auditar.py             revisa todo → ESTADO.md (falla si hay problema grave → GitHub manda correo)
@@ -81,7 +81,7 @@ GitHub Actions  (.github/workflows/rebajon.yml, 7:00 y 19:00 CDMX = 13:00 y 01:0
 ## Estado actual (actualízalo al terminar cada cambio importante)
 
 - 2026-11-11: sistema en producción. Buffer conectado a Instagram @rebajonmx, Facebook página Rebajón MX y TikTok @rebajonmx.
-  Secretos configurados: NETLIFY_AUTH_TOKEN, NETLIFY_SITE_ID, BUFFER_API_KEY, ML_CLIENT_ID, ML_CLIENT_SECRET.
+  Secretos configurados: BUFFER_API_KEY, ML_CLIENT_ID, ML_CLIENT_SECRET.
 - 2026-11-11: API de Mercado Libre activa (app "Rebajon MX Ofertas", Client ID 7642238823271133). 38 de 40 ofertas
   actualizan precio solo; power bank (/up/MLMU…) y tablet quedan con precio manual (vencen 21 nov).
 - Motor v2 con 10 conceptos y 3 colores. Campaña activa: Buen Fin 2026 (13–17 nov).
