@@ -26,9 +26,21 @@ def conceptos():
     return out
 
 
+def calificacion(o):
+    """'Calificación Rebajón' de 1 a 10: descuento + calificación de compradores (fórmula transparente, ver CONCEPTOS.md)."""
+    try:
+        r = float(o.get("rating") or 4.5)
+    except ValueError:
+        r = 4.5
+    return max(5.0, min(9.9, round(4 + o["off"] * 0.07 + (r - 4.5) * 3, 1)))
+
+
 def producto_video(o):
     return {"n": o.get("short") or corto(o["name"]), "e": emoji(o["name"]), "now": o["now"], "was": o["was"],
-            "off": o["off"], "img": o["img"], "cat": o.get("cat", "")}
+            "off": o["off"], "img": o["img"], "cat": o.get("cat", ""), "calif": calificacion(o)}
+
+
+UN_PRODUCTO = ("producto", "adivina", "califica")
 
 
 def filtrar(ofertas, esc):
@@ -93,7 +105,7 @@ def cumple(c, ofertas, cat):
         lista = [o for o in lista if o.get("cat") == cat]
         if not cat:
             return False
-    usa_productos = any(e["tipo"] in ("producto", "productos") for e in c["escenas"])
+    usa_productos = any(e["tipo"] in ("productos",) + UN_PRODUCTO for e in c["escenas"])
     return len(lista) >= req.get("minimo", 1 if usa_productos else 0)
 
 
@@ -110,7 +122,7 @@ def elegir(forzar_concepto=None, forzar_tema=None):
     ultimo = hist[-1]["concepto"] if hist else None
     usos = lambda clave, val: sum(1 for h in hist if h.get(clave) == val)
     pool = [c for c in candidatos if c["id"] != ultimo] or candidatos
-    concepto = min(pool, key=lambda c: (usos("concepto", c["id"]), c["id"]))
+    concepto = min(pool, key=lambda c: (usos("concepto", c["id"]) / c.get("peso", 1), c["id"]))   # "peso": más seguido
     temas = concepto.get("temas") or list(CONFIG["temas"])
     tema = forzar_tema or min(temas, key=lambda t: (usos("tema", t), hist[-1]["tema"] == t if hist else False, t))
     return armar(concepto, tema, ofertas, cat)
@@ -121,7 +133,7 @@ def armar(concepto, tema, ofertas, cat):
     c = rellenar(concepto, v)
     escenas, usados = [], set()
     for e in c["escenas"]:
-        if e["tipo"] == "producto":
+        if e["tipo"] in UN_PRODUCTO:
             lista = [o for o in filtrar(ofertas, e) if o["url"] not in usados] or filtrar(ofertas, e)
             if lista:
                 o = lista[min(e.get("indice", 0), len(lista) - 1)]
@@ -131,8 +143,10 @@ def armar(concepto, tema, ofertas, cat):
             lista = [o for o in filtrar(ofertas, e) if o["url"] not in usados][:e.get("cuantos", 3)]
             for k, o in enumerate(lista):
                 usados.add(o["url"])
-                escenas.append({"tipo": "producto", "etiqueta": f"#{k + 1}", "producto": producto_video(o),
-                                "seg": e.get("seg_cada", 2.4)})
+                esc = {"tipo": e.get("como", "producto"), "etiqueta": f"#{k + 1}", "producto": producto_video(o)}
+                if e.get("como", "producto") == "producto":
+                    esc["seg"] = e.get("seg_cada", 2.4)
+                escenas.append(esc)
         else:
             escenas.append(e)
     if not escenas or escenas[-1]["tipo"] != "cierre":
@@ -141,7 +155,8 @@ def armar(concepto, tema, ofertas, cat):
             "publicacion": c["publicacion"].strip() + pie_publicacion(),
             "video": {"tema": CONFIG["temas"][tema], "logo": CONFIG["logo"], "web": CONFIG["web"],
                       "tienda": CONFIG["tienda"], "telegram": bool(CONFIG.get("telegram")),
-                      "seed": hoy().toordinal() * 7 + len(leer_json(HISTORIAL, [])), "escenas": escenas}}
+                      "seed": hoy().toordinal() * 7 + len(leer_json(HISTORIAL, [])), "escenas": escenas,
+                      "mascota": bool(c.get("mascota"))}}
 
 
 if __name__ == "__main__":

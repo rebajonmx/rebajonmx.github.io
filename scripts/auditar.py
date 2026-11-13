@@ -17,6 +17,24 @@ def revisar_url(url):
         return 0, str(e)
 
 
+def revisar_links(ofertas):
+    """Cada link de afiliado debe redirigir a Mercado Libre con el código de afiliado (matt_word)."""
+    import re
+    malos, codigos = [], set()
+    for o in ofertas:
+        try:
+            r = requests.get(o["url"], allow_redirects=False, timeout=20, headers={"User-Agent": "Mozilla/5.0"})
+            destino = r.headers.get("location", "")
+            m = re.search(r"matt_word=([\w-]+)", destino)
+            if r.status_code in (301, 302, 303, 307, 308) and "mercadolibre" in destino and m:
+                codigos.add(m.group(1))
+            else:
+                malos.append(f"{o['name'][:40]} ({o['url']} → HTTP {r.status_code})")
+        except requests.RequestException as e:
+            malos.append(f"{o['name'][:40]} ({o['url']} → {str(e)[:40]})")
+    return malos, codigos
+
+
 def main():
     graves, avisos, ok = [], [], []
     buffer = sys.argv[1] if len(sys.argv) > 1 else "desconocido"
@@ -44,6 +62,13 @@ def main():
         avisos.append(f"Hay {len(vig)} ofertas vigentes; conviene tener al menos 8.")
     else:
         ok.append(f"{len(vig)} ofertas vigentes.")
+    malos, codigos = revisar_links(vig)
+    if malos:
+        (graves if len(malos) > len(vig) / 3 else avisos).append(f"{len(malos)} links de afiliado no abren bien: " + "; ".join(malos[:5]))
+    else:
+        ok.append(f"{len(vig)}/{len(vig)} links de afiliado abren Mercado Libre con tu código de afiliado ({', '.join(sorted(codigos))}).")
+    if len(codigos) > 1:
+        avisos.append(f"Hay links con distintos códigos de afiliado: {', '.join(sorted(codigos))}. Revisa que todos sean tuyos.")
     dias = CONFIG.get("dias_vigencia_precio", 10)
     por_vencer = [o["name"] for o in cargar() if o.get("active") and o.get("revisado")
                   and (hoy() - datetime.date.fromisoformat(o["revisado"])).days >= dias - 2]
