@@ -100,6 +100,15 @@ GitHub Actions  (.github/workflows/rebajon.yml, 7:00 y 19:00 CDMX = 13:00 y 01:0
   cambiar la llave de Buffer (quedó visible en una captura).
 - WhatsApp: decidido NO automatizar (no hay vía oficial). Se publica a mano con el texto de /whatsapp.txt.
 
+## Rebi: dos voces en prueba A/B (desde 12-nov-2026)
+
+- Rebi es el mismo dibujo (etiqueta amarilla original). Solo cambian la voz y, muy sutil, los cachetes:
+  mujer = voz Piper es_MX-claude-high + cachetes rosas; hombre = voz Piper es_MX-ald-medium + cachetes azul suave.
+  Mismo ritmo para ambas (length_scale 0.92, sentence_silence 0.12), sin efectos de tono (el dueño los rechazó).
+- Se alternan solas en cada video con Rebi (`elegir_rebi()` en generar_video.py); a mano: Run workflow → rebi.
+- Queda en `historial.json` (campo `rebi`) y en ESTADO.md para comparar cuál logra más reproducciones.
+- Dueño rechazó: Rebi azul con gorra, voz aguda, voz femenina con tono bajado. No volver a esas versiones.
+
 ## Ideas siguientes (por prioridad)
 
 1. Leer métricas de cada publicación desde la API de Buffer y agregarlas a `historial.json` para elegir conceptos/colores
