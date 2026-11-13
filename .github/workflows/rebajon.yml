@@ -76,14 +76,14 @@ jobs:
       - uses: actions/cache@v4
         with:
           path: ~/piper
-          key: piper-2023.11.14-2-esmx-ald-v2
+          key: piper-2023.11.14-2-esmx-claude-v3
 
       - name: Instalar voz de Rebi (Piper, gratis y libre)
         continue-on-error: true
         run: |
           mkdir -p ~/piper && cd ~/piper
           [ -x piper/piper ] || curl -sSLf https://github.com/rhasspy/piper/releases/download/2023.11.14-2/piper_linux_x86_64.tar.gz | tar xz
-          for v in es/es_MX/ald/medium/es_MX-ald-medium es/es_MX/claude/high/es_MX-claude-high; do   # ald = voz masculina
+          for v in es/es_MX/claude/high/es_MX-claude-high; do   # voz original de Rebi (se pasa a voz de hombre en generar_video.py)
             n=$(basename $v)
             if [ ! -s $n.onnx ]; then
               curl -sSLf -o $n.onnx https://huggingface.co/rhasspy/piper-voices/resolve/v1.0.0/$v.onnx && \
@@ -91,7 +91,7 @@ jobs:
             fi
             [ -s $n.onnx ] && break
           done
-          M=$(ls ~/piper/es_MX-ald-medium.onnx ~/piper/*.onnx 2>/dev/null | head -1)
+          M=$(ls ~/piper/es_MX-claude-high.onnx ~/piper/*.onnx 2>/dev/null | head -1)
           echo "PIPER_BIN=$HOME/piper/piper/piper" >> "$GITHUB_ENV"
           echo "PIPER_MODEL=$M" >> "$GITHUB_ENV"
           echo "Hola, soy Rebi" | ~/piper/piper/piper --model "$M" --output_file /tmp/prueba.wav && ls -la /tmp/prueba.wav
