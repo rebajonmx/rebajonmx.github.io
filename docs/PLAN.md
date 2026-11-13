@@ -79,7 +79,7 @@ siempre). Una IA de video gratuita da pocos segundos al día y estilo inconsiste
 5. **Más tiendas:** Amazon Afiliados y otras tiendas mexicanas con programa de afiliados. Solo cambia el link y
    la etiqueta de tienda (agregar campo `tienda` a `links.txt`).
 6. **Más tipos de video:** encuesta, "antes vs. después", cuenta regresiva animada, carrusel de imágenes.
-7. **Clientes:** cada cliente = copia del repositorio + su `config/marca.json` + su Netlify y Buffer (ver MANUAL §10).
+7. **Clientes:** cada cliente = copia del repositorio + su `config/marca.json` + su GitHub Pages y Buffer (ver MANUAL §10).
    Ofrecer el servicio a tiendas o creadores que quieran su propia página de ofertas automatizada.
 8. **Correo/boletín:** cuando haya audiencia, un boletín semanal gratis (por ejemplo, plan gratis de un servicio
    de boletines) con las mejores ofertas.
@@ -91,6 +91,6 @@ siempre). Una IA de video gratuita da pocos segundos al día y estilo inconsiste
 | Vence o se revoca la llave de Buffer | ESTADO 🔴 "Falló la publicación" | Nueva llave en Buffer → reemplazar `BUFFER_API_KEY` |
 | Una red desconecta su cuenta en Buffer | Error en el paso 5 con el nombre de la red | Buffer → Channels → reconectar |
 | Pocas ofertas vigentes | ESTADO 🟡/🔴 | Agregar links / actualizar precios |
-| Cambian límites gratuitos (Gemini, GitHub, Buffer, Netlify) | Errores de cuota | Revisar páginas oficiales; el sistema funciona sin Gemini |
+| Cambian límites gratuitos (Gemini, GitHub, Buffer) | Errores de cuota | Revisar páginas oficiales; el sistema funciona sin Gemini |
 | GitHub pausa horarios tras 60 días sin cambios | No corre a la hora | Actions → habilitar flujo (los commits automáticos lo evitan) |
 | Mercado Libre cambia su API | Paso 1 con error de API | Seguir con precios manuales; pedir a Jules que ajuste `mercadolibre.py` |

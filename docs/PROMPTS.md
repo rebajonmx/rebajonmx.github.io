@@ -79,6 +79,6 @@ Después, en contenido.py, da más probabilidad a los conceptos y colores con m�
 
 ```
 Quiero usar este sistema para otro cliente: [nombre, página, colores, redes, tienda].
-Dime paso a paso qué cuentas crear (GitHub, Netlify, Buffer) y prepara el contenido de config/marca.json
+Dime paso a paso qué cuentas crear (GitHub, Buffer) y prepara el contenido de config/marca.json
 y un data/links.txt de ejemplo para ese cliente. No modifiques el repositorio de Rebajón MX.
 ```

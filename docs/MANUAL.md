@@ -61,7 +61,7 @@ y cruza con el historial. Lo que funcione mejor: haz más conceptos parecidos o 
 ## 6. WhatsApp y Telegram
 
 - **WhatsApp:** los canales de WhatsApp **no permiten** publicar en automático de forma oficial (las herramientas no oficiales
-  pueden hacer que bloqueen el número). El texto listo del día queda en la página: `rebajonmx.netlify.app/whatsapp.txt`.
+  pueden hacer que bloqueen el número). El texto listo del día queda en la página: `rebajonmx.github.io/whatsapp.txt`.
   Recomendación: fija en el canal un mensaje invitando al canal de Telegram y a la página.
 - **Telegram (100% automático y gratis):**
   1. En Telegram crea un canal público (ej. `@rebajonmx`).
@@ -84,7 +84,7 @@ cuenta de Samuel. Secretos `ML_CLIENT_ID` y `ML_CLIENT_SECRET` ya guardados en G
 
 | Secreto | Para qué | Obligatorio |
 |---|---|---|
-| `NETLIFY_AUTH_TOKEN`, `NETLIFY_SITE_ID` | Publicar la página | Sí |
+| (ninguno) | La página se publica con GitHub Pages: el repositorio debe ser público y Settings → Pages → Source = "GitHub Actions". Netlify se dejó el 12-nov-2026 (plan gratis sin créditos) | — |
 | `BUFFER_API_KEY` | Publicar en Instagram, Facebook y TikTok | Sí |
 | `ML_CLIENT_ID`, `ML_CLIENT_SECRET` | Precios automáticos y sugerencias de Mercado Libre | Sí (ya están) |
 | `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` | Canal de Telegram | No |
@@ -103,7 +103,7 @@ fechas de la campaña (ej. Buen Fin, Hot Sale, Navidad) y los colores de cada te
 
 1. En GitHub: **Use this template** / o "Fork" del repositorio con otro nombre.
 2. Cambia `config/marca.json` y `data/links.txt` del nuevo cliente.
-3. Crea un sitio en Netlify y una cuenta de Buffer para el cliente; agrega sus secretos (sección 8).
+3. Copia el repositorio con el nombre `<usuario>.github.io`, activa Pages (GitHub Actions) y crea una cuenta de Buffer para el cliente; agrega sus secretos (sección 8).
 Cada cliente queda separado y gratis (GitHub Actions gratis en repos privados: 2,000 minutos/mes; cada ejecución usa ~5).
 
 ## 11. Problemas comunes

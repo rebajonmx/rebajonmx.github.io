@@ -12,9 +12,9 @@ Esto es lo que **una persona** hace para multiplicar el alcance. Todo es copiar 
 ✅ Precio de antes vs. ahora · solo descuentos de verdad
 👇 Todas con link directo
 ```
-- Link de la bio: `https://rebajonmx.netlify.app`
+- Link de la bio: `https://rebajonmx.github.io`
 - Facebook (página → Editar → Información): mismo texto + botón de acción "Ir al sitio web" con la misma página.
-- TikTok: si aún no te deja poner link en la bio (pide 1,000 seguidores), escribe en la bio `rebajonmx.netlify.app` como texto.
+- TikTok: si aún no te deja poner link en la bio (pide 1,000 seguidores), escribe en la bio `rebajonmx.github.io` como texto.
 
 **Fijar 3 publicaciones** arriba del perfil (Instagram y TikTok: ⋯ → Fijar): el video "Compra segura", el carrusel
 "Top 5 ofertas de hoy" más reciente y el video que más vistas tenga. Generan confianza al que llega por primera vez.
@@ -29,9 +29,9 @@ Les comparto las ofertas de hoy que sí tienen descuento real (revisé el precio
 Si buscan algo en especial, coméntenme y les digo si está en oferta.
 ```
 **Estados de WhatsApp** (tu número personal o de negocio): sube 1 vez al día la imagen del carrusel o el video,
-con el texto de `rebajonmx.netlify.app/whatsapp.txt`. Tus contactos ven tus estados sin que les escribas.
+con el texto de `rebajonmx.github.io/whatsapp.txt`. Tus contactos ven tus estados sin que les escribas.
 
-**Canal de WhatsApp:** publica 1 vez al día el texto de `rebajonmx.netlify.app/whatsapp.txt` (ya viene armado).
+**Canal de WhatsApp:** publica 1 vez al día el texto de `rebajonmx.github.io/whatsapp.txt` (ya viene armado).
 
 **Botón "Compartir" de la página:** cada oferta tiene su botón verde de WhatsApp. Pide en tus publicaciones:
 "si a alguien le sirve, compártesela".
@@ -39,7 +39,7 @@ con el texto de `rebajonmx.netlify.app/whatsapp.txt`. Tus contactos ven tus esta
 ## 3. Interacción (5 min al día) — el algoritmo premia comentarios y guardados
 
 - Responde **todos** los comentarios en la primera hora (aunque sea con un emoji o "¡va!").
-- Si alguien pregunta por un producto: "Lo tienes en la página con link directo 👉 rebajonmx.netlify.app".
+- Si alguien pregunta por un producto: "Lo tienes en la página con link directo 👉 rebajonmx.github.io".
 - Los videos y carruseles ya piden comentar, guardar y compartir: no hace falta agregar nada.
 
 ## 4. Lo barato: anuncios solo donde ya funciona (opcional, $50–100 MXN al día)
