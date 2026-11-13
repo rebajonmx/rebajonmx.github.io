@@ -94,3 +94,15 @@ siempre). Una IA de video gratuita da pocos segundos al día y estilo inconsiste
 | Cambian límites gratuitos (Gemini, GitHub, Buffer) | Errores de cuota | Revisar páginas oficiales; el sistema funciona sin Gemini |
 | GitHub pausa horarios tras 60 días sin cambios | No corre a la hora | Actions → habilitar flujo (los commits automáticos lo evitan) |
 | Mercado Libre cambia su API | Paso 1 con error de API | Seguir con precios manuales; pedir a Jules que ajuste `mercadolibre.py` |
+
+## Pendiente después del Buen Fin (martes 18 nov 2026): volver privado el código
+
+Desde el 12-nov-2026 el repositorio es público (`rebajonmx/rebajonmx.github.io`) porque GitHub Pages gratis lo exige
+y Netlify bloqueó las publicaciones (plan gratis sin créditos). Las claves están en Secrets (no se ven), pero el código sí.
+Plan para dejarlo privado y lo más seguro posible:
+1. Crear un repositorio público nuevo **solo para la página** (`rebajonmx.github.io`) y renombrar este a `rebajonmx-auto` y volverlo **privado**.
+2. En el flujo, el paso 4 publica la carpeta `public/` en ese repositorio con una clave *fine-grained* (solo "Contents: write"
+   sobre ese único repositorio, con vencimiento) guardada como secreto `PAGINA_TOKEN`. La persona la crea y la pega; la IA no.
+3. Activar verificación en dos pasos en GitHub y en el Gmail de la cuenta.
+4. Revisar que los registros de Actions no impriman datos personales.
+5. Probar con publicar=false, luego una corrida real, y confirmar ESTADO.md en 🟢.
