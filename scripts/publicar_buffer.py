@@ -59,16 +59,19 @@ def main():
         print("Sin BUFFER_API_KEY: se omite la publicación.")
         return
     url = f"https://{WEB}/media/{turno['archivo']}"
+    solo = sys.argv[sys.argv.index("--solo") + 1] if "--solo" in sys.argv else None
     redes = CONFIG.get("redes", list(META))
     ids, fallas = {}, []
     for c in canales():
-        if c["service"] not in redes:
+        if c["service"] not in redes or (solo and c["service"] != solo):
             continue
         if carrusel:
             activos = [{"image": {"url": f"https://{WEB}/media/{a}"}} for a in turno["archivos"]]
             meta = META_FOTOS[c["service"]]
         else:
-            activos = [{"video": {"url": url, "metadata": {"thumbnailOffset": 1500}}}]
+            # Facebook no baja videos de github.io: usa la copia en CDN si existe (ver copia_cdn.py).
+            vurl = os.environ.get("VIDEO_URL_FACEBOOK") if c["service"] == "facebook" else None
+            activos = [{"video": {"url": vurl or url, "metadata": {"thumbnailOffset": 1500}}}]
             meta = META[c["service"]]
         entrada = {"text": turno["publicacion"], "channelId": c["id"], "schedulingType": "automatic", "mode": "shareNow",
                    "metadata": meta, "assets": activos}
@@ -81,6 +84,11 @@ def main():
                 fallas.append(f"{c['service']}: {r.get('message')}")
         except Exception as e:
             fallas.append(f"{c['service']}: {str(e)[:200]}")
+    if solo:   # reintento de una sola red: no se duplica el registro
+        print("Reintento en", solo, ":", ids or fallas)
+        if fallas and not ids:
+            sys.exit(1)
+        return
     hist = leer_json(HISTORIAL, [])
     hist.append({"fecha": ahora().strftime("%Y-%m-%d %H:%M"), "concepto": turno["concepto"], "tema": turno["tema"],
                  "categoria": turno.get("categoria", ""), "archivo": turno["archivo"], "rebi": turno.get("rebi", ""), "buffer": ids, "errores": fallas})
