@@ -49,9 +49,25 @@ y los textos. O escribe la idea en `contenido/pedido.txt` y deja que Gemini lo a
 | `producto` | `elegir`, `indice`, `categoria` (o `categorias`: lista), `max_precio`, `etiqueta` | Foto del producto, % de descuento y precio animado. |
 | `productos` | igual que `producto` + `cuantos` (1 a 5) | Varias escenas de producto seguidas con #1, #2, #3. |
 | `cierre` | `titulo`, `titulo2` | Se agrega solo al final. Solo ponlo si quieres cambiar sus títulos. |
+| `adivina` | igual que `producto` + `pregunta` | Juego "¿Adivinas el precio?": foto, cuenta regresiva 3-2-1 y revelación con confeti. |
+| `califica` | igual que `producto` | "Calificación Rebajón" de 5 a 9.9 = 4 + descuento×0.07 + (estrellas−4.5)×3 (fórmula fija, nunca inventada). |
+| `rebi` | `titulo`, `etiqueta`, `dice` | Rebi, la mascota, en grande saludando. |
 
 Todas aceptan `seg` (duración en segundos) si quieres cambiar la duración normal.
 `elegir`: `top` (más descuento), `barato` (precio más bajo), `aleatorio`, `vendidos` (más ventas) o `variado` (rota: cada publicación muestra productos distintos; recomendado para listas).
+
+
+En `productos` se puede poner `"como": "adivina"` o `"como": "califica"` para usar esos formatos con varios productos.
+
+### Rebi (mascota con voz)
+
+- En el concepto pon `"mascota": true`. Rebi aparece en pequeño en las escenas y habla con voz (Piper, gratis) y subtítulos.
+- Cualquier escena acepta `"dice"`: lo que dice Rebi. Si no lo pones, Rebi lo arma solo en `producto`, `califica`,
+  `adivina` (`"dice2"` es la revelación) y `cierre`. La escena dura lo que tarda en decirlo.
+- Si la voz no está disponible el video sale igual, con subtítulos.
+- Personalidad de Rebi: amable, cercano, honesto. Habla en primera persona ("yo reviso los precios por ti"), frases cortas,
+  nunca exagera ni promete de más.
+- `"peso": 3` hace que un concepto salga más seguido (por defecto 1).
 
 ## Variables que se rellenan solas
 
