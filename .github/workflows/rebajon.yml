@@ -1,11 +1,13 @@
 name: Rebajón MX automático
 
-# Corre solo 2 veces al día (4 durante una campaña, ver config/marca.json → publicaciones_extra_en_campana).
+# Corre solo 2 veces al día (6 durante una campaña, ver config/marca.json → publicaciones_extra_en_campana).
 # También se puede correr a mano: pestaña Actions → "Rebajón MX automático" → Run workflow.
 on:
   schedule:
     - cron: "0 13 * * *"   # 7:00 a. m. Ciudad de México
+    - cron: "0 16 * * *"   # 10:00 a. m. Ciudad de México (solo durante campaña)
     - cron: "0 18 * * *"   # 12:00 p. m. Ciudad de México (solo durante campaña)
+    - cron: "0 21 * * *"   # 3:00 p. m. Ciudad de México (solo durante campaña)
     - cron: "0 23 * * *"   # 5:00 p. m. Ciudad de México (solo durante campaña)
     - cron: "0 1 * * *"    # 7:00 p. m. Ciudad de México
   workflow_dispatch:
@@ -41,7 +43,7 @@ jobs:
         run: |
           python3 - <<'PY' >> "$GITHUB_OUTPUT"
           from comun import CONFIG, campana
-          extra = "${{ github.event.schedule }}" in ("0 18 * * *", "0 23 * * *")
+          extra = "${{ github.event.schedule }}" in ("0 16 * * *", "0 18 * * *", "0 21 * * *", "0 23 * * *")
           seguir = (not extra) or (CONFIG.get("publicaciones_extra_en_campana", True) and campana()["etapa"] == "durante")
           print("seguir=" + ("true" if seguir else "false"))
           PY
@@ -62,8 +64,31 @@ jobs:
       - name: Instalar herramientas
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-core fonts-noto-color-emoji
-          pip install -q requests==2.32.3 playwright==1.48.0
+          pip install -q requests==2.32.3 playwright==1.48.0 num2words==0.5.14
           python -m playwright install --with-deps chromium
+
+      - uses: actions/cache@v4
+        with:
+          path: ~/piper
+          key: piper-2023.11.14-2-esmx-v1
+
+      - name: Instalar voz de Rebi (Piper, gratis y libre)
+        continue-on-error: true
+        run: |
+          mkdir -p ~/piper && cd ~/piper
+          [ -x piper/piper ] || curl -sSLf https://github.com/rhasspy/piper/releases/download/2023.11.14-2/piper_linux_x86_64.tar.gz | tar xz
+          for v in es/es_MX/claude/high/es_MX-claude-high es/es_MX/ald/medium/es_MX-ald-medium; do
+            n=$(basename $v)
+            if [ ! -s $n.onnx ]; then
+              curl -sSLf -o $n.onnx https://huggingface.co/rhasspy/piper-voices/resolve/v1.0.0/$v.onnx && \
+              curl -sSLf -o $n.onnx.json https://huggingface.co/rhasspy/piper-voices/resolve/v1.0.0/$v.onnx.json || rm -f $n.onnx*
+            fi
+            [ -s $n.onnx ] && break
+          done
+          M=$(ls ~/piper/*.onnx | head -1)
+          echo "PIPER_BIN=$HOME/piper/piper/piper" >> "$GITHUB_ENV"
+          echo "PIPER_MODEL=$M" >> "$GITHUB_ENV"
+          echo "Hola, soy Rebi" | ~/piper/piper/piper --model "$M" --output_file /tmp/prueba.wav && ls -la /tmp/prueba.wav
 
       - name: 1. Ofertas (links.txt + API de Mercado Libre)
         working-directory: scripts
