@@ -53,6 +53,12 @@ jobs:
     needs: turno
     if: needs.turno.outputs.seguir == 'true'
     runs-on: ubuntu-24.04   # fijo: probado así (ubuntu-latest cambia de versión)
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
@@ -110,11 +116,24 @@ jobs:
         working-directory: scripts
         run: python generar_carrusel.py
 
-      - name: 4. Publicar página en Netlify
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        run: npx -y netlify-cli@17.38.1 deploy --prod --dir public --site "$NETLIFY_SITE_ID" --auth "$NETLIFY_AUTH_TOKEN" --message "Actualización automática"
+      # 4. Página en GitHub Pages (gratis, sin límite de publicaciones). Antes era Netlify: su plan gratis
+      #    se quedó sin créditos el 12 nov 2026. Página: https://rebajonmx.github.io
+      - name: 4a. Preparar página
+        run: touch public/.nojekyll
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+      - name: 4. Publicar página en GitHub Pages
+        id: pages
+        uses: actions/deploy-pages@v4
+      - name: 4b. Esperar a que la página responda
+        run: |
+          for i in $(seq 1 30); do
+            code=$(curl -s -o /dev/null -w "%{http_code}" "https://rebajonmx.github.io/?v=$GITHUB_RUN_ID")
+            [ "$code" = "200" ] && echo "En línea" && sleep 20 && break
+            sleep 10
+          done
 
       - name: 5. Publicar en Instagram, Facebook y TikTok (Buffer)
         id: buffer
