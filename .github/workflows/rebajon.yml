@@ -15,6 +15,9 @@ on:
       concepto:
         description: "Concepto a usar (nombre del archivo en contenido/conceptos, sin .json). Vacío = automático"
         required: false
+      rebi:
+        description: "Voz de Rebi: hombre o mujer. Vacío = se alternan solas"
+        required: false
       tema:
         description: "Color: azul, blanco o rosa. Vacío = automático"
         required: false
@@ -76,24 +79,26 @@ jobs:
       - uses: actions/cache@v4
         with:
           path: ~/piper
-          key: piper-2023.11.14-2-esmx-ald-v4
+          key: piper-2023.11.14-2-esmx-ald-claude-v5
 
       - name: Instalar voz de Rebi (Piper, gratis y libre)
         continue-on-error: true
         run: |
           mkdir -p ~/piper && cd ~/piper
           [ -x piper/piper ] || curl -sSLf https://github.com/rhasspy/piper/releases/download/2023.11.14-2/piper_linux_x86_64.tar.gz | tar xz
-          for v in es/es_MX/ald/medium/es_MX-ald-medium; do   # voz de hombre de Rebi (natural, sin efectos)
+          # Dos voces de Rebi que se alternan (A/B): hombre = es_MX-ald-medium, mujer = es_MX-claude-high (la original).
+          for v in es/es_MX/ald/medium/es_MX-ald-medium es/es_MX/claude/high/es_MX-claude-high; do
             n=$(basename $v)
             if [ ! -s $n.onnx ]; then
               curl -sSLf -o $n.onnx https://huggingface.co/rhasspy/piper-voices/resolve/v1.0.0/$v.onnx && \
               curl -sSLf -o $n.onnx.json https://huggingface.co/rhasspy/piper-voices/resolve/v1.0.0/$v.onnx.json || rm -f $n.onnx*
             fi
-            [ -s $n.onnx ] && break
           done
           M=$(ls ~/piper/es_MX-ald-medium.onnx ~/piper/*.onnx 2>/dev/null | head -1)
           echo "PIPER_BIN=$HOME/piper/piper/piper" >> "$GITHUB_ENV"
           echo "PIPER_MODEL=$M" >> "$GITHUB_ENV"
+          echo "PIPER_MODEL_HOMBRE=$HOME/piper/es_MX-ald-medium.onnx" >> "$GITHUB_ENV"
+          echo "PIPER_MODEL_MUJER=$HOME/piper/es_MX-claude-high.onnx" >> "$GITHUB_ENV"
           echo "Hola, soy Rebi" | ~/piper/piper/piper --model "$M" --output_file /tmp/prueba.wav && ls -la /tmp/prueba.wav
 
       - name: 1. Ofertas (links.txt + API de Mercado Libre)
@@ -109,6 +114,8 @@ jobs:
 
       - name: 3. Crear video del turno
         working-directory: scripts
+        env:
+          REBI_VOZ: ${{ github.event.inputs.rebi }}
         run: python generar_video.py --concepto "${{ github.event.inputs.concepto }}" --tema "${{ github.event.inputs.tema }}"
 
       - name: 3b. Crear carrusel de imágenes del día
