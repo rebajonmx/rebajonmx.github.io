@@ -1,12 +1,12 @@
 # Estado de Rebajón MX: 🟢 TODO BIEN
 
-Última revisión automática: 2026-11-12 17:43 (hora CDMX)
+Última revisión automática: 2026-11-12 18:23 (hora CDMX)
 
 ## Correcto
 - 🟢 Página en línea con la fecha de hoy.
-- 🟢 Video del turno en la página: video-20261112-1740.mp4 (HTTP 200).
-- 🟢 Publicado en redes vía Buffer.
+- 🟢 Video del turno en la página: video-20261112-1820.mp4 (HTTP 200).
 - 🟢 51 ofertas vigentes.
+- 🟢 51/51 links de afiliado abren Mercado Libre con tu código de afiliado (blsa6633152).
 
 ## Últimas publicaciones
 
