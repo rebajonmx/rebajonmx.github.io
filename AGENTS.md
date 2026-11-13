@@ -109,6 +109,15 @@ GitHub Actions  (.github/workflows/rebajon.yml, 7:00 y 19:00 CDMX = 13:00 y 01:0
 - Queda en `historial.json` (campo `rebi`) y en ESTADO.md para comparar cuál logra más reproducciones.
 - Dueño rechazó: Rebi azul con gorra, voz aguda, voz femenina con tono bajado. No volver a esas versiones.
 
+## Facebook y videos (desde 12-nov-2026)
+
+- Facebook NO logra bajar videos desde rebajonmx.github.io (Buffer: "Facebook was unable to process the media");
+  Instagram y TikTok sí. Por eso `scripts/copia_cdn.py` (paso 4c) sube el video a la rama `media` (un commit que se
+  reemplaza) y Facebook lo toma de cdn.jsdelivr.net (variable VIDEO_URL_FACEBOOK en publicar_buffer.py). Probado: OK.
+- Si un video no sale en Facebook: Actions → "Reintentar Facebook (video actual)" → Run workflow (publica solo en
+  Facebook el video que está en la página en ese momento).
+- El paso 4a conserva en la página los videos de las últimas 8 publicaciones (cada despliegue reemplaza todo el sitio).
+
 ## Ideas siguientes (por prioridad)
 
 1. Leer métricas de cada publicación desde la API de Buffer y agregarlas a `historial.json` para elegir conceptos/colores
