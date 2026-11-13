@@ -80,8 +80,10 @@ def trozos(texto, a, b):
 
 # Rebi tiene dos voces que se alternan para comparar cuál gusta más (A/B): mujer (la original) y hombre.
 # Solo cambian la voz y, muy sutil, el color de los cachetes. Se guarda en turno.json/historial.json como "rebi".
-REBI = {"mujer": {"modelo": "PIPER_MODEL_MUJER", "chapas": "rgba(244,114,182,.55)"},
-        "hombre": {"modelo": "PIPER_MODEL_HOMBRE", "chapas": "rgba(96,165,250,.38)"}}
+# "ritmo" = (length_scale, sentence_silence) de Piper. La voz de hombre habla más lento por naturaleza: se acelera
+# para que dure lo mismo que la de mujer (medido: misma escena 31.6 s vs 27.2 s con 0.92).
+REBI = {"mujer": {"modelo": "PIPER_MODEL_MUJER", "chapas": "rgba(244,114,182,.55)", "ritmo": ("0.92", "0.12")},
+        "hombre": {"modelo": "PIPER_MODEL_HOMBRE", "chapas": "rgba(96,165,250,.38)", "ritmo": ("0.78", "0.08")}}
 VOZ = {"genero": "hombre"}
 
 
@@ -100,9 +102,10 @@ def sintetizar(texto, ruta):
     if not texto or not bin_ or not modelo or not os.path.exists(bin_) or not os.path.exists(modelo):
         return 0
     try:
-        # Mismo ritmo y pausas para las dos voces (0.92 / 0.12), sin efectos.
-        subprocess.run([bin_, "--model", modelo, "--output_file", str(ruta), "--length_scale", "0.92",
-                        "--sentence_silence", "0.12"], input=en_palabras(texto).encode(), check=True,
+        # Mismo ritmo percibido para las dos voces (ver REBI["..."]["ritmo"]), sin efectos.
+        largo, pausa = REBI[VOZ["genero"]]["ritmo"]
+        subprocess.run([bin_, "--model", modelo, "--output_file", str(ruta), "--length_scale", largo,
+                        "--sentence_silence", pausa], input=en_palabras(texto).encode(), check=True,
                        capture_output=True, timeout=120)
         with wave.open(str(ruta)) as w:
             return w.getnframes() / w.getframerate()
