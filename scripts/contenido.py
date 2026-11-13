@@ -122,7 +122,7 @@ def elegir(forzar_concepto=None, forzar_tema=None):
     ultimo = hist[-1]["concepto"] if hist else None
     usos = lambda clave, val: sum(1 for h in hist if h.get(clave) == val)
     pool = [c for c in candidatos if c["id"] != ultimo] or candidatos
-    concepto = min(pool, key=lambda c: (usos("concepto", c["id"]) / c.get("peso", 1), c["id"]))   # "peso": más seguido
+    concepto = min(pool, key=lambda c: (usos("concepto", c["id"]) / c.get("peso", 1), -c.get("peso", 1), c["id"]))   # "peso": más seguido
     temas = concepto.get("temas") or list(CONFIG["temas"])
     tema = forzar_tema or min(temas, key=lambda t: (usos("tema", t), hist[-1]["tema"] == t if hist else False, t))
     return armar(concepto, tema, ofertas, cat)
