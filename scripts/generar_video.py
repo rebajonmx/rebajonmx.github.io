@@ -83,9 +83,18 @@ def sintetizar(texto, ruta):
     if not texto or not bin_ or not modelo or not os.path.exists(bin_) or not os.path.exists(modelo):
         return 0
     try:
-        subprocess.run([bin_, "--model", modelo, "--output_file", str(ruta), "--length_scale", "0.92",
-                        "--sentence_silence", "0.12"], input=en_palabras(texto).encode(), check=True,
-                       capture_output=True, timeout=120)
+        crudo = ruta.with_name(ruta.stem + "_crudo.wav")
+        subprocess.run([bin_, "--model", modelo, "--output_file", str(crudo), "--length_scale", "0.9",
+                        "--noise_scale", "0.75", "--noise_w", "0.9", "--sentence_silence", "0.1"],
+                       input=en_palabras(texto).encode(), check=True, capture_output=True, timeout=120)
+        with wave.open(str(crudo)) as w:
+            sr = w.getframerate()
+        # Voz de Rebi: chavo joven y alegre → tono un poco más agudo (+3 semitonos), algo más ágil y con brillo.
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(crudo), "-af",
+                        f"asetrate={sr}*1.19,aresample={SR},atempo=0.92,equalizer=f=3000:t=q:w=1:g=3,"
+                        "equalizer=f=180:t=q:w=1:g=-2,volume=1.1", "-ac", "1", "-ar", str(SR), str(ruta)],
+                       check=True, capture_output=True, timeout=60)
+        crudo.unlink()
         with wave.open(str(ruta)) as w:
             return w.getnframes() / w.getframerate()
     except Exception as ex:
