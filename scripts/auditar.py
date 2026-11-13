@@ -89,7 +89,12 @@ def main():
             md += [f"## {titulo}"] + [f"- {icono} {x}" for x in lista] + [""]
     md += ["## Últimas publicaciones", "", "| Fecha | Concepto | Color | Redes | Errores |", "|---|---|---|---|---|"]
     for h in hist[-10:][::-1]:
-        md.append(f"| {h['fecha']} | {h['concepto']} | {h['tema']} | {', '.join(h.get('buffer', {})) or '-'} | {len(h.get('errores', []))} |")
+        md.append(f"| {h['fecha']} | {h['concepto']}{' (Rebi ' + h['rebi'] + ')' if h.get('rebi') else ''} | {h['tema']} | {', '.join(h.get('buffer', {})) or '-'} | {len(h.get('errores', []))} |")
+    rebis = {}
+    for h in hist:
+        if h.get("rebi"):
+            rebis[h["rebi"]] = rebis.get(h["rebi"], 0) + 1
+    md += ["", "Rebi (voz que se alterna para comparar): " + (", ".join(f"{k}: {v}" for k, v in sorted(rebis.items())) or "aún no hay")]
     md += ["", f"Publicaciones por color: " + (", ".join(f"{k}: {v}" for k, v in sorted(resumen.items())) or "aún no hay"), "",
            "Para comparar resultados, mira las visualizaciones de cada video en Buffer (Analytics) o en cada red,",
            "y cruza con esta tabla (concepto y color). Guía: docs/MANUAL.md → Métricas."]

@@ -8,7 +8,7 @@ Salida: public/media/<archivo>.mp4, public/media/portada.jpg y public/media/turn
 """
 import argparse, base64, json, subprocess
 from playwright.sync_api import sync_playwright
-from comun import RAIZ, MEDIA, ahora, escribir_json
+from comun import RAIZ, MEDIA, HISTORIAL, ahora, escribir_json, leer_json
 from contenido import elegir
 
 
@@ -78,12 +78,29 @@ def trozos(texto, a, b):
     return out
 
 
+# Rebi tiene dos voces que se alternan para comparar cuál gusta más (A/B): mujer (la original) y hombre.
+# Solo cambian la voz y, muy sutil, el color de los cachetes. Se guarda en turno.json/historial.json como "rebi".
+REBI = {"mujer": {"modelo": "PIPER_MODEL_MUJER", "chapas": "rgba(244,114,182,.55)"},
+        "hombre": {"modelo": "PIPER_MODEL_HOMBRE", "chapas": "rgba(96,165,250,.38)"}}
+VOZ = {"genero": "hombre"}
+
+
+def elegir_rebi():
+    """REBI_VOZ (hombre/mujer) manda; si no, la contraria a la última publicada con Rebi."""
+    pedido = os.environ.get("REBI_VOZ", "").strip().lower()
+    if pedido in REBI:
+        return pedido
+    previos = [h.get("rebi") for h in leer_json(HISTORIAL, []) if h.get("rebi") in REBI]
+    return "mujer" if previos and previos[-1] == "hombre" else "hombre"
+
+
 def sintetizar(texto, ruta):
-    bin_, modelo = os.environ.get("PIPER_BIN"), os.environ.get("PIPER_MODEL")
+    bin_ = os.environ.get("PIPER_BIN")
+    modelo = os.environ.get(REBI[VOZ["genero"]]["modelo"]) or os.environ.get("PIPER_MODEL")
     if not texto or not bin_ or not modelo or not os.path.exists(bin_) or not os.path.exists(modelo):
         return 0
     try:
-        # Rebi: mismo ritmo y pausas del original (0.92 / 0.12) con voz real de hombre (es_MX-ald-medium), sin efectos.
+        # Mismo ritmo y pausas para las dos voces (0.92 / 0.12), sin efectos.
         subprocess.run([bin_, "--model", modelo, "--output_file", str(ruta), "--length_scale", "0.92",
                         "--sentence_silence", "0.12"], input=en_palabras(texto).encode(), check=True,
                        capture_output=True, timeout=120)
@@ -144,6 +161,9 @@ def preparar_voz(video, carpeta):
 
 def renderizar(turno, salida):
     video = turno["video"]
+    if video.get("mascota"):
+        VOZ["genero"] = turno.setdefault("rebi", elegir_rebi())
+        video["chapas"] = REBI[VOZ["genero"]]["chapas"]
     voz = preparar_voz(video, salida.parent) if video.get("mascota") else None
     for e in video["escenas"]:
         if "producto" in e:
@@ -194,8 +214,8 @@ def main():
     info, fotos = renderizar(turno, MEDIA / archivo)
     escribir_json(MEDIA / "turno.json", {"archivo": archivo, "concepto": turno["concepto"], "nombre": turno["nombre"],
                                          "tema": turno["tema"], "categoria": turno["categoria"], "publicacion": turno["publicacion"],
-                                         "duracion": round(info["dur"], 1), "fotos": fotos})
-    print(f"Video listo: {archivo} · concepto={turno['concepto']} · color={turno['tema']} · "
+                                         "duracion": round(info["dur"], 1), "fotos": fotos, "rebi": turno.get("rebi", "")})
+    print(f"Video listo: {archivo} · concepto={turno['concepto']} · color={turno['tema']} · rebi={turno.get('rebi', '-')} · "
           f"{info['dur']:.1f}s · fotos {fotos['cargadas']}/{fotos['total']}")
 
 

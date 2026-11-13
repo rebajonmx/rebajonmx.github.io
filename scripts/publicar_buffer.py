@@ -83,7 +83,7 @@ def main():
             fallas.append(f"{c['service']}: {str(e)[:200]}")
     hist = leer_json(HISTORIAL, [])
     hist.append({"fecha": ahora().strftime("%Y-%m-%d %H:%M"), "concepto": turno["concepto"], "tema": turno["tema"],
-                 "categoria": turno.get("categoria", ""), "archivo": turno["archivo"], "buffer": ids, "errores": fallas})
+                 "categoria": turno.get("categoria", ""), "archivo": turno["archivo"], "rebi": turno.get("rebi", ""), "buffer": ids, "errores": fallas})
     escribir_json(HISTORIAL, hist)
     for f in fallas:
         print("  ✗", f)
