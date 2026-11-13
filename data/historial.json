@@ -145,5 +145,33 @@
    "instagram": "6af73fd822cd418aa2dadf0c"
   },
   "errores": []
+ },
+ {
+  "fecha": "2026-11-13 12:49",
+  "concepto": "adivina-precio",
+  "tema": "blanco",
+  "categoria": "Belleza",
+  "archivo": "video-20261113-1248.mp4",
+  "rebi": "",
+  "buffer": {
+   "tiktok": "6af75bb7d16af15d4dc6ed12",
+   "facebook": "6af75bc34b28296eb10a94e6",
+   "instagram": "6af75bcc81e1228421b85141"
+  },
+  "errores": []
+ },
+ {
+  "fecha": "2026-11-13 12:50",
+  "concepto": "carrusel",
+  "tema": "rosa",
+  "categoria": "",
+  "archivo": "carrusel-20261113-1248-1.jpg",
+  "rebi": "",
+  "buffer": {
+   "tiktok": "6af75bd7bb36d00909bf1a76",
+   "facebook": "6af75be2bb36d00909bf26c6",
+   "instagram": "6af75bedd16af15d4dc70af5"
+  },
+  "errores": []
  }
 ]
