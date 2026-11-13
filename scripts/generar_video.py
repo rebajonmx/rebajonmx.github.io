@@ -84,15 +84,16 @@ def sintetizar(texto, ruta):
         return 0
     try:
         crudo = ruta.with_name(ruta.stem + "_crudo.wav")
-        subprocess.run([bin_, "--model", modelo, "--output_file", str(crudo), "--length_scale", "0.9",
-                        "--noise_scale", "0.75", "--noise_w", "0.9", "--sentence_silence", "0.1"],
+        subprocess.run([bin_, "--model", modelo, "--output_file", str(crudo), "--length_scale", "0.96",
+                        "--noise_scale", "0.8", "--noise_w", "0.9", "--sentence_silence", "0.12"],
                        input=en_palabras(texto).encode(), check=True, capture_output=True, timeout=120)
         with wave.open(str(crudo)) as w:
             sr = w.getframerate()
-        # Voz de Rebi: chavo joven y alegre → tono un poco más agudo (+3 semitonos), algo más ágil y con brillo.
+        # Voz de Rebi: masculina, natural (sin cambiar el tono), con calidez y presencia tipo locutor de radio.
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(crudo), "-af",
-                        f"asetrate={sr}*1.19,aresample={SR},atempo=0.92,equalizer=f=3000:t=q:w=1:g=3,"
-                        "equalizer=f=180:t=q:w=1:g=-2,volume=1.1", "-ac", "1", "-ar", str(SR), str(ruta)],
+                        f"aresample={SR},equalizer=f=140:t=q:w=1:g=2.5,equalizer=f=3200:t=q:w=1.2:g=3,"
+                        "acompressor=threshold=-20dB:ratio=3:attack=5:release=80,volume=1.25",
+                        "-ac", "1", "-ar", str(SR), str(ruta)],
                        check=True, capture_output=True, timeout=60)
         crudo.unlink()
         with wave.open(str(ruta)) as w:
