@@ -87,6 +87,9 @@ GitHub Actions  (.github/workflows/rebajon.yml, 7:00 y 19:00 CDMX = 13:00 y 01:0
 - Motor v2 con 10 conceptos y 3 colores. Campaña activa: Buen Fin 2026 (13–17 nov).
 - 51 ofertas (12 nov): 40 del 11 nov + 11 tomadas de data/sugerencias.md. Todas con URL del producto salvo 2.
 - 2026-11-12: carrusel diario (probado: publicado en IG, FB y TikTok), 19 conceptos de video, botón "Compartir por WhatsApp" en cada oferta, docs/MARKETING.md.
+- 2026-11-13: mascota **Rebi** (etiqueta amarilla animada en motor.js, voz Piper es_MX instalada en el flujo, boca sincronizada,
+  subtítulos), escenas `adivina` y `califica`, 9 conceptos nuevos (5 con Rebi, `peso` 2-3). Campaña: 6 videos al día
+  (7, 10, 12, 15, 17 y 19 h). Auditoría revisa que cada link de afiliado redirija con el código de afiliado.
 - Los horarios de GitHub se retrasan ~1 hora (el turno de 7:00 sale ~8:10). Es normal.
   Los links se generaron en la Central de afiliados de ML (sesión del dueño): Compartir → Copiar link.
 - 18 conceptos. Nuevos para la campaña: ultimas-horas, regalos-adelantados (durante), lo-mas-vendido, errores-buen-fin,
