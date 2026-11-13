@@ -36,35 +36,26 @@ const precio=(d,t,t0,yN,yP,yA)=>{T(d.n,W/2,yN,60,C.tx,{al:(t-t0)/.15,max:900});
 // ---------- Rebi: mascota de Rebajón MX (etiqueta de precio amarilla, amable). Personaje original. ----------
 // boca: 0..1 (apertura según la voz). ola: brazo saludando. Se dibuja con figuras simples: no usa imágenes.
 const VOZ=V.voz||[],SUBS=V.subs||[];
-const rebi=(X,Y,sc,t,boca=0,ola=1)=>{const bob=Math.sin(t*4.6)*11,sq=1+boca*.05,tilt=Math.sin(t*2.3)*.05;x.save();x.translate(X,Y+bob);x.rotate(tilt);x.scale(sc,sc*sq);
- // Rebi: chavo optimista y juguetón. Cuerpo de etiqueta azul cielo, gorra amarilla volteada, sello % amarillo.
- const ink='#141a33',cuerpo='#38bdf8',sombraC='#0ea5e9',gorra='#ffcf2e',lw=9;x.lineJoin='round';x.lineCap='round';
+const rebi=(X,Y,sc,t,boca=0,ola=1)=>{const bob=Math.sin(t*4.2)*10,sq=1+boca*.05;x.save();x.translate(X,Y+bob);x.scale(sc,sc*sq);
+ // Rebi: etiqueta de precio amarilla, amable y optimista (diseño original). Detalles en azul.
+ const ink='#141a33',amar='#ffcf2e',azul='#3b82f6',lw=9;x.lineJoin='round';x.lineCap='round';
  x.save();x.globalAlpha=.18;x.fillStyle=ink;x.beginPath();x.ellipse(0,190-bob/sc,120,22,0,0,7);x.fill();x.restore();
- const brazo=(lado,ang)=>{x.save();x.translate(lado*118,10);x.rotate(ang);x.strokeStyle=ink;x.lineWidth=15;x.beginPath();x.moveTo(0,0);x.lineTo(lado*72,-10);x.stroke();
-  x.fillStyle=cuerpo;x.beginPath();x.arc(lado*80,-12,23,0,7);x.fill();x.lineWidth=7;x.stroke();x.restore()};
- brazo(-1,.35+Math.sin(t*3)*.1);brazo(1,ola?-.95+Math.sin(t*9)*.5:.35+Math.sin(t*3+1)*.1);
- // tenis
- [-52,52].forEach(px=>{x.fillStyle='#fff';x.beginPath();x.ellipse(px,182,38,17,0,0,7);x.fill();x.lineWidth=6;x.strokeStyle=ink;x.stroke();
-  x.fillStyle=gorra;x.fillRect(px-30,184,60,6)});
- // cuerpo
+ x.strokeStyle=ink;x.lineWidth=6;x.beginPath();x.moveTo(0,-150);x.bezierCurveTo(22,-180,-26,-195,6,-215);x.stroke();
+ const brazo=(lado,ang)=>{x.save();x.translate(lado*118,10);x.rotate(ang);x.strokeStyle=ink;x.lineWidth=14;x.beginPath();x.moveTo(0,0);x.lineTo(lado*70,-10);x.stroke();
+  x.fillStyle=amar;x.beginPath();x.arc(lado*78,-12,22,0,7);x.fill();x.lineWidth=7;x.stroke();x.restore()};
+ brazo(-1,.35+Math.sin(t*3)*.08);brazo(1,ola?-.9+Math.sin(t*9)*.45:.35+Math.sin(t*3+1)*.08);
+ x.fillStyle=ink;[-50,50].forEach(px=>{x.beginPath();x.ellipse(px,182,34,16,0,0,7);x.fill()});
  x.beginPath();x.moveTo(-60,-160);x.lineTo(60,-160);x.lineTo(120,-100);x.lineTo(120,140);x.quadraticCurveTo(120,175,85,175);x.lineTo(-85,175);x.quadraticCurveTo(-120,175,-120,140);x.lineTo(-120,-100);x.closePath();
- x.fillStyle=cuerpo;x.fill();x.save();x.clip();x.fillStyle=sombraC;x.fillRect(60,-170,80,360);x.restore();x.strokeStyle=ink;x.lineWidth=lw;x.stroke();
- // gorra volteada (visera hacia atrás)
- x.fillStyle=gorra;x.beginPath();x.moveTo(-112,-118);x.quadraticCurveTo(-100,-215,0,-218);x.quadraticCurveTo(100,-215,112,-118);x.closePath();x.fill();x.lineWidth=8;x.strokeStyle=ink;x.stroke();
- x.beginPath();x.moveTo(-112,-120);x.quadraticCurveTo(-160,-118,-175,-100);x.quadraticCurveTo(-150,-92,-108,-104);x.closePath();x.fill();x.stroke();
- x.fillStyle=ink;x.beginPath();x.arc(0,-216,9,0,7);x.fill();x.fillStyle=ink;x.font=F(46);x.textAlign='center';x.textBaseline='middle';x.fillText('R',8,-160);
- // ojos (parpadean) con mirada pícara
- const blink=(t%3.1)<.12?.12:1,mira=Math.sin(t*1.7)*5;[-46,46].forEach(ex=>{x.save();x.translate(ex,-40);x.scale(1,blink);x.fillStyle='#fff';x.beginPath();x.ellipse(0,0,29,34,0,0,7);x.fill();x.lineWidth=6;x.strokeStyle=ink;x.stroke();
-  x.fillStyle=ink;x.beginPath();x.arc(mira,6,15,0,7);x.fill();x.fillStyle='#fff';x.beginPath();x.arc(mira-5,0,5,0,7);x.fill();x.restore()});
- // cejas gruesas, una más arriba (carisma)
- x.strokeStyle=ink;x.lineWidth=10;x.beginPath();x.moveTo(-70,-88);x.quadraticCurveTo(-46,-100,-22,-90);x.stroke();x.beginPath();x.moveTo(22,-96+Math.sin(t*2)*4);x.quadraticCurveTo(46,-108,70,-94);x.stroke();
- x.fillStyle='rgba(251,146,60,.4)';[-82,82].forEach(cx=>{x.beginPath();x.ellipse(cx,14,18,11,0,0,7);x.fill()});
- // boca: sonrisa de lado o abierta con la voz
- if(boca<.08){x.strokeStyle=ink;x.lineWidth=8;x.beginPath();x.moveTo(-30,20);x.quadraticCurveTo(4,48,36,14);x.stroke()}
- else{const h=12+boca*46;x.fillStyle='#7a1030';x.beginPath();x.ellipse(2,34,31+boca*6,h/2,0,0,7);x.fill();x.lineWidth=7;x.strokeStyle=ink;x.stroke();
-  x.fillStyle='#fff';x.fillRect(-14,34-h/2+2,28,Math.min(9,h*.25));x.fillStyle='#f87171';x.beginPath();x.ellipse(2,34+h*.22,17,h*.2,0,0,7);x.fill()}
- // sello %
- x.fillStyle=gorra;x.beginPath();x.arc(0,112,34,0,7);x.fill();x.lineWidth=6;x.strokeStyle=ink;x.stroke();x.fillStyle=ink;x.font=F(40);x.textAlign='center';x.textBaseline='middle';x.fillText('%',0,114);
+ x.fillStyle=amar;x.fill();x.strokeStyle=ink;x.lineWidth=lw;x.stroke();
+ x.fillStyle=azul;x.beginPath();x.arc(0,-118,16,0,7);x.fill();x.lineWidth=6;x.stroke();
+ const blink=(t%3.4)<.12?.12:1;[-46,46].forEach(ex=>{x.save();x.translate(ex,-40);x.scale(1,blink);x.fillStyle='#fff';x.beginPath();x.ellipse(0,0,30,36,0,0,7);x.fill();x.lineWidth=6;x.stroke();
+  x.fillStyle=ink;x.beginPath();x.arc(ex>0?-4:4,6,15,0,7);x.fill();x.fillStyle='#fff';x.beginPath();x.arc(ex>0?-9:-1,-1,5,0,7);x.fill();x.restore()});
+ x.strokeStyle=ink;x.lineWidth=7;[-46,46].forEach(ex=>{x.beginPath();x.arc(ex,-78,22,Math.PI*1.2,Math.PI*1.8);x.stroke()});
+ x.fillStyle='rgba(125,211,252,.8)';[-82,82].forEach(cx=>{x.beginPath();x.ellipse(cx,12,20,13,0,0,7);x.fill()});
+ if(boca<.08){x.strokeStyle=ink;x.lineWidth=8;x.beginPath();x.arc(0,18,30,.15*Math.PI,.85*Math.PI);x.stroke()}
+ else{const h=12+boca*46;x.fillStyle='#7a1030';x.beginPath();x.ellipse(0,34,30+boca*6,h/2,0,0,7);x.fill();x.lineWidth=7;x.strokeStyle=ink;x.stroke();
+  x.fillStyle='#f87171';x.beginPath();x.ellipse(0,34+h*.22,18,h*.2,0,0,7);x.fill()}
+ x.fillStyle=azul;x.beginPath();x.arc(0,112,34,0,7);x.fill();x.lineWidth=6;x.strokeStyle=ink;x.stroke();x.fillStyle='#fff';x.font=F(40);x.textAlign='center';x.textBaseline='middle';x.fillText('%',0,114);
  x.restore()};
 const bocaEn=t=>VOZ.length?(VOZ[Math.min(VOZ.length-1,Math.round(t*FPS))]||0):0;
 const subtitulo=t=>{const s=SUBS.find(u=>t>=u.a&&t<=u.b);if(!s)return;const ls=lines(s.t,46,860,800).slice(0,3),h=ls.length*58+40;
@@ -89,7 +80,7 @@ const ESC={
   if(s.etiqueta)pill(s.etiqueta,W/2-250,535,52,C.ac,C.sa,{rot:-.08,sc:B(t/.3)});const [a,b]=shake(t-.3,18);x.save();x.translate(a,b);pill('-'+d.off+'%',W/2+245,550,78,C.a2,C.wh,{rot:.1,sc:t<.3?0:2-1*E((t-.3)/.2)});x.restore();
   precio(d,t,.35,1015,1125,1225)},
  rebi:(s,t,T0)=>{bg(t);logo();if(s.titulo)P(s.titulo,W/2,560,78,C.ac,{w:900,al:t/.15,max:920});
-  rebi(W/2,1010,1.7*(.7+.3*B(t/.4)),T0,bocaEn(T0),1);if(s.etiqueta)pill(s.etiqueta,W/2,1380,50,C.a2,C.wh,{al:(t-.6)/.15,sc:B((t-.6)/.35),rot:-.03})},
+  rebi(W/2,1010,1.7*(.7+.3*B(t/.4)),T0,bocaEn(T0),1);if(s.etiqueta)pill(s.etiqueta,W/2,1380,50,'#ffffff','#1d4ed8',{al:(t-.6)/.15,sc:B((t-.6)/.35),rot:-.03})},
  adivina:(s,t)=>{const d=s.producto,rev=Math.max(1.6,(s.dur||4.2)-1.5);bg(t);logo();P(s.pregunta||'¿Cuánto crees que cuesta?',W/2,520,64,C.tx,{w:900,al:t/.15});
   foto(d,W/2,830,420,.6+.4*E(t/.35),t/.2);T(d.n,W/2,1090,56,C.tx,{al:(t-.2)/.15,max:900});
   if(t<rev){const k=Math.ceil((rev-t)/(rev/3));T(String(Math.max(1,Math.min(3,k))),W/2,1260,170,C.ac,{sc:B(((t%(rev/3))/(rev/3))/.4)});T('antes '+money(d.was),W/2,1390,46,C.tm,{w:700})}
