@@ -243,5 +243,33 @@
    "instagram": "6af88d79c5b364e0620271fd"
   },
   "errores": []
+ },
+ {
+  "fecha": "2026-11-14 12:40",
+  "concepto": "lo-mas-vendido",
+  "tema": "blanco",
+  "categoria": "Belleza",
+  "archivo": "video-20261114-1238.mp4",
+  "rebi": "",
+  "buffer": {
+   "tiktok": "6af8ab0b918fe79d2e99b9ca",
+   "facebook": "6af8ab17c5b364e0620d34bf",
+   "instagram": "6af8ab20918fe79d2e99c047"
+  },
+  "errores": []
+ },
+ {
+  "fecha": "2026-11-14 12:41",
+  "concepto": "carrusel",
+  "tema": "azul",
+  "categoria": "",
+  "archivo": "carrusel-20261114-1239-1.jpg",
+  "rebi": "",
+  "buffer": {
+   "tiktok": "6af8ab2be5a113497a9fcbb8",
+   "facebook": "6af8ab35918fe79d2e99c5b7",
+   "instagram": "6af8ab40918fe79d2e99c7e7"
+  },
+  "errores": []
  }
 ]
