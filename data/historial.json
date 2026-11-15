@@ -341,5 +341,33 @@
    "instagram": "6af9dfa255ad64be5043d499"
   },
   "errores": []
+ },
+ {
+  "fecha": "2026-11-15 12:41",
+  "concepto": "pov-buen-fin",
+  "tema": "blanco",
+  "categoria": "Belleza",
+  "archivo": "video-20261115-1240.mp4",
+  "rebi": "",
+  "buffer": {
+   "tiktok": "6af9fcd6b9a106584cc9c202",
+   "facebook": "6af9fce1ee359588b5466d58",
+   "instagram": "6af9fcec55ad64be504ec424"
+  },
+  "errores": []
+ },
+ {
+  "fecha": "2026-11-15 12:42",
+  "concepto": "carrusel",
+  "tema": "blanco",
+  "categoria": "",
+  "archivo": "carrusel-20261115-1240-1.jpg",
+  "rebi": "",
+  "buffer": {
+   "tiktok": "6af9fcf64f0276ab94570440",
+   "facebook": "6af9fd014f0276ab94570667",
+   "instagram": "6af9fd0b55ad64be504ecaf4"
+  },
+  "errores": []
  }
 ]
