@@ -281,7 +281,7 @@
   "url": "https://meli.la/1Q3HHtm",
   "cat": "Tecnología",
   "name": "Audífonos inalámbricos 1HORA Bluetooth 6.0",
-  "now": 158.78,
+  "now": 164.38,
   "was": 338.0,
   "img": "https://http2.mlstatic.com/D_Q_NP_2X_725168-MLA100077728739_122025-AB.webp",
   "rating": "4.7",
@@ -290,7 +290,7 @@
   "firma": "338.0|182.0",
   "revisado": "2026-11-16",
   "e": "🔊",
-  "off": 53,
+  "off": 51,
   "product": "https://www.mercadolibre.com.mx/audifonos-inalambricos-1hora-aut205-in-ear-bluetooth-60-con-microfono-auriculares-bluetooth-negro/p/MLM20922199",
   "ml_tipo": "producto",
   "ml_id": "MLM20922199"
@@ -497,8 +497,8 @@
   "url": "https://meli.la/31s5GYp",
   "cat": "Belleza",
   "name": "Perfume Rasasi Hawas Malibu 100 ml",
-  "now": 698,
-  "was": 997.03,
+  "now": 485.68,
+  "was": 1299.0,
   "img": "https://http2.mlstatic.com/D_Q_NP_2X_630055-MLA110564420513_042026-AB.webp",
   "rating": "4.8",
   "sold": "10mil",
@@ -506,7 +506,7 @@
   "firma": "1299.0|705.0",
   "revisado": "2026-11-16",
   "e": "💐",
-  "off": 30,
+  "off": 63,
   "product": "https://www.mercadolibre.com.mx/p/MLM68254703",
   "ml_tipo": "producto",
   "ml_id": "MLM68254703"
@@ -515,7 +515,7 @@
   "url": "https://meli.la/16d7QuB",
   "cat": "Belleza",
   "name": "Perfume Armaf Odyssey Marshmallow 100 ml",
-  "now": 511.67,
+  "now": 498,
   "was": 1299,
   "img": "https://http2.mlstatic.com/D_Q_NP_2X_778079-MLA91427961184_092025-AB.webp",
   "rating": "4.9",
@@ -524,7 +524,7 @@
   "firma": "1098.0|550.0",
   "revisado": "2026-11-16",
   "e": "💐",
-  "off": 61,
+  "off": 62,
   "product": "https://www.mercadolibre.com.mx/p/MLM54800146",
   "ml_tipo": "producto",
   "ml_id": "MLM54800146"
@@ -623,7 +623,7 @@
   "url": "https://meli.la/2GtQzvZ",
   "cat": "Juguetes",
   "name": "LEGO Speed Champions Ferrari F1",
-  "now": 465,
+  "now": 468.3,
   "was": 679,
   "img": "https://http2.mlstatic.com/D_Q_NP_2X_773959-MLA99468694168_112025-AB.webp",
   "rating": "4.9",
@@ -632,7 +632,7 @@
   "firma": "679.0|490.0",
   "revisado": "2026-11-16",
   "e": "🎁",
-  "off": 32,
+  "off": 31,
   "product": "https://www.mercadolibre.com.mx/p/MLM45423403",
   "ml_tipo": "producto",
   "ml_id": "MLM45423403"
@@ -929,8 +929,8 @@
   "url": "https://meli.la/2EkJQbm",
   "cat": "Electrodomésticos",
   "name": "Horno de microondas Mirage 0.7 ft³",
-  "now": 1356,
-  "was": 2490.0,
+  "now": 1370.92,
+  "was": 2490,
   "img": "https://http2.mlstatic.com/D_NQ_NP_944928-MLA112812361117_062026-F.jpg",
   "rating": "",
   "sold": "",
@@ -941,6 +941,6 @@
   "ml_id": "MLM18439163",
   "ml_tipo": "producto",
   "e": "🍲",
-  "off": 46
+  "off": 45
  }
 ]

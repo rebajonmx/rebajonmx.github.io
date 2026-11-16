@@ -425,5 +425,34 @@
    "instagram": "6afb27b50db12e0a1279b41d"
   },
   "errores": []
+ },
+ {
+  "fecha": "2026-11-16 11:10",
+  "concepto": "ya-empezo",
+  "tema": "azul",
+  "categoria": "Tecnología",
+  "archivo": "video-20261116-1107.mp4",
+  "rebi": "",
+  "buffer": {
+   "tiktok": "6afb38bd54a42b822d116cd1",
+   "instagram": "6afb38e6145e4ab7bd3d4aae"
+  },
+  "errores": [
+   "facebook: [{'message': 'The operation was aborted due to timeout', 'path': ['createPost'], 'extensions': {'request': {'method': 'POST', 'body': '{\"query\":\"mutation($_createPost_input:CreatePostInput!){createPos"
+  ]
+ },
+ {
+  "fecha": "2026-11-16 11:10",
+  "concepto": "carrusel",
+  "tema": "rosa",
+  "categoria": "",
+  "archivo": "carrusel-20261116-1107-1.jpg",
+  "rebi": "",
+  "buffer": {
+   "tiktok": "6afb38f3145e4ab7bd3d584e",
+   "facebook": "6afb38fe54a42b822d119056",
+   "instagram": "6afb3909e4e68dc2183580cd"
+  },
+  "errores": []
  }
 ]
