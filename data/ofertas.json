@@ -51,9 +51,9 @@
  {
   "cat": "Tecnología",
   "name": "Bocina Bluetooth Aiwa 20 W, resistente al agua",
-  "now": 378,
+  "now": 373.58,
   "was": 999,
-  "off": 62,
+  "off": 63,
   "rating": "4.9",
   "sold": "10mil",
   "img": "https://http2.mlstatic.com/D_Q_NP_2X_868838-MLA114381982302_082026-AB.webp",
@@ -172,9 +172,9 @@
  {
   "cat": "Electrodomésticos",
   "name": "Báscula digital con Bluetooth, hasta 180 kg",
-  "now": 140.58,
-  "was": 280,
-  "off": 50,
+  "now": 153,
+  "was": 400,
+  "off": 62,
   "rating": "4.8",
   "sold": "100mil",
   "img": "https://http2.mlstatic.com/D_Q_NP_2X_776558-MLA119273003497_102026-AB.webp",
@@ -587,8 +587,8 @@
   "url": "https://meli.la/13bSFL1",
   "cat": "Juguetes",
   "name": "Nintendo Switch OLED + Super Mario Bros. Wonder",
-  "now": 5999,
-  "was": 8598.99,
+  "now": 5899,
+  "was": 8598.0,
   "img": "https://http2.mlstatic.com/D_Q_NP_2X_708545-MLA91725553793_092025-AB.webp",
   "rating": "4.9",
   "sold": "5mil",
@@ -596,7 +596,7 @@
   "firma": "8598.0|5981.0",
   "revisado": "2026-11-16",
   "e": "🎁",
-  "off": 30,
+  "off": 31,
   "product": "https://www.mercadolibre.com.mx/p/MLM54621976",
   "ml_tipo": "producto",
   "ml_id": "MLM54621976"
@@ -803,7 +803,7 @@
   "url": "https://meli.la/1atNucX",
   "cat": "Belleza",
   "name": "Sérum Garnier Express Aclara anti manchas 30 ml",
-  "now": 71.3,
+  "now": 61,
   "was": 225,
   "img": "https://http2.mlstatic.com/D_NQ_NP_753989-MLA119183426348_112026-F.jpg",
   "rating": "",
@@ -815,7 +815,7 @@
   "ml_id": "MLM18957818",
   "ml_tipo": "producto",
   "e": "🛒",
-  "off": 68
+  "off": 73
  },
  {
   "url": "https://meli.la/1WmUQrE",
