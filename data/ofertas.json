@@ -105,9 +105,9 @@
  {
   "cat": "Hogar",
   "name": "Colchón individual Noite con memory foam",
-  "now": 1598.13,
+  "now": 1799,
   "was": 3926.51,
-  "off": 59,
+  "off": 54,
   "rating": "4.8",
   "sold": "10mil",
   "img": "https://http2.mlstatic.com/D_Q_NP_2X_803768-MLA99934454495_112025-AB.webp",
@@ -190,9 +190,9 @@
  {
   "cat": "Electrodomésticos",
   "name": "Licuadora portátil 500 W con 2 vasos",
-  "now": 478.25,
-  "was": 891.84,
-  "off": 46,
+  "now": 544,
+  "was": 889,
+  "off": 39,
   "rating": "4.8",
   "sold": "10mil",
   "img": "https://http2.mlstatic.com/D_Q_NP_2X_889462-MLA120642145027_112026-AB.webp",
@@ -497,8 +497,8 @@
   "url": "https://meli.la/31s5GYp",
   "cat": "Belleza",
   "name": "Perfume Rasasi Hawas Malibu 100 ml",
-  "now": 728.15,
-  "was": 1299.0,
+  "now": 705,
+  "was": 1150,
   "img": "https://http2.mlstatic.com/D_Q_NP_2X_630055-MLA110564420513_042026-AB.webp",
   "rating": "4.8",
   "sold": "10mil",
@@ -506,7 +506,7 @@
   "firma": "1299.0|705.0",
   "revisado": "2026-11-16",
   "e": "💐",
-  "off": 44,
+  "off": 39,
   "product": "https://www.mercadolibre.com.mx/p/MLM68254703",
   "ml_tipo": "producto",
   "ml_id": "MLM68254703"
@@ -731,7 +731,7 @@
   "url": "https://meli.la/2KMErdY",
   "cat": "Moda",
   "name": "Mochila antirrobo impermeable con puerto USB",
-  "now": 260.03,
+  "now": 297.95,
   "was": 628.58,
   "img": "https://http2.mlstatic.com/D_Q_NP_2X_610234-MLA99991086711_112025-AB.webp",
   "rating": "4.9",
@@ -740,7 +740,7 @@
   "firma": "627.0|251.0",
   "revisado": "2026-11-16",
   "e": "🎒",
-  "off": 59,
+  "off": 53,
   "product": "https://www.mercadolibre.com.mx/p/MLM27439359",
   "ml_tipo": "producto",
   "ml_id": "MLM27439359"
@@ -930,7 +930,7 @@
   "cat": "Electrodomésticos",
   "name": "Horno de microondas Mirage 0.7 ft³",
   "now": 1370.92,
-  "was": 2490,
+  "was": 1963.78,
   "img": "https://http2.mlstatic.com/D_NQ_NP_944928-MLA112812361117_062026-F.jpg",
   "rating": "",
   "sold": "",
@@ -941,6 +941,6 @@
   "ml_id": "MLM18439163",
   "ml_tipo": "producto",
   "e": "🍲",
-  "off": 45
+  "off": 30
  }
 ]
