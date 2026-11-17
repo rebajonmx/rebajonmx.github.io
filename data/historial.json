@@ -524,5 +524,33 @@
    "instagram": "6afc87ae104bf3e62492807e"
   },
   "errores": []
+ },
+ {
+  "fecha": "2026-11-17 12:58",
+  "concepto": "rebi-arranca",
+  "tema": "azul",
+  "categoria": "Tecnología",
+  "archivo": "video-20261117-1256.mp4",
+  "rebi": "mujer",
+  "buffer": {
+   "tiktok": "6afca3c9d4c8ef4106f868ed",
+   "facebook": "6afca3d532ea84693c382d3b",
+   "instagram": "6afca3dfd4c8ef4106f8722f"
+  },
+  "errores": []
+ },
+ {
+  "fecha": "2026-11-17 12:59",
+  "concepto": "carrusel",
+  "tema": "azul",
+  "categoria": "",
+  "archivo": "carrusel-20261117-1257-1.jpg",
+  "rebi": "",
+  "buffer": {
+   "tiktok": "6afca3ead4c8ef4106f87523",
+   "facebook": "6afca3f57ab2c2731e0c98c4",
+   "instagram": "6afca4007ab2c2731e0c9bbe"
+  },
+  "errores": []
  }
 ]
