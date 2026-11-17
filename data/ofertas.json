@@ -2,9 +2,9 @@
  {
   "cat": "Tecnología",
   "name": "Samsung Galaxy A16 · 128 GB, 4 GB RAM",
-  "now": 2668.83,
+  "now": 2799,
   "was": 4999,
-  "off": 47,
+  "off": 44,
   "rating": "4.8",
   "sold": "10mil",
   "img": "https://http2.mlstatic.com/D_Q_NP_2X_790939-MLA99551674904_122025-AB.webp",
@@ -209,8 +209,8 @@
   "url": "https://meli.la/2fCtMUa",
   "cat": "Tecnología",
   "name": "Smart TV Aiwa Roku 50\" QLED 4K",
-  "now": 4925,
-  "was": 8499,
+  "now": 5073,
+  "was": 8212.71,
   "img": "https://http2.mlstatic.com/D_Q_NP_2X_615872-MLA109791452087_032026-AB.webp",
   "rating": "4.9",
   "sold": "10mil",
@@ -218,7 +218,7 @@
   "firma": "8499.0|4925.0",
   "revisado": "2026-11-17",
   "e": "📺",
-  "off": 42,
+  "off": 38,
   "product": "https://www.mercadolibre.com.mx/pantalla-smart-tv-aiwa-roku-50-pulgadas-qled-4k-ultra-hd/p/MLM63172085",
   "ml_tipo": "producto",
   "ml_id": "MLM63172085"
@@ -371,16 +371,16 @@
   "url": "https://meli.la/1ywgkyN",
   "cat": "Hogar",
   "name": "50 ganchos de terciopelo antideslizantes",
-  "now": 430,
-  "was": 399.0,
+  "now": 258,
+  "was": 399,
   "img": "https://http2.mlstatic.com/D_Q_NP_2X_905314-MLA114206085312_082026-AB.webp",
   "rating": "4.9",
   "sold": "100mil",
-  "active": false,
+  "active": true,
   "firma": "399.0|259.0",
   "revisado": "2026-11-17",
   "e": "🧺",
-  "off": 0,
+  "off": 35,
   "product": "https://www.mercadolibre.com.mx/p/MLM37178455",
   "ml_tipo": "producto",
   "ml_id": "MLM37178455"
@@ -389,7 +389,7 @@
   "url": "https://meli.la/1CSCyEq",
   "cat": "Hogar",
   "name": "Mesa plegable tipo portafolio 1.80 m",
-  "now": 729,
+  "now": 660.03,
   "was": 1300,
   "img": "https://http2.mlstatic.com/D_Q_NP_2X_835044-MLA82957913699_032025-AB.webp",
   "rating": "4.7",
@@ -398,7 +398,7 @@
   "firma": "1300.0|669.0",
   "revisado": "2026-11-17",
   "e": "🪑",
-  "off": 44,
+  "off": 49,
   "product": "https://www.mercadolibre.com.mx/p/MLM47003664",
   "ml_tipo": "producto",
   "ml_id": "MLM47003664"
@@ -641,7 +641,7 @@
   "url": "https://meli.la/19u6ieN",
   "cat": "Juguetes",
   "name": "Muñeca Gabby's Dollhouse con diadema",
-  "now": 241.04,
+  "now": 274.56,
   "was": 399,
   "img": "https://http2.mlstatic.com/D_Q_NP_2X_723677-MLA99960282861_112025-AB.webp",
   "rating": "4.9",
@@ -650,7 +650,7 @@
   "firma": "399.0|248.0",
   "revisado": "2026-11-17",
   "e": "🎁",
-  "off": 40,
+  "off": 31,
   "product": "https://www.mercadolibre.com.mx/p/MLM44894938",
   "ml_tipo": "producto",
   "ml_id": "MLM44894938"
@@ -875,7 +875,7 @@
   "url": "https://meli.la/1s1r8vA",
   "cat": "Deportes",
   "name": "Casa de campaña 3-4 personas impermeable",
-  "now": 459,
+  "now": 483.06,
   "was": 993.5,
   "img": "https://http2.mlstatic.com/D_NQ_NP_772063-MLA108747858278_032026-F.jpg",
   "rating": "",
@@ -887,7 +887,7 @@
   "ml_id": "MLM45967325",
   "ml_tipo": "producto",
   "e": "🛒",
-  "off": 54
+  "off": 51
  },
  {
   "url": "https://meli.la/1cejyRH",
@@ -929,7 +929,7 @@
   "url": "https://meli.la/2EkJQbm",
   "cat": "Electrodomésticos",
   "name": "Horno de microondas Mirage 0.7 ft³",
-  "now": 1412.05,
+  "now": 1370.92,
   "was": 1963.78,
   "img": "https://http2.mlstatic.com/D_NQ_NP_944928-MLA112812361117_062026-F.jpg",
   "rating": "",
@@ -941,6 +941,6 @@
   "ml_id": "MLM18439163",
   "ml_tipo": "producto",
   "e": "🍲",
-  "off": 28
+  "off": 30
  }
 ]
