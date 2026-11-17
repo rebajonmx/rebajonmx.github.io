@@ -281,7 +281,7 @@
   "url": "https://meli.la/1Q3HHtm",
   "cat": "Tecnología",
   "name": "Audífonos inalámbricos 1HORA Bluetooth 6.0",
-  "now": 163.42,
+  "now": 157.84,
   "was": 338.0,
   "img": "https://http2.mlstatic.com/D_Q_NP_2X_725168-MLA100077728739_122025-AB.webp",
   "rating": "4.7",
@@ -290,7 +290,7 @@
   "firma": "338.0|182.0",
   "revisado": "2026-11-17",
   "e": "🔊",
-  "off": 52,
+  "off": 53,
   "product": "https://www.mercadolibre.com.mx/audifonos-inalambricos-1hora-aut205-in-ear-bluetooth-60-con-microfono-auriculares-bluetooth-negro/p/MLM20922199",
   "ml_tipo": "producto",
   "ml_id": "MLM20922199"
@@ -371,7 +371,7 @@
   "url": "https://meli.la/1ywgkyN",
   "cat": "Hogar",
   "name": "50 ganchos de terciopelo antideslizantes",
-  "now": 399,
+  "now": 430,
   "was": 399.0,
   "img": "https://http2.mlstatic.com/D_Q_NP_2X_905314-MLA114206085312_082026-AB.webp",
   "rating": "4.9",
@@ -497,7 +497,7 @@
   "url": "https://meli.la/31s5GYp",
   "cat": "Belleza",
   "name": "Perfume Rasasi Hawas Malibu 100 ml",
-  "now": 699,
+  "now": 679,
   "was": 1299,
   "img": "https://http2.mlstatic.com/D_Q_NP_2X_630055-MLA110564420513_042026-AB.webp",
   "rating": "4.8",
@@ -506,7 +506,7 @@
   "firma": "1299.0|705.0",
   "revisado": "2026-11-17",
   "e": "💐",
-  "off": 46,
+  "off": 48,
   "product": "https://www.mercadolibre.com.mx/p/MLM68254703",
   "ml_tipo": "producto",
   "ml_id": "MLM68254703"
@@ -641,7 +641,7 @@
   "url": "https://meli.la/19u6ieN",
   "cat": "Juguetes",
   "name": "Muñeca Gabby's Dollhouse con diadema",
-  "now": 274.56,
+  "now": 248.49,
   "was": 399,
   "img": "https://http2.mlstatic.com/D_Q_NP_2X_723677-MLA99960282861_112025-AB.webp",
   "rating": "4.9",
@@ -650,7 +650,7 @@
   "firma": "399.0|248.0",
   "revisado": "2026-11-17",
   "e": "🎁",
-  "off": 31,
+  "off": 38,
   "product": "https://www.mercadolibre.com.mx/p/MLM44894938",
   "ml_tipo": "producto",
   "ml_id": "MLM44894938"
@@ -695,7 +695,7 @@
   "url": "https://meli.la/28V1s8a",
   "cat": "Mascotas",
   "name": "Croquetas Purina Beneful perro adulto 10 kg",
-  "now": 494,
+  "now": 459,
   "was": 824.4,
   "img": "https://http2.mlstatic.com/D_Q_NP_2X_796843-MLA99930306865_112025-AB.webp",
   "rating": "4.9",
@@ -704,7 +704,7 @@
   "firma": "824.0|510.0",
   "revisado": "2026-11-17",
   "e": "🐾",
-  "off": 40,
+  "off": 44,
   "product": "https://www.mercadolibre.com.mx/p/MLM21259835",
   "ml_tipo": "producto",
   "ml_id": "MLM21259835"
@@ -821,7 +821,7 @@
   "url": "https://meli.la/1WmUQrE",
   "cat": "Belleza",
   "name": "Base Maybelline Super Stay Lumi Matte",
-  "now": 179.4,
+  "now": 141.9,
   "was": 345,
   "img": "https://http2.mlstatic.com/D_NQ_NP_873362-MLA92306999274_092025-F.jpg",
   "rating": "",
@@ -833,7 +833,7 @@
   "ml_id": "MLM34341029",
   "ml_tipo": "producto",
   "e": "🛒",
-  "off": 48
+  "off": 59
  },
  {
   "url": "https://meli.la/1ZpTouG",
@@ -929,8 +929,8 @@
   "url": "https://meli.la/2EkJQbm",
   "cat": "Electrodomésticos",
   "name": "Horno de microondas Mirage 0.7 ft³",
-  "now": 1449,
-  "was": 2490.0,
+  "now": 1412.05,
+  "was": 1963.78,
   "img": "https://http2.mlstatic.com/D_NQ_NP_944928-MLA112812361117_062026-F.jpg",
   "rating": "",
   "sold": "",
@@ -941,6 +941,6 @@
   "ml_id": "MLM18439163",
   "ml_tipo": "producto",
   "e": "🍲",
-  "off": 42
+  "off": 28
  }
 ]
