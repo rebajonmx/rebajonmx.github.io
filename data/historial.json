@@ -622,5 +622,33 @@
    "instagram": "6aff0541abf4ba608b7a1826"
   },
   "errores": []
+ },
+ {
+  "fecha": "2026-11-19 20:22",
+  "concepto": "rebi-oferta-falsa",
+  "tema": "azul",
+  "categoria": "Belleza",
+  "archivo": "video-20261119-2019.mp4",
+  "rebi": "mujer",
+  "buffer": {
+   "tiktok": "6affaead738ce4635f7c3f16",
+   "facebook": "6affaeb87b0a126ceb9e1c7f",
+   "instagram": "6affaec3738ce4635f7c4c7c"
+  },
+  "errores": []
+ },
+ {
+  "fecha": "2026-11-19 20:22",
+  "concepto": "carrusel",
+  "tema": "rosa",
+  "categoria": "",
+  "archivo": "carrusel-20261119-2020-1.jpg",
+  "rebi": "",
+  "buffer": {
+   "tiktok": "6affaece4c1afd05dee53b34",
+   "facebook": "6affaed80f5eda1a57b483cf",
+   "instagram": "6affaee37b0a126ceb9e26c1"
+  },
+  "errores": []
  }
 ]
