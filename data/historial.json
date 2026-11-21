@@ -664,5 +664,33 @@
    "instagram": "6b0055fb234b6bb6eea0bdc8"
   },
   "errores": []
+ },
+ {
+  "fecha": "2026-11-20 20:08",
+  "concepto": "ahorro-total",
+  "tema": "azul",
+  "categoria": "Hogar",
+  "archivo": "video-20261120-2006.mp4",
+  "rebi": "",
+  "buffer": {
+   "tiktok": "6b00fcfa20a2d09a0ac7c2bf",
+   "facebook": "6b00fd05d9cbb430a1114da7",
+   "instagram": "6b00fd0ed9cbb430a11150ed"
+  },
+  "errores": []
+ },
+ {
+  "fecha": "2026-11-20 20:08",
+  "concepto": "carrusel",
+  "tema": "azul",
+  "categoria": "",
+  "archivo": "carrusel-20261120-2006-1.jpg",
+  "rebi": "",
+  "buffer": {
+   "tiktok": "6b00fd195e993799d8454604",
+   "facebook": "6b00fd245e993799d84547dc",
+   "instagram": "6b00fd2e20a2d09a0ac7d1ef"
+  },
+  "errores": []
  }
 ]
