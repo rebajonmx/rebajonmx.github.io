@@ -706,5 +706,33 @@
    "instagram": "6b01a2cc8bd84d5966f14caf"
   },
   "errores": []
+ },
+ {
+  "fecha": "2026-11-21 20:03",
+  "concepto": "checklist-antes-de-pagar",
+  "tema": "rosa",
+  "categoria": "Belleza",
+  "archivo": "video-20261121-2001.mp4",
+  "rebi": "",
+  "buffer": {
+   "tiktok": "6b024d3fc72676f5e9f72a1f",
+   "facebook": "6b024d49846b0ee907522de5",
+   "instagram": "6b024d54d5eabfb8cc76759d"
+  },
+  "errores": []
+ },
+ {
+  "fecha": "2026-11-21 20:03",
+  "concepto": "carrusel",
+  "tema": "blanco",
+  "categoria": "",
+  "archivo": "carrusel-20261121-2001-1.jpg",
+  "rebi": "",
+  "buffer": {
+   "tiktok": "6b024d5fc72676f5e9f73a73",
+   "facebook": "6b024d69d5eabfb8cc767c0f",
+   "instagram": "6b024d74846b0ee907523c7a"
+  },
+  "errores": []
  }
 ]
