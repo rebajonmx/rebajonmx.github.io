@@ -748,5 +748,33 @@
    "instagram": "6b02f414cc364169c15a1d62"
   },
   "errores": []
+ },
+ {
+  "fecha": "2026-11-22 20:14",
+  "concepto": "cosas-utiles",
+  "tema": "blanco",
+  "categoria": "Hogar",
+  "archivo": "video-20261122-2012.mp4",
+  "rebi": "",
+  "buffer": {
+   "tiktok": "6b03a14d846b0ee907d676bd",
+   "facebook": "6b03a158c72676f5e97ac813",
+   "instagram": "6b03a163cc364169c1a21cab"
+  },
+  "errores": []
+ },
+ {
+  "fecha": "2026-11-22 20:14",
+  "concepto": "carrusel",
+  "tema": "rosa",
+  "categoria": "",
+  "archivo": "carrusel-20261122-2012-1.jpg",
+  "rebi": "",
+  "buffer": {
+   "tiktok": "6b03a16da6de38de9eafb7a1",
+   "facebook": "6b03a178846b0ee907d684aa",
+   "instagram": "6b03a182a6de38de9eafbc47"
+  },
+  "errores": []
  }
 ]
