@@ -1,14 +1,15 @@
-# Estado de Rebajón MX: 🟡 BIEN, CON AVISOS
+# Estado de Rebajón MX: 🔴 REVISAR
 
-Última revisión automática: 2026-11-24 08:18 (hora CDMX)
+Última revisión automática: 2026-11-24 20:20 (hora CDMX)
+
+## Problemas
+- 🔴 Video del turno en la página: video-20261124-2019.mp4 (HTTP 404).
 
 ## Avisos
 - 🟡 2 ofertas con precio por vencer (actualiza sus precios en links.txt): Power bank 42,000 mAh con carga rápida 66 W, Tablet Samsung Galaxy Tab A11
 
 ## Correcto
 - 🟢 Página en línea con la fecha de hoy.
-- 🟢 Video del turno en la página: video-20261124-0816.mp4 (HTTP 200).
-- 🟢 Publicado en redes vía Buffer.
 - 🟢 49 ofertas vigentes.
 - 🟢 49/49 links de afiliado abren Mercado Libre con tu código de afiliado (blsa6633152).
 
