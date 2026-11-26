@@ -1,9 +1,9 @@
 # Estado de Rebajón MX: 🔴 REVISAR
 
-Última revisión automática: 2026-11-25 08:17 (hora CDMX)
+Última revisión automática: 2026-11-25 20:18 (hora CDMX)
 
 ## Problemas
-- 🔴 Video del turno en la página: video-20261125-0816.mp4 (HTTP 404).
+- 🔴 Video del turno en la página: video-20261125-2018.mp4 (HTTP 404).
 
 ## Avisos
 - 🟡 La página está en línea pero no muestra la fecha de hoy.
