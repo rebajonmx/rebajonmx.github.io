@@ -818,5 +818,33 @@
    "instagram": "6b083f3cfec3221816793c2f"
   },
   "errores": []
+ },
+ {
+  "fecha": "2026-11-26 20:21",
+  "concepto": "menos-de-500",
+  "tema": "blanco",
+  "categoria": "Juguetes",
+  "archivo": "video-20261126-2019.mp4",
+  "rebi": "",
+  "buffer": {
+   "tiktok": "6b08e8f470e2a88e2cecfd85",
+   "facebook": "6b08e8ff07985b96e307f474",
+   "instagram": "6b08e90870e2a88e2ced0663"
+  },
+  "errores": []
+ },
+ {
+  "fecha": "2026-11-26 20:21",
+  "concepto": "carrusel",
+  "tema": "azul",
+  "categoria": "",
+  "archivo": "carrusel-20261126-2019-1.jpg",
+  "rebi": "",
+  "buffer": {
+   "tiktok": "6b08e914548b6e180d52937c",
+   "facebook": "6b08e91e548b6e180d529586",
+   "instagram": "6b08e9298899c4e7790c3e58"
+  },
+  "errores": []
  }
 ]
