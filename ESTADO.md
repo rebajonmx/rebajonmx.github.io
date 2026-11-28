@@ -1,13 +1,13 @@
 # Estado de Rebajón MX: 🟡 BIEN, CON AVISOS
 
-Última revisión automática: 2026-11-27 20:17 (hora CDMX)
+Última revisión automática: 2026-11-28 08:01 (hora CDMX)
 
 ## Avisos
 - 🟡 2 ofertas con precio por vencer (actualiza sus precios en links.txt): Power bank 42,000 mAh con carga rápida 66 W, Tablet Samsung Galaxy Tab A11
 
 ## Correcto
 - 🟢 Página en línea con la fecha de hoy.
-- 🟢 Video del turno en la página: video-20261127-2015.mp4 (HTTP 200).
+- 🟢 Video del turno en la página: video-20261128-0758.mp4 (HTTP 200).
 - 🟢 Publicado en redes vía Buffer.
 - 🟢 49 ofertas vigentes.
 - 🟢 49/49 links de afiliado abren Mercado Libre con tu código de afiliado (blsa6633152).
@@ -16,6 +16,7 @@
 
 | Fecha | Concepto | Color | Redes | Errores |
 |---|---|---|---|---|
+| 2026-11-28 08:00 | para-tu-casa | azul | tiktok, facebook, instagram | 0 |
 | 2026-11-27 20:17 | carrusel | blanco | tiktok, facebook, instagram | 0 |
 | 2026-11-27 20:17 | para-el | azul | tiktok, facebook, instagram | 0 |
 | 2026-11-27 08:18 | oferta-del-dia | blanco | tiktok, facebook, instagram | 0 |
@@ -25,11 +26,10 @@
 | 2026-11-24 08:17 | juguetes-navidad | rosa | tiktok, facebook, instagram | 0 |
 | 2026-11-23 08:43 | detector-descuento-falso | azul | tiktok, facebook, instagram | 0 |
 | 2026-11-22 20:14 | carrusel | rosa | tiktok, facebook, instagram | 0 |
-| 2026-11-22 20:14 | cosas-utiles | blanco | tiktok, facebook, instagram | 0 |
 
 Rebi (voz que se alterna para comparar): hombre: 8, mujer: 8
 
-Publicaciones por color: azul: 22, blanco: 22, rosa: 20
+Publicaciones por color: azul: 23, blanco: 22, rosa: 20
 
 Para comparar resultados, mira las visualizaciones de cada video en Buffer (Analytics) o en cada red,
 y cruza con esta tabla (concepto y color). Guía: docs/MANUAL.md → Métricas.
